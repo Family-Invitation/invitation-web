@@ -50,23 +50,27 @@ export default function Section4() {
         }}
       ></div>
       <div // Footer
-        style={{
-          height: 100,
-        }}
+        style={
+          {
+            //   height: 180,
+            // backgroundColor: "red",
+          }
+        }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 180"
           style={{
-            transform: "translateY(66%)",
+            width: "100%",
+            transform: "translateY(-1%)",
             position: "absolute",
             zIndex: 1,
-            width: "100%",
           }}
         >
           <path
             fill="#84865f"
-            d="M0,0L1440,192L1440,0L0,0Z"
-            preserveAspectRatio="none"
+            fill-opacity="1"
+            d="M0,0L1440,180L1440,0L0,0Z"
             speechify-initial-font-family="GTWalsheim, system-ui, sans-serif"
             speechify-initial-font-size="16px"
           ></path>

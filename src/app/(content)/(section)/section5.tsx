@@ -57,7 +57,12 @@ export default function Section5() {
       />
       <h3
         style={{
-          marginTop: "30%",
+          marginTop: resizeList(200, [
+            {
+              width: 700,
+              decresePercent: 30,
+            },
+          ]),
           color: "#85865F",
           fontFamily: "Josefin Sans",
           fontSize: resizeList(30, [
@@ -97,6 +102,7 @@ export default function Section5() {
       </h2>
       <div // Text
         style={{
+          marginTop: 10,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
