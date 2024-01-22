@@ -131,7 +131,7 @@ export default function Section4() {
         >
           Our Love Story
         </h2>
-        <div // Text
+        {/* <div // Text
           style={{
             marginTop: 30,
             display: "flex",
@@ -148,7 +148,7 @@ export default function Section4() {
           }}
         >
           How it all started
-        </div>
+        </div> */}
       </div>
       <div>
         <Carousel />

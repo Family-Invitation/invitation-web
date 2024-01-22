@@ -124,7 +124,7 @@ export default function Section1() {
           lineHeight: "45px",
         }}
       >
-        31.12.23
+        03.02.2024
       </h3>
     </div>
   );

@@ -374,10 +374,10 @@ export default function Section3() {
             fontSize: resize(600, 20, 50),
           }}
         >
-          <span>
+          {/* <span>
             The highest happiness on earth is the happiness of marriage.
-          </span>
-          <strong>William Lyon Phelps</strong>
+          </span> */}
+          <strong>Jum'at, 3 Februari 2024</strong>
         </div>
         <div // Space
           style={{
@@ -396,7 +396,7 @@ export default function Section3() {
             style={{
               width: "100%",
               height: 610,
-              backgroundImage: `url("https://i.pinimg.com/564x/02/cc/12/02cc121cde3b6ed097f608cee5676823.jpg")`,
+              backgroundImage: `url("/img1.jpeg")`,
               backgroundPosition:
                 windowWidth > 1100
                   ? "0 -250px"
@@ -426,7 +426,7 @@ export default function Section3() {
                 color: "white",
               }}
             >
-              <h2
+              {/* <h2
                 style={{
                   fontFamily: "Josefin Sans",
                   fontSize: resizeList(30, [
@@ -443,7 +443,7 @@ export default function Section3() {
                 }}
               >
                 Where & When
-              </h2>
+              </h2> */}
               <h1
                 style={{
                   fontFamily: "Cormorant Garamond",
@@ -468,6 +468,7 @@ export default function Section3() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
+                  textAlign: "center",
                   fontFamily: "Josefin Sans",
                   fontSize: resizeList(20, [
                     {
@@ -482,9 +483,14 @@ export default function Section3() {
                 }}
               >
                 <span>
-                  Gravitation is not responsible for people falling in love.
+                  <em>Assalamu'alaikum Wr.Wb.</em>
+                  <br />
+                  <br />
+                  Tanpa mengurangi rasa hormat, kami mengundang
+                  Bapak/Ibu/Saudara/i untuk hadir dihari bahagia Pernikahan kami
+                  yang akan di laksanakan pada:
                 </span>
-                <strong>Albert Einstein</strong>
+                {/* <strong>Albert Einstein</strong> */}
               </div>
             </div>
           </div>
@@ -544,7 +550,7 @@ export default function Section3() {
                   margin: "10px 0",
                 }}
               >
-                Holy Matrimony
+                Akad Nikah
               </h2>
               <img
                 style={{
@@ -591,7 +597,7 @@ export default function Section3() {
                       margin: "0 5px",
                     }}
                   />
-                  <span>Sunday, 31 December 2023</span>
+                  <span>Jum'at, 2 Februari 2024</span>
                 </div>
                 <div // Time
                   style={{
@@ -616,7 +622,7 @@ export default function Section3() {
                       margin: "0 5px",
                     }}
                   />
-                  <span>10.00 - 12.00 WIB</span>
+                  <span>08.00 - Selesai</span>
                 </div>
                 <div // Location
                   style={{
@@ -649,11 +655,11 @@ export default function Section3() {
                       flexDirection: "column",
                     }}
                   >
-                    <strong>Shangri-La Hotel Jakarta</strong>
-                    <span>
+                    <strong>KUA</strong>
+                    {/* <span>
                       Jl. Jenderal Sudirman No.Kav. 1, Karet Tengsin, Kecamatan
                       Tanah Abang, Kota Jakarta Pusat, DKI Jakarta 10220
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
@@ -784,7 +790,7 @@ export default function Section3() {
                   margin: "10px 0",
                 }}
               >
-                Wedding Reception
+                Resepsi
               </h2>
               <img
                 style={{
@@ -831,7 +837,7 @@ export default function Section3() {
                       margin: "0 5px",
                     }}
                   />
-                  <span>Sunday, 31 December 2023</span>
+                  <span> Sabtu, 3 Februari 2024</span>
                 </div>
                 <div // Time
                   style={{
@@ -856,7 +862,7 @@ export default function Section3() {
                       margin: "0 5px",
                     }}
                   />
-                  <span>18.00 - 21.00</span>
+                  <span>09.00 - Selesai</span>
                 </div>
                 <div // Location
                   style={{
@@ -889,10 +895,10 @@ export default function Section3() {
                       flexDirection: "column",
                     }}
                   >
-                    <strong>Shangri-La Hotel Jakarta</strong>
+                    {/* <strong>Shangri-La Hotel Jakarta</strong> */}
                     <span>
-                      Jl. Jenderal Sudirman No.Kav. 1, Karet Tengsin, Kecamatan
-                      Tanah Abang, Kota Jakarta Pusat, DKI Jakarta 10220
+                      Simpangan Depok, Jatijajar 2, Gang Persada, RT 007/RW 007,
+                      Tapos, Depok
                     </span>
                   </div>
                 </div>
@@ -1051,7 +1057,9 @@ export default function Section3() {
                   textAlign: "center",
                 }}
               >
-                We will broadcast the wedding ceremony virtually
+                Kami juga berencana untuk mempublikasikan pernikahan kami secara
+                virtual melalui live Instagram yang bisa anda ikuti melalui link
+                berikut:
               </div>
               <button // Join
                 style={{
