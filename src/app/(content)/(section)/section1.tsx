@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import useGetData from "@/hooks/useGetData";
+import { Data } from "@/interfaces/dataInterfaces";
+import { useEffect, useState, useRef } from "react";
 
 export default function Section1() {
   const [windowWidth, setWindowWidth] = useState(0);
@@ -40,13 +42,20 @@ export default function Section1() {
     return () => window.removeEventListener("resize", f);
   }, []);
 
+  const dataKonsumen: Data = useGetData();
+
+  const { data } = dataKonsumen;
+
+  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
+  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
+
   return (
     <div
       id="section1"
       style={{
-        width: "100vw",
+        width: "100%",
         height: "100vh",
-        backgroundImage: 'url("/back.png")',
+        backgroundImage: 'url("/bg-section1.webp")',
         backgroundColor: "#e9ede8",
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
@@ -95,7 +104,7 @@ export default function Section1() {
           margin: 0,
         }}
       >
-        Romeo & Juliet
+        {mempelaiPria} & {mempelaiWanita}
       </h1>
       <h3
         style={{

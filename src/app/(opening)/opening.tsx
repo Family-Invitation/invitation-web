@@ -1,3 +1,5 @@
+import useGetData from "@/hooks/useGetData";
+import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
@@ -51,7 +53,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
       });
     }, 750);
 
-    audio?.play();
+    // audio?.play();
   }
 
   useEffect(() => {
@@ -67,10 +69,17 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
 
     document.body.style.overflow = "hidden";
 
-    setAudio(new Audio("/beautiful-in-white.mp3"));
+    // setAudio(new Audio("/beautiful-in-white.mp3"));
 
     return () => window.removeEventListener("resize", f);
   }, []);
+
+  const dataKonsumen: Data = useGetData();
+
+  const { data } = dataKonsumen;
+
+  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
+  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
 
   return (
     <div
@@ -79,7 +88,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
         transition: "ease-in 300ms",
         width: "100%",
         height: "100vh",
-        backgroundImage: 'url("/back.png")',
+        backgroundImage: 'url("/bg-section1.webp")',
         backgroundColor: "#e9ede8",
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
@@ -155,7 +164,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           margin: 0,
         }}
       >
-        Romeo & Juliet
+        {mempelaiPria} & {mempelaiWanita}
       </h2>
       <h3
         style={{

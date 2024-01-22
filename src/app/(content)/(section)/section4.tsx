@@ -1,4 +1,36 @@
+import Carousel from "@/components/Carousel";
+import { useState, useEffect } from "react";
+
 export default function Section4() {
+  const [windowWidth, setWindowWidth] = useState(0);
+
+  function resizeList(
+    normalSize: number,
+    list: {
+      width: number;
+      decresePercent: number;
+    }[]
+  ): number {
+    for (const { width: w, decresePercent: d } of list) {
+      if (windowWidth <= w) {
+        return normalSize - (normalSize * d) / 100;
+      }
+    }
+    return normalSize;
+  }
+
+  useEffect(() => {
+    function f() {
+      setWindowWidth(window.innerWidth);
+    }
+
+    f();
+
+    window.addEventListener("resize", f);
+
+    return () => window.removeEventListener("resize", f);
+  }, []);
+
   return (
     <div
       style={{
@@ -7,6 +39,7 @@ export default function Section4() {
         backgroundColor: "#84865f",
         display: "flex",
         flexDirection: "column",
+        fontFamily: "Josefin Sans",
       }}
     >
       <div // Header
@@ -46,9 +79,80 @@ export default function Section4() {
       </div>
       <div
         style={{
-          flex: 1,
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          maxWidth: "1140px",
+          margin: "0 auto",
         }}
-      ></div>
+      >
+        <h3
+          style={{
+            marginTop: resizeList(100, [
+              {
+                width: 700,
+                decresePercent: 30,
+              },
+            ]),
+            color: "white",
+            fontSize: resizeList(30, [
+              {
+                width: 450,
+                decresePercent: 50,
+              },
+              {
+                width: 700,
+                decresePercent: 30,
+              },
+            ]),
+            margin: 0,
+          }}
+        >
+          The Journey
+        </h3>
+        <h2
+          style={{
+            color: "white",
+            fontFamily: "Cormorant Garamond",
+            marginTop: 20,
+            fontSize: resizeList(60, [
+              {
+                width: 450,
+                decresePercent: 50,
+              },
+              {
+                width: 700,
+                decresePercent: 30,
+              },
+            ]),
+            fontWeight: 600,
+            margin: 0,
+          }}
+        >
+          Our Love Story
+        </h2>
+        <div // Text
+          style={{
+            marginTop: 30,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            color: "white",
+            fontFamily: "Josefin Sans",
+            fontSize: resizeList(20, [
+              {
+                width: 700,
+                decresePercent: 30,
+              },
+            ]),
+          }}
+        >
+          How it all started
+        </div>
+      </div>
+      <div>
+        <Carousel />
+      </div>
       <div // Footer
         style={
           {

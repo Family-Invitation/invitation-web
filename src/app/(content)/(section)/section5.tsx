@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Section5() {
@@ -32,10 +33,11 @@ export default function Section5() {
 
   return (
     <div
+      id="section5"
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundImage: `url("https://i0.wp.com/zeinvitation.com/wp-content/uploads/2022/07/BACKGROUND_LEAVES_WATERCOLOR-01-Vertical-scaled.jpg?fit=1707%2C2560&ssl=1")`,
+        backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, #FFFFFF00 100%), url("https://i0.wp.com/zeinvitation.com/wp-content/uploads/2022/07/BACKGROUND_LEAVES_WATERCOLOR-01-Vertical-scaled.jpg?fit=1707%2C2560&ssl=1")`,
         zIndex: 0,
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -43,21 +45,20 @@ export default function Section5() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        padding: "100px 0",
       }}
     >
       <div
         style={{
           width: "100%",
           height: "100%",
-          backgroundImage:
-            "linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
           position: "absolute",
           zIndex: -1,
         }}
       />
       <h3
         style={{
-          marginTop: resizeList(200, [
+          marginTop: resizeList(100, [
             {
               width: 700,
               decresePercent: 30,
@@ -121,6 +122,35 @@ export default function Section5() {
           this world alone.
         </span>
         <strong>J. R. R. Tolkien</strong>
+      </div>
+      <div style={{ maxWidth: "1140px", marginTop: "60px" }}>
+        <iframe
+          width="1140px"
+          height="600px"
+          src="https://www.youtube.com/embed/64ojWgAzl94"
+          title="Video YouTube"
+          frameBorder="0"
+          allowFullScreen
+        ></iframe>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: "20px",
+            paddingTop: "12px",
+          }}
+        >
+          {[1, 2, 3, 4, 5, 6].map((item) => (
+            <Image
+              key={item}
+              src={`/couple.png`}
+              alt="foto wedding"
+              width={200}
+              height={160}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

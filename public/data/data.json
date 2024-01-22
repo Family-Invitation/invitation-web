@@ -1,0 +1,55 @@
+{
+    "data": {
+      "namaAkunPemesan": "aqila silvia darmawan",
+      "noPesanan": "1350507885372693",
+      "jumlahDanSeri": 100,
+      "checkOutDi": "MEMPELAI WANITA",
+      "mempelaiWanita": {
+        "namaLengkap": "Pigita disca pertiwi",
+        "namaPanggilan": "Gita",
+        "anakKe": 1,
+        "namaOrangTua": {
+          "bapak": "untung suwardi",
+          "ibu": "nuralim sahidah"
+        }
+      },
+      "mempelaiPria": {
+        "namaLengkap": "Muhamad alfiqri",
+        "namaPanggilan": "kule",
+        "anakKe": 7,
+        "namaOrangTua": {
+          "bapak": "suherman",
+          "ibu": "yurnita"
+        }
+      },
+      "akadNikah": {
+        "hariTanggal": "02/februari/2024",
+        "jamPukul": "08.00",
+        "alamatLengkap": "kua"
+      },
+      "resepsi": {
+        "hariTanggal": "03/februari/2024",
+        "jamPukul": "09.00 sampai dengan selesai",
+        "alamatLengkap": "simpangan depok, jatijajar 2, gang persada, rt 007/rw007, tapos, depok",
+        "tempatResepsi": "pria"
+      },
+      "turutMengundang": [
+        "bpk rt drs. Ruslan (rt 07)",
+        "bpk rw toto iswanto (rw 07)",
+        "herlina susanti (kakak)",
+        "doni saputra (kakak)",
+        "resmi wandi (kakak)",
+        "mega silvia (kakak)",
+        "antoni (kakak ipar)",
+        "sessi mardiana (kakak ipar)",
+        "siti munawaroh (kakak ipar)",
+        "iwan darmawan (kakak ipar)",
+        "citra Rahma putri (ponakan)",
+        "m.fauzan (ponakan)"
+      ],
+      "fotoMempelai": "jika menggunakan",
+      "denahLokasi": "minimal order 300pcs (ditulis tangan lalu difoto) jika menggunakan",
+      "hiburan": "jika ada"
+    }
+  }
+  
