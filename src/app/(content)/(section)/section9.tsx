@@ -11,10 +11,10 @@ export default function Section9() {
 
   const { data } = dataKonsumen;
 
-  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
+  const mempelaiPria = data?.mempelaiPria?.namaPanggilan;
   const ayahMempelaiPria = data?.mempelaiPria?.namaOrangTua?.bapak;
   const ibuMempelaiPria = data?.mempelaiPria?.namaOrangTua?.ibu;
-  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
+  const mempelaiWanita = data?.mempelaiWanita?.namaPanggilan;
   const ayahMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.bapak;
   const ibuMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.ibu;
 
@@ -54,6 +54,9 @@ export default function Section9() {
         display: "flex",
         flexDirection: "column",
         backgroundColor: "transparent",
+        justifyContent: "center",
+        alignContent: "center",
+        textAlign: "center",
         margin: "100px auto",
         alignItems: "center",
         fontFamily: "Josefin Sans",
@@ -61,8 +64,11 @@ export default function Section9() {
     >
       <div
         style={{
-          color: "#4F583D",
-          fontSize: resizeList(30, [
+          color: "white",
+          marginBottom: "30px",
+          marginLeft: "300px",
+          marginRight: "300px",
+          fontSize: resizeList(20, [
             {
               width: 450,
               decresePercent: 50,
@@ -74,7 +80,28 @@ export default function Section9() {
           ]),
         }}
       >
-        Thank You
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
+        Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
+        kehadiran dan doa restunya, kamu mengucapkan terima kasih.
+        <br />
+        <em>Wassalamu'alaikum Wr.Wb.</em>
+      </div>
+      <div
+        style={{
+          color: "white",
+          fontSize: resizeList(15, [
+            {
+              width: 450,
+              decresePercent: 50,
+            },
+            {
+              width: 700,
+              decresePercent: 30,
+            },
+          ]),
+        }}
+      >
+        Kami yang berbahagia
       </div>
       <div
         style={{
@@ -94,7 +121,7 @@ export default function Section9() {
       >
         {mempelaiPria} & {mempelaiWanita}
       </div>
-      <div
+      {/* <div
         style={{
           color: "#F5EACF",
           marginTop: "30px",
@@ -111,9 +138,9 @@ export default function Section9() {
         }}
       >
         The Big Family
-      </div>
+      </div> */}
 
-      <div
+      {/* <div
         style={{
           color: "white",
           marginTop: "30px",
@@ -130,8 +157,8 @@ export default function Section9() {
         }}
       >
         Lord {ayahMempelaiPria} & Lady {ibuMempelaiPria}
-      </div>
-      <div
+      </div> */}
+      {/* <div
         style={{
           color: "white",
           marginTop: "10px",
@@ -148,18 +175,37 @@ export default function Section9() {
         }}
       >
         Lord {ayahMempelaiWanita} & Lady {ibuMempelaiWanita}
-      </div>
+      </div> */}
       <img
         src="/logo.png"
         alt="logo"
         style={{
           aspectRatio: "1:1",
-          width: "150px",
+          width: "80px",
           marginTop: "30px",
           mixBlendMode: "color-burn",
           backgroundColor: "transparent",
+          borderRadius: "50%",
         }}
       />
+      <div
+        style={{
+          color: "white",
+          marginTop: "10px",
+          fontSize: resizeList(15, [
+            {
+              width: 450,
+              decresePercent: 50,
+            },
+            {
+              width: 700,
+              decresePercent: 30,
+            },
+          ]),
+        }}
+      >
+        Family Invitation
+      </div>
       <div style={{ display: "flex", marginTop: "20px", gap: "10px" }}>
         <Link href={whatsappLink} target="_blank">
           <FaWhatsapp size={30} color="white" />

@@ -227,7 +227,7 @@ export default function Section8() {
                 ]),
               }}
             >
-              Share Love
+              Wedding Gift
             </div>
             <div
               style={{
@@ -246,9 +246,9 @@ export default function Section8() {
                 fontFamily: "Josefin Sans",
               }}
             >
-              Your prayers & blessings at our wedding is enough as a gift, but
-              if you want to give more, we are happy to receive it and it will
-              complement our happiness even more
+              Kehadiran Anda merupakan hadiah terindah. Namun, apabila Anda
+              memberikan tanda kasih kepada kami, dapat melalui fitur di bawah
+              ini:
             </div>
           </div>
           <div style={{ width: "100%", margin: "50px 0" }}>

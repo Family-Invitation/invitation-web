@@ -56,7 +56,7 @@ export default function Section5() {
           zIndex: -1,
         }}
       />
-      <h3
+      {/* <h3
         style={{
           marginTop: resizeList(100, [
             {
@@ -80,7 +80,7 @@ export default function Section5() {
         }}
       >
         A Glimpse of
-      </h3>
+      </h3> */}
       <h2
         style={{
           color: "#4F583D",
@@ -99,7 +99,7 @@ export default function Section5() {
           margin: 0,
         }}
       >
-        Our Moments
+        Gallery
       </h2>
       <div // Text
         style={{
@@ -117,21 +117,18 @@ export default function Section5() {
           ]),
         }}
       >
-        <span>
-          I would rather share one lifetime with you than face all the ages of
-          this world alone.
-        </span>
-        <strong>J. R. R. Tolkien</strong>
+        <span>Our Moments</span>
+        {/* <strong>J. R. R. Tolkien</strong> */}
       </div>
       <div style={{ maxWidth: "1140px", marginTop: "60px" }}>
-        <iframe
+        {/* <iframe
           width="1140px"
           height="600px"
           src="https://www.youtube.com/embed/64ojWgAzl94"
           title="Video YouTube"
           frameBorder="0"
           allowFullScreen
-        ></iframe>
+        ></iframe> */}
         <div
           style={{
             display: "grid",
@@ -140,10 +137,10 @@ export default function Section5() {
             paddingTop: "12px",
           }}
         >
-          {[1, 2, 3, 4, 5, 6].map((item) => (
+          {[1, 2, 3, 4].map((item) => (
             <Image
               key={item}
-              src={`/couple.png`}
+              src={`/img${item}.jpeg`}
               alt="foto wedding"
               width={200}
               height={160}

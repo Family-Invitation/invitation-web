@@ -85,7 +85,7 @@ export default function Section2() {
             marginBottom: 50,
           }}
         >
-          <h2
+          {/* <h2
             style={{
               fontFamily: "Josefin Sans",
               color: "#85865F",
@@ -103,8 +103,8 @@ export default function Section2() {
             }}
           >
             The Beloved
-          </h2>
-          <h1
+          </h2> */}
+          {/* <h1
             style={{
               fontFamily: "Cormorant Garamond",
               color: "#4F583D",
@@ -123,7 +123,7 @@ export default function Section2() {
             }}
           >
             Groom & Bride
-          </h1>
+          </h1> */}
           <div
             style={{
               display: "flex",
@@ -158,10 +158,13 @@ export default function Section2() {
             }}
           >
             <p style={{ margin: "10px 0", fontWeight: 300 }}>
-              Once in awhile, right in the middle of an ordinary life, love
-              gives us a fairy tale.
+              Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+              pasangan-pasangan untukmu dari jenismu sendiri,agar kamu cenderung
+              dan merasa tentram kepadanya, dan Dia menjadikandi antaramu rasa
+              kasih dan sayang. <br />
+              <br /> ( Ar-Rum 21 )
             </p>
-            <strong>Unknown</strong>
+            {/* <strong>Unknown</strong> */}
           </div>
         </div>
         <div // Foto & Detail
@@ -224,7 +227,7 @@ export default function Section2() {
                   borderRadius: "50%",
                   position: "absolute",
                 }}
-                src="/man.png"
+                src="/man.jpeg"
                 alt=""
               />
               <img
@@ -487,7 +490,7 @@ export default function Section2() {
                   borderRadius: "50%",
                   position: "absolute",
                 }}
-                src="/woman.png"
+                src="/woman.jpeg"
                 alt=""
               />
               <img

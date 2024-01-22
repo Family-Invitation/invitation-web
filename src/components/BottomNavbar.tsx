@@ -51,7 +51,7 @@ const BottomNavbar: React.FC = () => {
       >
         <Menu to="section1">
           <Image
-            src="/couple.png"
+            src="/img1-squere.jpeg"
             alt="couple"
             width={50}
             height={50}

@@ -193,7 +193,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           ])}px 0px`,
         }}
       >
-        Dear Mr./ Mrs./ Ms.
+        Kepada Bpk/Ibu/Saudara/i
       </h3>
       <h2
         style={{
@@ -210,12 +210,12 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           fontWeight: 400,
           color: "#8fa6ac",
           fontFamily: "Josefin Sans",
-          margin: 0,
+          marginBottom: 40,
         }}
       >
         Ega & Partner
       </h2>
-      <h3
+      {/* <h3
         style={{
           fontSize: resizeList(20, [
             {
@@ -233,7 +233,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
         }}
       >
         You are cordially invited to our wedding.
-      </h3>
+      </h3> */}
       <button
         style={{
           fontSize: resizeList(20, [
