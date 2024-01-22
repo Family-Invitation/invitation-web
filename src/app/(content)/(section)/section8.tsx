@@ -1,3 +1,4 @@
+import ButtonBase from "@/components/ButtonBase";
 import { IButton, IGiftCard } from "@/interfaces/dataInterfaces";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -168,25 +169,6 @@ export default function Section8() {
           <ButtonBase text="Confirm" />
         </div>
       </div>
-    );
-  };
-
-  const ButtonBase = ({ icon, text, onClick }: IButton) => {
-    return (
-      <button
-        style={{
-          border: "#8A594C",
-          backgroundColor: "#8A594C",
-          cursor: "pointer",
-          padding: "10px",
-          borderRadius: "5px",
-          width: "100px",
-          color: "white",
-          marginBottom: "10px",
-        }}
-      >
-        {text}
-      </button>
     );
   };
 
