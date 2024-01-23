@@ -12,26 +12,31 @@ const ResponsiveCarousel: React.FC = () => {
 
   const dataImages: ICarouselItem[] = [
     {
+      id: 1,
       imageUrl: "https://placekitten.com/800/600",
       year: 2022,
       label: "Start Dating",
     },
     {
+      id: 2,
       imageUrl: "https://placekitten.com/801/600",
       year: 2023,
       label: "Engagement",
     },
     {
+      id: 3,
       imageUrl: "https://placekitten.com/802/600",
       year: 2024,
       label: "Wedding",
     },
     {
+      id: 4,
       imageUrl: "https://placekitten.com/803/600",
       year: 2025,
       label: "Family",
     },
     {
+      id: 5,
       imageUrl: "https://placekitten.com/804/600",
       year: 2026,
       label: "Special Moments",
@@ -82,17 +87,23 @@ const ResponsiveCarousel: React.FC = () => {
         responsive={responsive}
         infinite
         containerClass="carousel-container"
-        removeArrowOnDeviceType={["tablet", "mobile"]}
-        deviceType="desktop"
         showDots={false}
         ssr
         keyBoardControl
         transitionDuration={500}
         beforeChange={(nextIndex) => setCurrentIndex(nextIndex)}
         itemClass="carousel-item"
+        rewind={false}
+        rewindWithAnimation={false}
+        rtl={false}
+        shouldResetAutoplay
+        sliderClass=""
+        slidesToSlide={1}
+        swipeable
       >
         {dataImages.map((data, index) => (
           <div
+            key={data?.id}
             style={{
               display: "flex",
               flexDirection: "column",
@@ -112,7 +123,9 @@ const ResponsiveCarousel: React.FC = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 position: "relative",
+                fontStyle: "italic",
               }}
+              className="font-josefinSans"
             >
               {data.label}
               <IoMdArrowDropdown
@@ -126,7 +139,7 @@ const ResponsiveCarousel: React.FC = () => {
               />
             </div>
             <img
-              key={index}
+              key={data?.id}
               src={data.imageUrl}
               alt={`Slide ${index + 1}`}
               style={{
@@ -136,7 +149,12 @@ const ResponsiveCarousel: React.FC = () => {
                 aspectRatio: "1/1",
               }}
             />
-            <div style={{ color: "white", marginTop: "30px" }}>{data.year}</div>
+            <div
+              style={{ color: "white", marginTop: "30px", fontSize: "30px" }}
+              className="font-cormorantGaramond"
+            >
+              {data.year}
+            </div>
           </div>
         ))}
       </Carousel>

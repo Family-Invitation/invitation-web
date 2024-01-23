@@ -62,7 +62,15 @@ export interface IMenu {
 }
 
 export interface ICarouselItem {
+  id: number;
   imageUrl: string;
   year: number;
   label: string;
+}
+
+export interface IWishItem {
+  name: string;
+  wish: string;
+  date: string;
+  time: string;
 }

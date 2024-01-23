@@ -1,13 +1,21 @@
+"use client";
 import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface Props {
+  showOpening: boolean;
   setShowOpening: Dispatch<SetStateAction<boolean>>;
+  setShowContent: Dispatch<SetStateAction<boolean>>;
 }
 
-const Opening: NextPage<Props> = ({ setShowOpening }) => {
+const Opening: NextPage<Props> = ({
+  showOpening,
+  setShowOpening,
+  setShowContent,
+}) => {
+  console.log("opening");
   const [windowWidth, setWindowWidth] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [audio, setAudio] = useState<HTMLAudioElement>();
@@ -39,19 +47,20 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
 
   function scroll(id: string) {
     const doc = document.getElementById(id);
-
-    window.scrollTo({
-      top: doc?.offsetTop || 0 - 60,
-      behavior: "smooth",
-    });
-
-    setTimeout(() => {
-      document.body.style.overflow = "auto";
-      setShowOpening(false);
+    if (doc) {
       window.scrollTo({
-        top: 0,
+        top: doc?.offsetTop || 0 - 60,
+        behavior: "smooth",
       });
-    }, 750);
+
+      setTimeout(() => {
+        document.body.style.overflow = "auto";
+        setShowOpening(false);
+        window.scrollTo({
+          top: 0,
+        });
+      }, 750);
+    }
 
     // audio?.play();
   }
@@ -67,12 +76,30 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
 
     setLoaded(true);
 
-    document.body.style.overflow = "hidden";
+    // document.body.style.overflow = "hidden";
 
     // setAudio(new Audio("/beautiful-in-white.mp3"));
 
     return () => window.removeEventListener("resize", f);
   }, []);
+
+  useEffect(() => {
+    const body = document.body;
+
+    if (showOpening) {
+      body.style.overflow = "hidden";
+    } else {
+      setShowOpening(false);
+      body.style.overflow = ""; // Mengembalikan overflow ke nilai default saat komponen unmount
+    }
+
+    return () => {
+      // Cleanup effect: mengembalikan overflow ke nilai default saat komponen unmount
+      body.style.overflow = "";
+    };
+  }, [showOpening]);
+
+  console.log({ showOpening });
 
   const dataKonsumen: Data = useGetData();
 
@@ -82,7 +109,9 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
   const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
 
   return (
+    // <div>tes</div>
     <div
+      id="opening"
       style={{
         opacity: loaded ? 1 : 0,
         transition: "ease-in 300ms",
@@ -98,6 +127,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
         justifyContent: "center",
         alignItems: "center",
       }}
+      className={`${showOpening ? "d-flex" : "d-none"}`}
     >
       <img
         data-aos="zoom-in"
@@ -258,7 +288,10 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           outline: "none",
           boxShadow: "0 4px 3px 2px rgba(0, 0, 0, 0.2)",
         }}
-        onClick={() => scroll("section1")}
+        onClick={() => {
+          setShowContent(true);
+          scroll("section1");
+        }}
       >
         Open Invitation
       </button>

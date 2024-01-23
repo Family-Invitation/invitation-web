@@ -1,38 +1,12 @@
 import ButtonBase from "@/components/ButtonBase";
-import { IButton, IGiftCard } from "@/interfaces/dataInterfaces";
+import { Data, IButton, IGiftCard } from "@/interfaces/dataInterfaces";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaGift } from "react-icons/fa6";
+import useResizeFont from "@/hooks/useResize";
 
-export default function Section8() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  useEffect(() => {
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
+export default function Section8({ data }: Readonly<Data>) {
+  const { resizeList, windowWidth } = useResizeFont();
 
   const GiftCard = ({
     isGift = false,
@@ -44,7 +18,6 @@ export default function Section8() {
   }: IGiftCard) => {
     return (
       <div
-        id="section8"
         style={{
           padding: "40px",
           backgroundColor: "white",
@@ -55,9 +28,9 @@ export default function Section8() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          margin: "25px auto",
           fontFamily: "Josefin Sans",
         }}
+        className="my-6 mx-auto"
       >
         {isGift ? (
           <>
@@ -68,12 +41,8 @@ export default function Section8() {
                 marginTop: "20px",
                 fontSize: resizeList(30, [
                   {
-                    width: 450,
-                    decresePercent: 50,
-                  },
-                  {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -86,12 +55,8 @@ export default function Section8() {
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
-                    width: 450,
-                    decresePercent: 50,
-                  },
-                  {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -108,12 +73,8 @@ export default function Section8() {
                 marginTop: "20px",
                 fontSize: resizeList(30, [
                   {
-                    width: 450,
-                    decresePercent: 50,
-                  },
-                  {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -126,12 +87,8 @@ export default function Section8() {
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
-                    width: 450,
-                    decresePercent: 50,
-                  },
-                  {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -144,12 +101,8 @@ export default function Section8() {
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
-                    width: 450,
-                    decresePercent: 50,
-                  },
-                  {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -174,15 +127,12 @@ export default function Section8() {
 
   return (
     <div
+      id="section8"
       style={{
         width: "100%",
         minHeight: "100vh",
         backgroundColor: "#84865f",
         zIndex: -1,
-        // display: "flex",
-        // flexDirection: "column",
-        // justifyContent: "center",
-        // alignContent: "center",
       }}
     >
       <div
@@ -200,6 +150,7 @@ export default function Section8() {
             alignItems: "center",
             flexDirection: "column",
           }}
+          className="px-8"
         >
           <div
             style={{
@@ -218,14 +169,15 @@ export default function Section8() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
+              className="font-cormorantGaramond font-semibold"
             >
               Wedding Gift
             </div>
@@ -236,15 +188,15 @@ export default function Section8() {
                 fontSize: resizeList(20, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
-                fontFamily: "Josefin Sans",
               }}
+              className="font-josefinSans"
             >
               Kehadiran Anda merupakan hadiah terindah. Namun, apabila Anda
               memberikan tanda kasih kepada kami, dapat melalui fitur di bawah
@@ -265,7 +217,7 @@ export default function Section8() {
               rekNumber="123456789"
             />
           </div>
-          <div style={{ width: "500px" }}>
+          <div className="w-full lg:w-[500px]">
             <div
               style={{
                 color: "white",
@@ -274,11 +226,11 @@ export default function Section8() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}

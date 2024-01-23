@@ -1,35 +1,9 @@
 import Carousel from "@/components/Carousel";
-import { useState, useEffect } from "react";
+import { Data } from "@/interfaces/dataInterfaces";
+import useResizeFont from "@/hooks/useResize";
 
-export default function Section4() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
-
-  useEffect(() => {
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
+export default function Section4({ data }: Readonly<Data>) {
+  const { resizeList, windowWidth } = useResizeFont();
 
   return (
     <div
@@ -91,18 +65,18 @@ export default function Section4() {
             marginTop: resizeList(100, [
               {
                 width: 700,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
             color: "white",
             fontSize: resizeList(30, [
               {
                 width: 450,
-                decresePercent: 50,
+                decreasePercent: 50,
               },
               {
                 width: 700,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
             margin: 0,
@@ -118,11 +92,11 @@ export default function Section4() {
             fontSize: resizeList(60, [
               {
                 width: 450,
-                decresePercent: 50,
+                decreasePercent: 50,
               },
               {
                 width: 700,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
             fontWeight: 600,

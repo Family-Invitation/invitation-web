@@ -37,13 +37,23 @@ const run = async function (cb: (v: string) => void) {
 
 export default function Page() {
   const [showOpening, setShowOpening] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {}, []);
 
+  console.log("showOpening", showOpening);
+
   return (
     <main>
-      {showOpening && <Opening setShowOpening={setShowOpening} />}
-      <Content />
+      {showOpening && (
+        <Opening
+          showOpening={showOpening}
+          setShowOpening={setShowOpening}
+          setShowContent={setShowContent}
+        />
+      )}
+      {showContent && <Content />}
+      {/* <Content /> */}
     </main>
   );
 }

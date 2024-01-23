@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useResizeFont from "@/hooks/useResize";
 import { GiDiamondRing, GiAerialSignal } from "react-icons/gi";
 import { AiOutlineCalendar } from "react-icons/ai";
 import { BiTimeFive } from "react-icons/bi";
@@ -9,10 +10,9 @@ import {
   IoFastFoodOutline,
 } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
+import { Data } from "@/interfaces/dataInterfaces";
 
-export default function Section3() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
+export default function Section3({ data }: Readonly<Data>) {
   const [count, setCount] = useState(0);
   const [countdown, setCountdown] = useState({
     days: 0,
@@ -21,49 +21,11 @@ export default function Section3() {
     seconds: 0,
   });
 
-  function resize(
-    width: number,
-    normalSize: number,
-    decresePercent: number
-  ): number {
-    return windowWidth > width
-      ? normalSize
-      : normalSize - (normalSize * decresePercent) / 100;
-  }
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
+  const { resizeList, windowWidth } = useResizeFont();
 
   function zeroReplace(n: number): string {
     return n > 9 ? `${n}` : `0${n}`;
   }
-
-  useEffect(() => {
-    const date = 1000 * 60 * 60 * 24;
-    setCount(date);
-
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
 
   useEffect(() => {
     if (count) {
@@ -113,11 +75,11 @@ export default function Section3() {
             fontSize: resizeList(30, [
               {
                 width: 450,
-                decresePercent: 50,
+                decreasePercent: 50,
               },
               {
                 width: 700,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
             margin: 0,
@@ -132,11 +94,11 @@ export default function Section3() {
             fontSize: resizeList(60, [
               {
                 width: 450,
-                decresePercent: 50,
+                decreasePercent: 50,
               },
               {
                 width: 700,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
             fontWeight: 600,
@@ -154,11 +116,11 @@ export default function Section3() {
             height: resizeList(128, [
               {
                 width: 450,
-                decresePercent: 50,
+                decreasePercent: 50,
               },
               {
                 width: 600,
-                decresePercent: 30,
+                decreasePercent: 30,
               },
             ]),
           }}
@@ -181,11 +143,11 @@ export default function Section3() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                   {
                     width: 600,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                 ]),
                 fontWeight: 600,
@@ -199,11 +161,11 @@ export default function Section3() {
                 fontSize: resizeList(19, [
                   {
                     width: 450,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                   {
                     width: 600,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontFamily: "Cormorant Garamond",
@@ -231,11 +193,11 @@ export default function Section3() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                   {
                     width: 600,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                 ]),
                 fontWeight: 600,
@@ -249,11 +211,11 @@ export default function Section3() {
                 fontSize: resizeList(19, [
                   {
                     width: 450,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                   {
                     width: 600,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontFamily: "Cormorant Garamond",
@@ -281,11 +243,11 @@ export default function Section3() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                   {
                     width: 600,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                 ]),
                 fontWeight: 600,
@@ -299,11 +261,11 @@ export default function Section3() {
                 fontSize: resizeList(19, [
                   {
                     width: 450,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                   {
                     width: 600,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontFamily: "Cormorant Garamond",
@@ -331,11 +293,11 @@ export default function Section3() {
                 fontSize: resizeList(60, [
                   {
                     width: 450,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                   {
                     width: 600,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                 ]),
                 fontWeight: 600,
@@ -349,11 +311,11 @@ export default function Section3() {
                 fontSize: resizeList(19, [
                   {
                     width: 450,
-                    decresePercent: 40,
+                    decreasePercent: 40,
                   },
                   {
                     width: 600,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontFamily: "Cormorant Garamond",
@@ -371,7 +333,7 @@ export default function Section3() {
             alignItems: "center",
             color: "#5F7161",
             fontFamily: "Josefin Sans",
-            fontSize: resize(600, 20, 50),
+            fontSize: "20px",
           }}
         >
           {/* <span>
@@ -432,11 +394,11 @@ export default function Section3() {
                   fontSize: resizeList(30, [
                     {
                       width: 450,
-                      decresePercent: 50,
+                      decreasePercent: 50,
                     },
                     {
                       width: 750,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   margin: 0,
@@ -450,11 +412,11 @@ export default function Section3() {
                   fontSize: resizeList(60, [
                     {
                       width: 450,
-                      decresePercent: 50,
+                      decreasePercent: 50,
                     },
                     {
                       width: 750,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontWeight: 600,
@@ -473,11 +435,11 @@ export default function Section3() {
                   fontSize: resizeList(20, [
                     {
                       width: 450,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                     {
                       width: 750,
-                      decresePercent: 50,
+                      decreasePercent: 50,
                     },
                   ]),
                 }}
@@ -512,7 +474,7 @@ export default function Section3() {
                 padding: resizeList(50, [
                   {
                     width: 450,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -522,13 +484,13 @@ export default function Section3() {
                   width: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   height: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#4F583D",
@@ -541,7 +503,7 @@ export default function Section3() {
                   fontSize: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Cormorant Garamond",
@@ -566,7 +528,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#85865F",
@@ -585,13 +547,13 @@ export default function Section3() {
                       width: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       height: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       margin: "0 5px",
@@ -610,13 +572,13 @@ export default function Section3() {
                       width: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       height: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       margin: "0 5px",
@@ -636,13 +598,13 @@ export default function Section3() {
                         width: resizeList(16, [
                           {
                             width: 450,
-                            decresePercent: 30,
+                            decreasePercent: 30,
                           },
                         ]),
                         height: resizeList(16, [
                           {
                             width: 450,
-                            decresePercent: 30,
+                            decreasePercent: 30,
                           },
                         ]),
                         margin: "0 5px",
@@ -669,7 +631,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Josefin Sans",
@@ -688,13 +650,13 @@ export default function Section3() {
                     width: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     height: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     margin: "0 5px",
@@ -708,7 +670,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Josefin Sans",
@@ -727,13 +689,13 @@ export default function Section3() {
                     width: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     height: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     margin: "0 5px",
@@ -752,7 +714,7 @@ export default function Section3() {
                 padding: resizeList(50, [
                   {
                     width: 450,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
               }}
@@ -762,13 +724,13 @@ export default function Section3() {
                   width: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   height: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#4F583D",
@@ -781,7 +743,7 @@ export default function Section3() {
                   fontSize: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Cormorant Garamond",
@@ -806,7 +768,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#85865F",
@@ -825,13 +787,13 @@ export default function Section3() {
                       width: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       height: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       margin: "0 5px",
@@ -850,13 +812,13 @@ export default function Section3() {
                       width: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       height: resizeList(16, [
                         {
                           width: 450,
-                          decresePercent: 30,
+                          decreasePercent: 30,
                         },
                       ]),
                       margin: "0 5px",
@@ -876,13 +838,13 @@ export default function Section3() {
                         width: resizeList(16, [
                           {
                             width: 450,
-                            decresePercent: 30,
+                            decreasePercent: 30,
                           },
                         ]),
                         height: resizeList(16, [
                           {
                             width: 450,
-                            decresePercent: 30,
+                            decreasePercent: 30,
                           },
                         ]),
                         margin: "0 5px",
@@ -909,7 +871,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Josefin Sans",
@@ -928,13 +890,13 @@ export default function Section3() {
                     width: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     height: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     margin: "0 5px",
@@ -948,7 +910,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Josefin Sans",
@@ -967,13 +929,13 @@ export default function Section3() {
                     width: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     height: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     margin: "0 5px",
@@ -1005,13 +967,13 @@ export default function Section3() {
                   width: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   height: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#4F583D",
@@ -1024,7 +986,7 @@ export default function Section3() {
                   fontSize: resizeList(50, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Cormorant Garamond",
@@ -1049,7 +1011,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   color: "#85865F",
@@ -1067,7 +1029,7 @@ export default function Section3() {
                   fontSize: resizeList(16, [
                     {
                       width: 450,
-                      decresePercent: 30,
+                      decreasePercent: 30,
                     },
                   ]),
                   fontFamily: "Josefin Sans",
@@ -1086,13 +1048,13 @@ export default function Section3() {
                     width: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     height: resizeList(16, [
                       {
                         width: 450,
-                        decresePercent: 30,
+                        decreasePercent: 30,
                       },
                     ]),
                     margin: "0 5px",

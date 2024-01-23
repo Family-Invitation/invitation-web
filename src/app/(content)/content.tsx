@@ -9,27 +9,31 @@ import Section7 from "./(section)/section7";
 import Section8 from "./(section)/section8";
 import Section9 from "./(section)/section9";
 import BottomNavbar from "@/components/BottomNavbar";
+import useGetData from "@/hooks/useGetData";
+import { Data } from "@/interfaces/dataInterfaces";
 
 export default function Content() {
+  const dataKonsumen: Data = useGetData();
+  console.log("konten");
+  const { data } = dataKonsumen;
   return (
-    <div>
-      <Section1 />
-      <Section2 />
-      <Section3 />
-      <Section4 />
-      <Section5 />
-      <Section6 />
-      <Section7 />
-      <Section8 />
+    <div style={{ width: "100%" }}>
+      <Section1 data={data} />
+      <Section2 data={data} />
+      <Section3 data={data} />
+      <Section4 data={data} />
+      <Section5 data={data} />
+      <Section6 data={data} />
+      <Section7 data={data} />
+      <Section8 data={data} />
       <Section9 />
       <MusicPlayer />
-      <BottomNavbar />
+      {/* <BottomNavbar /> */}
       <div
         style={{
           width: "100%",
           height: "100vh",
           flexDirection: "column",
-          backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.4)), url("/bg-section1.webp")`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           position: "fixed",
@@ -37,7 +41,16 @@ export default function Content() {
           left: 0,
           zIndex: -1,
         }}
-      ></div>
+        className="bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] "
+      >
+        <div
+          className="absolute top-0 left-0 opacity-50 transition-all duration-300 w-full h-full"
+          style={{
+            backgroundImage:
+              "linear-gradient(180deg, #00000000 0%, #000000 100%)",
+          }}
+        ></div>
+      </div>
     </div>
   );
 }

@@ -66,19 +66,16 @@ export default function Section9() {
         style={{
           color: "white",
           marginBottom: "30px",
-          marginLeft: "300px",
-          marginRight: "300px",
+          // marginLeft: "300px",
+          // marginRight: "300px",
           fontSize: resizeList(20, [
-            {
-              width: 450,
-              decresePercent: 50,
-            },
             {
               width: 700,
               decresePercent: 30,
             },
           ]),
         }}
+        className="mx-16 lg:mx-[300px]"
       >
         Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
         Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
@@ -89,16 +86,7 @@ export default function Section9() {
       <div
         style={{
           color: "white",
-          fontSize: resizeList(15, [
-            {
-              width: 450,
-              decresePercent: 50,
-            },
-            {
-              width: 700,
-              decresePercent: 30,
-            },
-          ]),
+          fontSize: "15px",
         }}
       >
         Kami yang berbahagia

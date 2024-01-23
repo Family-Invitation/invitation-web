@@ -34,7 +34,7 @@ const MusicPlayer = () => {
       style={{
         position: "fixed",
         bottom: "100px",
-        right: "30px",
+        right: "20px",
         zIndex: "999",
       }}
     >
@@ -47,8 +47,8 @@ const MusicPlayer = () => {
           border: "5px solid #4F583D",
           cursor: "pointer",
           outline: "none",
-          padding: "12px 12px 10px 14px",
         }}
+        className="p-2 md:p-3"
       >
         {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
       </button>

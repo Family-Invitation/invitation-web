@@ -1,14 +1,9 @@
-import useGetData from "@/hooks/useGetData";
+import useResizeFont from "@/hooks/useResize";
 import { Data } from "@/interfaces/dataInterfaces";
-import { useEffect, useState } from "react";
 import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa6";
 
-export default function Section2() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  const dataKonsumen: Data = useGetData();
-
-  const { data } = dataKonsumen;
+export default function Section2({ data }: Readonly<Data>) {
+  const { resizeList, windowWidth } = useResizeFont();
 
   const mempelaiPria = data?.mempelaiPria?.namaLengkap;
   const ayahMempelaiPria = data?.mempelaiPria?.namaOrangTua?.bapak;
@@ -16,33 +11,6 @@ export default function Section2() {
   const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
   const ayahMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.bapak;
   const ibuMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.ibu;
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
-
-  useEffect(() => {
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
 
   return (
     <div
@@ -53,7 +21,7 @@ export default function Section2() {
         width: "100%",
         backgroundImage: 'url("/bg-section2.webp")',
         backgroundSize: "cover !important",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "repeat",
         // backgroundPosition: "center",
         backgroundColor: "#fff",
         backgroundPosition: "bottom center",
@@ -134,11 +102,11 @@ export default function Section2() {
               width: resizeList(400, [
                 {
                   width: 450,
-                  decresePercent: 50,
+                  decreasePercent: 50,
                 },
                 {
                   width: 700,
-                  decresePercent: 30,
+                  decreasePercent: 30,
                 },
               ]),
               fontFamily: "Josefin Sans",
@@ -146,11 +114,11 @@ export default function Section2() {
               fontSize: resizeList(30, [
                 {
                   width: 450,
-                  decresePercent: 50,
+                  decreasePercent: 50,
                 },
                 {
                   width: 700,
-                  decresePercent: 20,
+                  decreasePercent: 20,
                 },
               ]),
               fontWeight: 400,
@@ -189,11 +157,11 @@ export default function Section2() {
                 height: resizeList(281, [
                   {
                     width: 450,
-                    decresePercent: 70,
+                    decreasePercent: 70,
                   },
                   {
                     width: 700,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                 ]),
                 display: "flex",
@@ -207,21 +175,21 @@ export default function Section2() {
                   width: resizeList(250, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   height: resizeList(250, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   borderRadius: "50%",
@@ -235,11 +203,11 @@ export default function Section2() {
                   width: resizeList(300, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   position: "absolute",
@@ -257,11 +225,11 @@ export default function Section2() {
                 fontSize: resizeList(40, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 600,
@@ -274,11 +242,11 @@ export default function Section2() {
                 width: resizeList(243, [
                   {
                     width: 450,
-                    decresePercent: 70,
+                    decreasePercent: 70,
                   },
                   {
                     width: 700,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                 ]),
               }}
@@ -292,11 +260,11 @@ export default function Section2() {
                 fontSize: resizeList(25, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 600,
@@ -312,11 +280,11 @@ export default function Section2() {
                 fontSize: resizeList(25, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 300,
@@ -334,56 +302,39 @@ export default function Section2() {
               style={{
                 color: "#8A584C",
                 margin: "20px 0",
+                display: "flex",
               }}
             >
               <FaFacebook
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />
               <FaTiktok
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />
               <FaInstagram
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />
@@ -394,21 +345,21 @@ export default function Section2() {
               flex: resizeList(1, [
                 {
                   width: 450,
-                  decresePercent: 50,
+                  decreasePercent: 90,
                 },
                 {
                   width: 700,
-                  decresePercent: 30,
+                  decreasePercent: 50,
                 },
               ]),
               fontSize: resizeList(60, [
                 {
                   width: 450,
-                  decresePercent: 50,
+                  decreasePercent: 50,
                 },
                 {
                   width: 700,
-                  decresePercent: 30,
+                  decreasePercent: 30,
                 },
               ]),
               fontWeight: 600,
@@ -421,11 +372,11 @@ export default function Section2() {
                 height: resizeList(281, [
                   {
                     width: 450,
-                    decresePercent: 70,
+                    decreasePercent: 70,
                   },
                   {
                     width: 700,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                 ]),
                 display: "flex",
@@ -452,11 +403,11 @@ export default function Section2() {
                 height: resizeList(281, [
                   {
                     width: 450,
-                    decresePercent: 70,
+                    decreasePercent: 70,
                   },
                   {
                     width: 700,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                 ]),
                 display: "flex",
@@ -470,21 +421,21 @@ export default function Section2() {
                   width: resizeList(250, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   height: resizeList(250, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   borderRadius: "50%",
@@ -498,11 +449,11 @@ export default function Section2() {
                   width: resizeList(300, [
                     {
                       width: 450,
-                      decresePercent: 70,
+                      decreasePercent: 70,
                     },
                     {
                       width: 700,
-                      decresePercent: 60,
+                      decreasePercent: 60,
                     },
                   ]),
                   position: "absolute",
@@ -520,11 +471,11 @@ export default function Section2() {
                 fontSize: resizeList(40, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 600,
@@ -537,11 +488,11 @@ export default function Section2() {
                 width: resizeList(243, [
                   {
                     width: 450,
-                    decresePercent: 70,
+                    decreasePercent: 70,
                   },
                   {
                     width: 700,
-                    decresePercent: 60,
+                    decreasePercent: 60,
                   },
                 ]),
               }}
@@ -555,11 +506,11 @@ export default function Section2() {
                 fontSize: resizeList(25, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 600,
@@ -575,11 +526,11 @@ export default function Section2() {
                 fontSize: resizeList(25, [
                   {
                     width: 450,
-                    decresePercent: 50,
+                    decreasePercent: 50,
                   },
                   {
                     width: 700,
-                    decresePercent: 30,
+                    decreasePercent: 30,
                   },
                 ]),
                 fontWeight: 300,
@@ -597,56 +548,39 @@ export default function Section2() {
               style={{
                 color: "#8A584C",
                 margin: "20px 0",
+                display: "flex",
               }}
             >
               <FaFacebook
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />
               <FaTiktok
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />
               <FaInstagram
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
                 style={{
-                  width: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
-                  height: resizeList(40, [
-                    {
-                      width: 450,
-                      decresePercent: 50,
-                    },
-                  ]),
                   margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                 }}
               />

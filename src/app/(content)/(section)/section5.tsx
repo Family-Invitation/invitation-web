@@ -1,35 +1,8 @@
+import { Data } from "@/interfaces/dataInterfaces";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-
-export default function Section5() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
-
-  useEffect(() => {
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
+import useResizeFont from "@/hooks/useResize";
+export default function Section5({ data }: Readonly<Data>) {
+  const { resizeList, windowWidth } = useResizeFont();
 
   return (
     <div
@@ -88,11 +61,11 @@ export default function Section5() {
           fontSize: resizeList(60, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
           fontWeight: 600,
@@ -112,7 +85,7 @@ export default function Section5() {
           fontSize: resizeList(20, [
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -133,9 +106,10 @@ export default function Section5() {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "20px",
+            // gap: "20px",
             paddingTop: "12px",
           }}
+          className="mx-5 md:mx-0 gap-4 md:gap-5"
         >
           {[1, 2, 3, 4].map((item) => (
             <Image
