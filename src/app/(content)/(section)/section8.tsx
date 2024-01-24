@@ -78,7 +78,7 @@ export default function Section8({ data }: Readonly<Data>) {
           </>
         ) : (
           <>
-            <Image src="/barcode.webp" alt="barcode" width={200} height={200} />
+            {/* <Image src="/barcode.webp" alt="barcode" width={200} height={200} /> */}
             <div
               style={{
                 color: "#4F583D",
@@ -246,7 +246,7 @@ export default function Section8({ data }: Readonly<Data>) {
               nomorWa={nomorWaWanita}
             />
           </div>
-          <div className="w-full lg:w-[500px]">
+          {/* <div className="w-full lg:w-[500px]">
             <div
               style={{
                 color: "white",
@@ -273,7 +273,7 @@ export default function Section8({ data }: Readonly<Data>) {
                 address="Jl. Setiabudi 100, Jakarta Pusat"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <ToastContainer />
