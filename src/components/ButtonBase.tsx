@@ -2,7 +2,14 @@ import { IButton } from "@/interfaces/dataInterfaces";
 import Link from "next/link";
 import React from "react";
 
-const ButtonBase = ({ icon, text, isLink, link = "", onClick }: IButton) => {
+const ButtonBase = ({
+  icon,
+  text,
+  isLink,
+  link = "",
+  isLoading = false,
+  onClick,
+}: IButton) => {
   const buttonStyles = {
     border: "#8A594C",
     backgroundColor: "#8A594C",
@@ -18,17 +25,20 @@ const ButtonBase = ({ icon, text, isLink, link = "", onClick }: IButton) => {
     <>
       {isLink ? (
         <Link href={link} target="_blank">
-          <div style={buttonStyles} className="text-center lg:w-[100px] w-20">
+          <div
+            style={buttonStyles}
+            className=" lg:w-[100px] w-24 text-sm lg:text-base text-center"
+          >
             {text}
           </div>
         </Link>
       ) : (
         <button
           style={buttonStyles}
-          className="lg:w-[100px] w-20"
+          className="lg:w-[100px] w-24 text-sm lg:text-base text-center"
           onClick={onClick}
         >
-          {text}
+          {isLoading ? "Loading..." : text}
         </button>
       )}
     </>

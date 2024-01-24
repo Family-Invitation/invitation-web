@@ -1,15 +1,12 @@
-import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
+import { urlWA } from "@/lib/constants";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
+import useResizeFont from "@/hooks/useResize";
 
-export default function Section9() {
-  const [windowWidth, setWindowWidth] = useState(0);
-
-  const dataKonsumen: Data = useGetData();
-
-  const { data } = dataKonsumen;
+export default function Section9({ data }: Readonly<Data>) {
+  const { resizeList, windowWidth } = useResizeFont();
 
   const mempelaiPria = data?.mempelaiPria?.namaPanggilan;
   const ayahMempelaiPria = data?.mempelaiPria?.namaOrangTua?.bapak;
@@ -18,39 +15,11 @@ export default function Section9() {
   const ayahMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.bapak;
   const ibuMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.ibu;
 
-  const whatsappLink = `https://api.whatsapp.com/send?phone=6287896695791`;
-
-  useEffect(() => {
-    function f() {
-      setWindowWidth(window.innerWidth);
-    }
-
-    f();
-
-    window.addEventListener("resize", f);
-
-    return () => window.removeEventListener("resize", f);
-  }, []);
-
-  function resizeList(
-    normalSize: number,
-    list: {
-      width: number;
-      decresePercent: number;
-    }[]
-  ): number {
-    for (const { width: w, decresePercent: d } of list) {
-      if (windowWidth <= w) {
-        return normalSize - (normalSize * d) / 100;
-      }
-    }
-    return normalSize;
-  }
   return (
     <div
       style={{
         width: "100%",
-        minHeight: "55vh",
+        minHeight: "60vh",
         display: "flex",
         flexDirection: "column",
         backgroundColor: "transparent",
@@ -71,7 +40,7 @@ export default function Section9() {
           fontSize: resizeList(20, [
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -98,11 +67,11 @@ export default function Section9() {
           fontSize: resizeList(60, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -116,11 +85,11 @@ export default function Section9() {
           fontSize: resizeList(20, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -135,11 +104,11 @@ export default function Section9() {
           fontSize: resizeList(20, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -153,11 +122,11 @@ export default function Section9() {
           fontSize: resizeList(20, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -183,11 +152,11 @@ export default function Section9() {
           fontSize: resizeList(15, [
             {
               width: 450,
-              decresePercent: 50,
+              decreasePercent: 50,
             },
             {
               width: 700,
-              decresePercent: 30,
+              decreasePercent: 30,
             },
           ]),
         }}
@@ -195,7 +164,7 @@ export default function Section9() {
         Family Invitation
       </div>
       <div style={{ display: "flex", marginTop: "20px", gap: "10px" }}>
-        <Link href={whatsappLink} target="_blank">
+        <Link href={urlWA + "6289516789565"} target="_blank">
           <FaWhatsapp size={30} color="white" />
         </Link>
         <Link

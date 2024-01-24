@@ -61,6 +61,7 @@ export interface IButton {
   text: string;
   isLink: boolean;
   link?: string;
+  isLoading?: boolean;
   onClick?: () => void;
 }
 
@@ -80,5 +81,19 @@ export interface IWishItem {
   name: string;
   wish: string;
   date: string;
-  time: string;
+}
+
+export interface WishMessage {
+  id: number;
+  sender: string;
+  message: string;
+  created_at: string;
+  updated_at: string;
+  deleted_at: string | null;
+}
+
+export interface PostWishParams {
+  invitation_id: number;
+  sender: string;
+  message: string;
 }

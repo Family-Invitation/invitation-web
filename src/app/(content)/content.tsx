@@ -12,22 +12,22 @@ import BottomNavbar from "@/components/BottomNavbar";
 import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 
-export default function Content() {
+export default function Content({ showContent }: { showContent: boolean }) {
   const dataKonsumen: Data = useGetData();
-  console.log("konten");
   const { data } = dataKonsumen;
+
   return (
-    <div style={{ width: "100%" }}>
+    <div id="content" style={{ width: "100%", zIndex: 10 }}>
       <Section1 data={data} />
       <Section2 data={data} />
       <Section3 data={data} />
-      <Section4 data={data} />
+      {/* <Section4 data={data} /> */}
       <Section5 data={data} />
       <Section6 data={data} />
       <Section7 data={data} />
       <Section8 data={data} />
-      <Section9 />
-      <MusicPlayer />
+      <Section9 data={data} />
+      <MusicPlayer showContent={showContent} />
       <BottomNavbar />
       <div
         style={{

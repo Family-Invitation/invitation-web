@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-const MusicPlayer = () => {
+const MusicPlayer = ({ showContent }: { showContent: boolean }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -28,6 +28,15 @@ const MusicPlayer = () => {
       // (Optional) Anda dapat menambahkan logika lainnya di sini, seperti memuat metadata audio atau mengatur volume
     }
   }, []);
+
+  useEffect(() => {
+    if (showContent) {
+      if (audioRef.current) {
+        audioRef.current.play();
+        setIsPlaying(true);
+      }
+    }
+  }, [showContent]);
 
   return (
     <div

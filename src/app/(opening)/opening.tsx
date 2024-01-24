@@ -2,22 +2,28 @@
 import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
+import { useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface Props {
   showOpening: boolean;
+  showContent: boolean;
   setShowOpening: Dispatch<SetStateAction<boolean>>;
   setShowContent: Dispatch<SetStateAction<boolean>>;
 }
 
 const Opening: NextPage<Props> = ({
   showOpening,
+  showContent,
   setShowOpening,
   setShowContent,
 }) => {
-  console.log("opening");
   const [windowWidth, setWindowWidth] = useState(0);
   const [loaded, setLoaded] = useState(false);
+
+  const searchParams = useSearchParams();
+
+  const toInvitation = searchParams.get("to");
 
   function resizeList(
     normalSize: number,
@@ -36,20 +42,20 @@ const Opening: NextPage<Props> = ({
 
   function scroll(id: string) {
     const doc = document.getElementById(id);
-    if (doc) {
-      window.scrollTo({
-        top: doc?.offsetTop || 0 - 60,
-        behavior: "smooth",
-      });
 
-      setTimeout(() => {
-        document.body.style.overflow = "auto";
-        setShowOpening(false);
-        window.scrollTo({
-          top: 0,
-        });
-      }, 750);
-    }
+    window.scrollTo({
+      top: doc?.offsetTop || 0 - 60,
+      behavior: "smooth",
+    });
+
+    document.body.style.overflow = "auto";
+    setShowOpening(false);
+    setTimeout(() => {
+      const docOpening = document.getElementById("opening");
+      if (docOpening) {
+        docOpening.style.display = "none";
+      }
+    }, 750);
   }
 
   useEffect(() => {
@@ -71,20 +77,20 @@ const Opening: NextPage<Props> = ({
   useEffect(() => {
     const body = document.body;
 
-    if (showOpening) {
-      body.style.overflow = "hidden";
-    } else {
+    if (showContent) {
       setShowOpening(false);
+      scroll("content");
       body.style.overflow = ""; // Mengembalikan overflow ke nilai default saat komponen unmount
+    } else {
+      body.style.overflow = "hidden";
     }
+    // body.style.overflow = showOpening ? "hidden" : "auto";
 
     return () => {
       // Cleanup effect: mengembalikan overflow ke nilai default saat komponen unmount
       body.style.overflow = "";
     };
-  }, [showOpening]);
-
-  console.log({ showOpening });
+  }, [showContent]);
 
   const dataKonsumen: Data = useGetData();
 
@@ -102,7 +108,6 @@ const Opening: NextPage<Props> = ({
         transition: "ease-in 300ms",
         width: "100%",
         height: "100vh",
-        // backgroundImage: 'url("/bg-section1.webp")',
         backgroundColor: "#e9ede8",
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
@@ -111,10 +116,9 @@ const Opening: NextPage<Props> = ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        zIndex: 20,
       }}
-      className={`${
-        showOpening ? "d-flex" : "d-none"
-      } bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
+      className={` bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
     >
       <img
         data-aos="zoom-in"
@@ -230,7 +234,7 @@ const Opening: NextPage<Props> = ({
           marginBottom: 40,
         }}
       >
-        Ega & Partner
+        {toInvitation}
       </h2>
       {/* <h3
         style={{
@@ -277,7 +281,6 @@ const Opening: NextPage<Props> = ({
         }}
         onClick={() => {
           setShowContent(true);
-          scroll("section1");
         }}
       >
         Open Invitation

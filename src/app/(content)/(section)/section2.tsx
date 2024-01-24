@@ -299,7 +299,7 @@ export default function Section2({ data }: Readonly<Data>) {
                 <br />
                 Ibu {ibuMempelaiPria}
               </p>
-              <div // Sosmed
+              {/* <div // Sosmed
                 style={{
                   color: "#8A584C",
                   margin: "20px 0",
@@ -339,7 +339,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                   }}
                 />
-              </div>
+              </div> */}
             </div>
             <div // Segment 2
               style={{
@@ -545,7 +545,7 @@ export default function Section2({ data }: Readonly<Data>) {
                 <br />
                 Ibu {ibuMempelaiWanita}
               </p>
-              <div // Sosmed
+              {/* <div // Sosmed
                 style={{
                   color: "#8A584C",
                   margin: "20px 0",
@@ -585,7 +585,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

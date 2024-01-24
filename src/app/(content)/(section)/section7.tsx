@@ -1,14 +1,47 @@
 import ButtonBase from "@/components/ButtonBase";
 import WishCard from "@/components/WishCard";
-import { Data } from "@/interfaces/dataInterfaces";
+import { Data, WishMessage } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
-import { useGetWish } from "@/hooks/useWish";
+import { useGetWish, usePostWish } from "@/hooks/useWish";
+import { useState } from "react";
 
 export default function Section7({ data }: Readonly<Data>) {
+  const [sender, setSender] = useState("");
+  const [message, setMessage] = useState("");
+  const [qty, setQty] = useState(5);
   const { resizeList, windowWidth } = useResizeFont();
-  const { data: dataWish } = useGetWish();
+  const {
+    data: dataWish,
+    isLoading: isLoadingDataWish,
+    refetch: refetchData,
+  } = useGetWish(qty);
 
-  console.log({ dataWish });
+  const postApi = usePostWish();
+  const totalDataWish = dataWish?.data?.total_documents;
+
+  const postData = async () => {
+    // Lakukan sesuatu sebelum atau setelah operasi POST
+    await postApi.mutate(
+      {
+        invitation_id: 1,
+        sender: sender,
+        message: message,
+      },
+      {
+        onSuccess: () => {
+          refetchData();
+        },
+      }
+    );
+    setSender("");
+    setMessage("");
+  };
+
+  const loadMore = () => {
+    setQty(qty + 3);
+    refetchData();
+  };
+
   return (
     <div
       id="section7"
@@ -122,26 +155,55 @@ export default function Section7({ data }: Readonly<Data>) {
             type="text"
             placeholder="Your Name"
             style={{ width: "100%", padding: "10px" }}
+            value={sender}
+            onChange={(e) => setSender(e.target.value)}
           />
           <textarea
             placeholder="Your Wish"
             rows={6}
-            style={{ width: "100%", padding: "10px", margin: "30px 0 50px 0" }}
+            style={{ width: "100%", padding: "10px", margin: "30px  0" }}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           />
           <div className="text-start">
-            <ButtonBase text="Submit" isLink={false} />
+            <ButtonBase
+              text="Submit"
+              isLink={false}
+              isLoading={postApi.isLoading}
+              onClick={postData}
+            />
           </div>
+          {isLoadingDataWish && (
+            <div className="text-center text-lg text-white">Loading...</div>
+          )}
+          {!dataWish?.data?.wishes?.length && (
+            <div className="text-center text-white w-full mt-8 font-josefinSans text-sm">
+              Belum ada data
+            </div>
+          )}
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 md:gap-16 mt-8 w-full">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <WishCard
-                key={item}
-                name="anonim"
-                wish="make a wish"
-                date="20 Januari 2024"
-                time="12.00 "
-              />
-            ))}
+            <>
+              {dataWish?.data?.wishes?.length &&
+                dataWish?.data?.wishes?.map((item: WishMessage) => (
+                  <WishCard
+                    key={item.id}
+                    name={item.sender}
+                    wish={item.message}
+                    date={item.created_at}
+                  />
+                ))}
+            </>
           </div>
+          {totalDataWish > dataWish?.data?.wishes?.length && (
+            <div className="w-full flex justify-center mt-4 md:mt-8">
+              <ButtonBase
+                text="Load More"
+                isLink={false}
+                isLoading={isLoadingDataWish}
+                onClick={loadMore}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

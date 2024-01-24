@@ -42,20 +42,16 @@ export default function Page() {
 
   useEffect(() => {}, []);
 
-  console.log("showOpening", showOpening);
-
   return (
     <QueryClientProvider client={queryClient}>
       <main>
-        {showOpening && (
-          <Opening
-            showOpening={showOpening}
-            setShowOpening={setShowOpening}
-            setShowContent={setShowContent}
-          />
-        )}
-        {showContent && <Content />}
-        {/* <Content /> */}
+        <Opening
+          showOpening={showOpening}
+          showContent={showContent}
+          setShowOpening={setShowOpening}
+          setShowContent={setShowContent}
+        />
+        {showContent && <Content showContent={showContent} />}
       </main>
     </QueryClientProvider>
   );
