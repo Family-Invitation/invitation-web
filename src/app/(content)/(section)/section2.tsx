@@ -271,7 +271,7 @@ export default function Section2({ data }: Readonly<Data>) {
                 margin: "20px 0",
               }}
             >
-              Son of
+              Putra Ketujuh dari
             </b>
             <p
               style={{
@@ -292,11 +292,11 @@ export default function Section2({ data }: Readonly<Data>) {
                 margin: 0,
               }}
             >
-              {ayahMempelaiPria}
+              Bapak {ayahMempelaiPria}
               <br />
               &
               <br />
-              {ibuMempelaiPria}
+              Ibu {ibuMempelaiPria}
             </p>
             <div // Sosmed
               style={{
@@ -517,7 +517,7 @@ export default function Section2({ data }: Readonly<Data>) {
                 margin: "20px 0",
               }}
             >
-              Daughter of
+              Putri Pertama dari
             </b>
             <p
               style={{
@@ -538,11 +538,11 @@ export default function Section2({ data }: Readonly<Data>) {
                 margin: 0,
               }}
             >
-              {ayahMempelaiWanita}
+              Bapak {ayahMempelaiWanita}
               <br />
               &
               <br />
-              {ibuMempelaiWanita}
+              Ibu {ibuMempelaiWanita}
             </p>
             <div // Sosmed
               style={{

@@ -66,7 +66,7 @@ export default function Section8({ data }: Readonly<Data>) {
           </>
         ) : (
           <>
-            <Image src="/barcode.webp" alt="barcode" width={200} height={200} />
+            {/* <Image src="/barcode.webp" alt="barcode" width={200} height={200} /> */}
             <div
               style={{
                 color: "#4F583D",
@@ -119,7 +119,7 @@ export default function Section8({ data }: Readonly<Data>) {
           }}
         >
           {!isGift && <ButtonBase text="Copy" />}
-          <ButtonBase text="Confirm" />
+          {/* <ButtonBase text="Confirm" /> */}
         </div>
       </div>
     );
@@ -206,18 +206,18 @@ export default function Section8({ data }: Readonly<Data>) {
           <div style={{ width: "100%", margin: "50px 0" }}>
             <GiftCard
               isGift={false}
-              bank="Bank BCA"
-              rekName="John Doe"
-              rekNumber="123456789"
+              bank="DANA"
+              rekName="Muhamad Alfiqri"
+              rekNumber="085781172863"
             />
             <GiftCard
               isGift={false}
-              bank="Bank Mandiri"
-              rekName="John Doe"
-              rekNumber="123456789"
+              bank="Bank BCA"
+              rekName="Pigita Disca Pertiwi"
+              rekNumber="7651439586"
             />
           </div>
-          <div className="w-full lg:w-[500px]">
+          {/* <div className="w-full lg:w-[500px]">
             <div
               style={{
                 color: "white",
@@ -244,7 +244,7 @@ export default function Section8({ data }: Readonly<Data>) {
                 address="Jl. Setiabudi 100, Jakarta Pusat"
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
