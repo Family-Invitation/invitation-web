@@ -177,7 +177,7 @@ export default function Section8({ data }: Readonly<Data>) {
             alignItems: "center",
             flexDirection: "column",
           }}
-          className="px-8"
+          className="px-6"
         >
           <div
             style={{

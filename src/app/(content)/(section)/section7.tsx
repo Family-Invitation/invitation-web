@@ -1,14 +1,17 @@
 import ButtonBase from "@/components/ButtonBase";
 import WishCard from "@/components/WishCard";
 import { Data } from "@/interfaces/dataInterfaces";
-import { useEffect, useState } from "react";
 import useResizeFont from "@/hooks/useResize";
+import { useGetWish } from "@/hooks/useWish";
 
 export default function Section7({ data }: Readonly<Data>) {
   const { resizeList, windowWidth } = useResizeFont();
+  const { data: dataWish } = useGetWish();
 
+  console.log({ dataWish });
   return (
     <div
+      id="section7"
       style={{
         width: "100%",
         minHeight: "100vh",
@@ -65,7 +68,7 @@ export default function Section7({ data }: Readonly<Data>) {
           alignItems: "center",
           flexDirection: "column",
         }}
-        className="w-full lg:w-[1000px] px-8 md:px-0 py-[100px] text-center"
+        className="w-full lg:w-[1000px] px-6 md:px-0 py-[100px]"
       >
         <h2
           style={{
@@ -102,6 +105,7 @@ export default function Section7({ data }: Readonly<Data>) {
               },
             ]),
           }}
+          className="text-center"
         >
           It is an honor and pleasure for us, if you can attend and give us your
           blessing
@@ -125,7 +129,7 @@ export default function Section7({ data }: Readonly<Data>) {
             style={{ width: "100%", padding: "10px", margin: "30px 0 50px 0" }}
           />
           <div className="text-start">
-            <ButtonBase text="Submit" />
+            <ButtonBase text="Submit" isLink={false} />
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 md:gap-16 mt-8 w-full">
             {[1, 2, 3, 4, 5, 6].map((item) => (

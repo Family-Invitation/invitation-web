@@ -18,17 +18,6 @@ const Opening: NextPage<Props> = ({
   console.log("opening");
   const [windowWidth, setWindowWidth] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement>();
-
-  function resize(
-    width: number,
-    normalSize: number,
-    decresePercent: number
-  ): number {
-    return windowWidth > width
-      ? normalSize
-      : normalSize - (normalSize * decresePercent) / 100;
-  }
 
   function resizeList(
     normalSize: number,
@@ -61,8 +50,6 @@ const Opening: NextPage<Props> = ({
         });
       }, 750);
     }
-
-    // audio?.play();
   }
 
   useEffect(() => {
@@ -77,8 +64,6 @@ const Opening: NextPage<Props> = ({
     setLoaded(true);
 
     // document.body.style.overflow = "hidden";
-
-    // setAudio(new Audio("/beautiful-in-white.mp3"));
 
     return () => window.removeEventListener("resize", f);
   }, []);
@@ -117,7 +102,7 @@ const Opening: NextPage<Props> = ({
         transition: "ease-in 300ms",
         width: "100%",
         height: "100vh",
-        backgroundImage: 'url("/bg-section1.webp")',
+        // backgroundImage: 'url("/bg-section1.webp")',
         backgroundColor: "#e9ede8",
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
@@ -127,7 +112,9 @@ const Opening: NextPage<Props> = ({
         justifyContent: "center",
         alignItems: "center",
       }}
-      className={`${showOpening ? "d-flex" : "d-none"}`}
+      className={`${
+        showOpening ? "d-flex" : "d-none"
+      } bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
     >
       <img
         data-aos="zoom-in"

@@ -28,7 +28,7 @@ export default function Content() {
       <Section8 data={data} />
       <Section9 />
       <MusicPlayer />
-      {/* <BottomNavbar /> */}
+      <BottomNavbar />
       <div
         style={{
           width: "100%",

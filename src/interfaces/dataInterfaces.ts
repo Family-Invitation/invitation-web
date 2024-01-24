@@ -9,6 +9,9 @@ export interface Mempelai {
   namaPanggilan: string;
   anakKe: number;
   namaOrangTua: OrangTua;
+  nomorRekening: string;
+  nomorWA: string;
+  namaBank: string;
 }
 
 export interface AkadNikah {
@@ -38,6 +41,8 @@ export interface Data {
     fotoMempelai: string;
     denahLokasi: string;
     hiburan: string;
+    lokasiAkad: string;
+    lokasiResepsi: string;
   };
 }
 
@@ -48,11 +53,14 @@ export interface IGiftCard {
   rekNumber?: string;
   recipientName?: string;
   address?: string;
+  nomorWa?: string;
 }
 
 export interface IButton {
   icon?: string;
   text: string;
+  isLink: boolean;
+  link?: string;
   onClick?: () => void;
 }
 

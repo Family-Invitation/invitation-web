@@ -24,6 +24,7 @@ export default function Section6({ data }: Readonly<Data>) {
         // fontFamily: "Cormorant Garamond",
         textAlign: "center",
       }}
+      className="px-6"
     >
       <div
         style={{
@@ -40,7 +41,7 @@ export default function Section6({ data }: Readonly<Data>) {
             marginTop: resizeList(100, [
               {
                 width: 700,
-                decreasePercent: 30,
+                decreasePercent: 50,
               },
             ]),
             color: "white",
@@ -52,7 +53,7 @@ export default function Section6({ data }: Readonly<Data>) {
             ]),
             margin: 0,
           }}
-          className="font-cormorantGaramond"
+          className="font-cormorantGaramond "
         >
           This event will be held using
         </h3>
@@ -100,9 +101,9 @@ export default function Section6({ data }: Readonly<Data>) {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
             gap: "40px",
-            margin: "50px",
+            // margin: "50px",
           }}
-          className="m-0 md:m-12"
+          className="m-4 md:m-12"
         >
           {images.map((image) => (
             <div

@@ -109,7 +109,7 @@ export default function Section5({ data }: Readonly<Data>) {
             // gap: "20px",
             paddingTop: "12px",
           }}
-          className="mx-5 md:mx-0 gap-4 md:gap-5"
+          className="mx-6 md:mx-0 gap-4 md:gap-5"
         >
           {[1, 2, 3, 4].map((item) => (
             <Image

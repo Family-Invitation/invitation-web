@@ -56,8 +56,6 @@ export default function Section4({ data }: Readonly<Data>) {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          maxWidth: "1140px",
-          margin: "0 auto",
         }}
       >
         <h3
@@ -123,9 +121,9 @@ export default function Section4({ data }: Readonly<Data>) {
         >
           How it all started
         </div> */}
-      </div>
-      <div>
-        <Carousel />
+        <div className="w-full">
+          <Carousel />
+        </div>
       </div>
       <div // Footer
         style={

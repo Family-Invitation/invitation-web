@@ -13,35 +13,44 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { Data } from "@/interfaces/dataInterfaces";
 
 export default function Section3({ data }: Readonly<Data>) {
-  const [count, setCount] = useState(0);
-  const [countdown, setCountdown] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  });
+  const targetDate = new Date("February 3, 2024 00:00:00").getTime();
+
+  const calculateTimeLeft = () => {
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference > 0) {
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      return { days, hours, minutes, seconds };
+    } else {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+  };
+
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
+
+  useEffect(() => {
+    const countdownInterval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft);
+    }, 1000);
+
+    return () => clearInterval(countdownInterval);
+  }, []);
+
+  const lokasiAkad = data?.lokasiAkad;
+  const lokasiResepsi = data?.lokasiResepsi;
 
   const { resizeList, windowWidth } = useResizeFont();
 
-  function zeroReplace(n: number): string {
-    return n > 9 ? `${n}` : `0${n}`;
-  }
-
-  useEffect(() => {
-    if (count) {
-      const timeout = setTimeout(() => {
-        setCountdown({
-          days: ~~(count / 1000 / 60 / 60 / 24),
-          hours: ~~(count / 1000 / 60 / 60),
-          minutes: ~~((count / 1000 / 60) % 60),
-          seconds: ~~(count / 1000) % 60,
-        });
-        setCount((c) => c - 1000);
-      }, 1000);
-
-      return () => clearTimeout(timeout);
-    }
-  }, [count]);
+  const redirectToMap = (location: string) => {
+    window.open(location, "_blank");
+  };
 
   return (
     <div
@@ -66,6 +75,7 @@ export default function Section3({ data }: Readonly<Data>) {
           alignItems: "center",
           flexDirection: "column",
         }}
+        className="max-w-7xl"
       >
         <h3
           style={{
@@ -109,8 +119,8 @@ export default function Section3({ data }: Readonly<Data>) {
         </h2>
         <div // Countdown Group
           style={{
-            margin: "50px 0",
-            width: "70%",
+            // margin: "50px 0",
+            // width: "100%",
             display: "flex",
             justifyContent: "space-between",
             height: resizeList(128, [
@@ -124,6 +134,7 @@ export default function Section3({ data }: Readonly<Data>) {
               },
             ]),
           }}
+          className="md:w-[70%] w-[85%] my-[50px]"
         >
           <div // Days
             style={{
@@ -154,7 +165,8 @@ export default function Section3({ data }: Readonly<Data>) {
                 fontFamily: "Josefin Sans",
               }}
             >
-              {zeroReplace(countdown.days)}
+              {/* {zeroReplace(countdown.days)} */}
+              {timeLeft.days}
             </span>
             <span
               style={{
@@ -204,7 +216,8 @@ export default function Section3({ data }: Readonly<Data>) {
                 fontFamily: "Josefin Sans",
               }}
             >
-              {zeroReplace(countdown.hours)}
+              {/* {zeroReplace(countdown.hours)} */}
+              {timeLeft.hours}
             </span>
             <span
               style={{
@@ -254,7 +267,8 @@ export default function Section3({ data }: Readonly<Data>) {
                 fontFamily: "Josefin Sans",
               }}
             >
-              {zeroReplace(countdown.minutes)}
+              {/* {zeroReplace(countdown.minutes)} */}
+              {timeLeft.minutes}
             </span>
             <span
               style={{
@@ -304,7 +318,8 @@ export default function Section3({ data }: Readonly<Data>) {
                 fontFamily: "Josefin Sans",
               }}
             >
-              {zeroReplace(countdown.seconds)}
+              {/* {zeroReplace(countdown.seconds)} */}
+              {timeLeft.seconds}
             </span>
             <span
               style={{
@@ -339,7 +354,7 @@ export default function Section3({ data }: Readonly<Data>) {
           {/* <span>
             The highest happiness on earth is the happiness of marriage.
           </span> */}
-          <strong>Jum'at, 3 Februari 2024</strong>
+          <strong>Sabtu, 3 Februari 2024</strong>
         </div>
         <div // Space
           style={{
@@ -349,10 +364,11 @@ export default function Section3({ data }: Readonly<Data>) {
         <div // Picture & Detail
           style={{
             minHeight: "100vh",
-            width: "70%",
+            // width: "70%",
             display: "flex",
             flexDirection: "column",
           }}
+          className="md:w-[70%] w-auto mx-6 md:mx-auto"
         >
           <div // Picture
             style={{
@@ -434,15 +450,12 @@ export default function Section3({ data }: Readonly<Data>) {
                   fontFamily: "Josefin Sans",
                   fontSize: resizeList(20, [
                     {
-                      width: 450,
-                      decreasePercent: 60,
-                    },
-                    {
                       width: 750,
                       decreasePercent: 50,
                     },
                   ]),
                 }}
+                className="px-2"
               >
                 <span>
                   <em>Assalamu'alaikum Wr.Wb.</em>
@@ -541,6 +554,7 @@ export default function Section3({ data }: Readonly<Data>) {
                     display: "flex",
                     alignItems: "center",
                   }}
+                  className="w-full"
                 >
                   <AiOutlineCalendar
                     style={{
@@ -644,6 +658,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   display: "flex",
                   alignItems: "center",
                 }}
+                onClick={() => redirectToMap(lokasiAkad)}
               >
                 <IoLocationSharp
                   style={{
@@ -884,6 +899,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   display: "flex",
                   alignItems: "center",
                 }}
+                onClick={() => redirectToMap(lokasiResepsi)}
               >
                 <IoLocationSharp
                   style={{

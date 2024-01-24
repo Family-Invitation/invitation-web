@@ -50,7 +50,15 @@ const MusicPlayer = () => {
         }}
         className="p-2 md:p-3"
       >
-        {isPlaying ? <FaPause size={24} /> : <FaPlay size={24} />}
+        {isPlaying ? (
+          <div className="w-4 lg:w-6 h-4 lg:h-6">
+            <FaPause size="100%" />
+          </div>
+        ) : (
+          <div className="w-4 lg:w-6 h-4 lg:h-6">
+            <FaPlay size="100%" />
+          </div>
+        )}
       </button>
       <audio ref={audioRef}></audio>
     </div>

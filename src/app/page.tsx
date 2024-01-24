@@ -5,6 +5,7 @@ import Content from "./(content)/content";
 import { useEffect, useState } from "react";
 import { Kafka } from "kafkajs";
 import useWebSocket, { useEventSource } from "react-use-websocket";
+import { QueryClientProvider, queryClient } from "../../react-query";
 
 const kafka = new Kafka({
   clientId: "next",
@@ -44,16 +45,18 @@ export default function Page() {
   console.log("showOpening", showOpening);
 
   return (
-    <main>
-      {showOpening && (
-        <Opening
-          showOpening={showOpening}
-          setShowOpening={setShowOpening}
-          setShowContent={setShowContent}
-        />
-      )}
-      {showContent && <Content />}
-      {/* <Content /> */}
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <main>
+        {showOpening && (
+          <Opening
+            showOpening={showOpening}
+            setShowOpening={setShowOpening}
+            setShowContent={setShowContent}
+          />
+        )}
+        {showContent && <Content />}
+        {/* <Content /> */}
+      </main>
+    </QueryClientProvider>
   );
 }
