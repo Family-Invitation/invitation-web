@@ -1,9 +1,12 @@
-import ButtonBase from "@/components/ButtonBase";
-import { Data, IButton, IGiftCard } from "@/interfaces/dataInterfaces";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaGift } from "react-icons/fa6";
+import { ToastContainer, toast } from "react-toastify";
+import { Data, IButton, IGiftCard } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
+import ButtonBase from "@/components/ButtonBase";
+import "react-toastify/dist/ReactToastify.css";
+import { urlWA } from "@/lib/constants";
 
 export default function Section8({ data }: Readonly<Data>) {
   const { resizeList, windowWidth } = useResizeFont();
@@ -15,7 +18,16 @@ export default function Section8({ data }: Readonly<Data>) {
     rekNumber = "",
     recipientName = "",
     address = "",
+    nomorWa = "",
   }: IGiftCard) => {
+    const handleCopy = (textToCopy: string) => {
+      navigator.clipboard.writeText(textToCopy);
+      toast.success("Nomor rekening berhasil disalin", {
+        position: "top-center",
+        autoClose: 5000,
+      });
+    };
+
     return (
       <div
         style={{
@@ -118,13 +130,28 @@ export default function Section8({ data }: Readonly<Data>) {
             marginTop: "20px",
           }}
         >
-          {!isGift && <ButtonBase text="Copy" />}
-          <ButtonBase text="Confirm" />
+          {!isGift && (
+            <ButtonBase
+              text="Copy"
+              isLink={false}
+              onClick={() => handleCopy(rekNumber)}
+            />
+          )}
+          <ButtonBase text="Confirm" isLink={true} link={urlWA + nomorWa} />
         </div>
       </div>
     );
   };
 
+  const namaMempelaiPria = data?.mempelaiPria?.namaLengkap;
+  const nomorRekeningPria = data?.mempelaiPria?.nomorRekening;
+  const nomorWaPria = data?.mempelaiPria?.nomorWA;
+  const namaBankPria = data?.mempelaiPria?.namaBank;
+
+  const namaMempelaiWanita = data?.mempelaiWanita?.namaLengkap;
+  const nomorRekeningWanita = data?.mempelaiWanita?.nomorRekening;
+  const nomorWaWanita = data?.mempelaiWanita?.nomorWA;
+  const namaBankWanita = data?.mempelaiWanita?.namaBank;
   return (
     <div
       id="section8"
@@ -206,15 +233,17 @@ export default function Section8({ data }: Readonly<Data>) {
           <div style={{ width: "100%", margin: "50px 0" }}>
             <GiftCard
               isGift={false}
-              bank="Bank BCA"
-              rekName="John Doe"
-              rekNumber="123456789"
+              bank={namaBankPria}
+              rekName={namaMempelaiPria}
+              rekNumber={nomorRekeningPria}
+              nomorWa={nomorWaPria}
             />
             <GiftCard
               isGift={false}
-              bank="Bank Mandiri"
-              rekName="John Doe"
-              rekNumber="123456789"
+              bank={namaBankWanita}
+              rekName={namaMempelaiWanita}
+              rekNumber={nomorRekeningWanita}
+              nomorWa={nomorWaWanita}
             />
           </div>
           <div className="w-full lg:w-[500px]">
@@ -247,6 +276,7 @@ export default function Section8({ data }: Readonly<Data>) {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }
