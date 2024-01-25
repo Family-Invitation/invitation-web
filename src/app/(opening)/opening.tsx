@@ -1,24 +1,29 @@
+"use client";
+import useGetData from "@/hooks/useGetData";
+import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
+import { useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface Props {
+  showOpening: boolean;
+  showContent: boolean;
   setShowOpening: Dispatch<SetStateAction<boolean>>;
+  setShowContent: Dispatch<SetStateAction<boolean>>;
 }
 
-const Opening: NextPage<Props> = ({ setShowOpening }) => {
+const Opening: NextPage<Props> = ({
+  showOpening,
+  showContent,
+  setShowOpening,
+  setShowContent,
+}) => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [loaded, setLoaded] = useState(false);
-  const [audio, setAudio] = useState<HTMLAudioElement>();
 
-  function resize(
-    width: number,
-    normalSize: number,
-    decresePercent: number
-  ): number {
-    return windowWidth > width
-      ? normalSize
-      : normalSize - (normalSize * decresePercent) / 100;
-  }
+  const searchParams = useSearchParams();
+
+  const toInvitation = searchParams.get("to");
 
   function resizeList(
     normalSize: number,
@@ -43,15 +48,14 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
       behavior: "smooth",
     });
 
+    document.body.style.overflow = "auto";
+    setShowOpening(false);
     setTimeout(() => {
-      document.body.style.overflow = "auto";
-      setShowOpening(false);
-      window.scrollTo({
-        top: 0,
-      });
+      const docOpening = document.getElementById("opening");
+      if (docOpening) {
+        docOpening.style.display = "none";
+      }
     }, 750);
-
-    audio?.play();
   }
 
   useEffect(() => {
@@ -65,21 +69,45 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
 
     setLoaded(true);
 
-    document.body.style.overflow = "hidden";
-
-    setAudio(new Audio("/beautiful-in-white.mp3"));
+    // document.body.style.overflow = "hidden";
 
     return () => window.removeEventListener("resize", f);
   }, []);
 
+  useEffect(() => {
+    const body = document.body;
+
+    if (showContent) {
+      setShowOpening(false);
+      scroll("content");
+      body.style.overflow = ""; // Mengembalikan overflow ke nilai default saat komponen unmount
+    } else {
+      body.style.overflow = "hidden";
+    }
+    // body.style.overflow = showOpening ? "hidden" : "auto";
+
+    return () => {
+      // Cleanup effect: mengembalikan overflow ke nilai default saat komponen unmount
+      body.style.overflow = "";
+    };
+  }, [showContent]);
+
+  const dataKonsumen: Data = useGetData();
+
+  const { data } = dataKonsumen;
+
+  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
+  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
+
   return (
+    // <div>tes</div>
     <div
+      id="opening"
       style={{
         opacity: loaded ? 1 : 0,
         transition: "ease-in 300ms",
         width: "100%",
         height: "100vh",
-        backgroundImage: 'url("/back.png")',
         backgroundColor: "#e9ede8",
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
@@ -88,7 +116,9 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        zIndex: 20,
       }}
+      className={` bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
     >
       <img
         data-aos="zoom-in"
@@ -155,7 +185,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           margin: 0,
         }}
       >
-        Romeo & Juliet
+        {mempelaiPria} & {mempelaiWanita}
       </h2>
       <h3
         style={{
@@ -184,7 +214,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           ])}px 0px`,
         }}
       >
-        Dear Mr./ Mrs./ Ms.
+        Kepada Bpk/Ibu/Saudara/i
       </h3>
       <h2
         style={{
@@ -201,12 +231,12 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           fontWeight: 400,
           color: "#8fa6ac",
           fontFamily: "Josefin Sans",
-          margin: 0,
+          marginBottom: 40,
         }}
       >
-        Ega & Partner
+        {toInvitation}
       </h2>
-      <h3
+      {/* <h3
         style={{
           fontSize: resizeList(20, [
             {
@@ -224,7 +254,7 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
         }}
       >
         You are cordially invited to our wedding.
-      </h3>
+      </h3> */}
       <button
         style={{
           fontSize: resizeList(20, [
@@ -249,7 +279,9 @@ const Opening: NextPage<Props> = ({ setShowOpening }) => {
           outline: "none",
           boxShadow: "0 4px 3px 2px rgba(0, 0, 0, 0.2)",
         }}
-        onClick={() => scroll("section1")}
+        onClick={() => {
+          setShowContent(true);
+        }}
       >
         Open Invitation
       </button>

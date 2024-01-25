@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
   color: rgb(0, 0, 0);
 }
@@ -19,4 +23,8 @@ main {
   align-items: center;
   /* transform: scaleY(-1) translateX(-100); */
   /* flex: 1; */
+}
+
+.react-multiple-carousel__arrow {
+  background: none !important;
 }
