@@ -114,15 +114,27 @@ export default function Section5({ data }: Readonly<Data>) {
           className="mx-6 md:mx-0 gap-4 md:gap-5"
         >
           {[1, 2, 3, 4].map((item) => (
-            <Image
-              key={item}
-              src={`/img${item}.jpeg`}
-              alt="foto wedding"
-              width={200}
-              height={160}
-              style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              data-aos="zoom-out"
-            />
+            <div
+              style={{
+                backgroundColor: "#819575",
+                borderRadius: "3%",
+              }}
+            >
+              <Image
+                key={item}
+                src={`/img${item}.jpeg`}
+                alt="foto wedding"
+                width={200}
+                height={160}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  borderRadius: "4%",
+                  padding: 5,
+                }}
+              />
+            </div>
           ))}
         </div>
       </div>

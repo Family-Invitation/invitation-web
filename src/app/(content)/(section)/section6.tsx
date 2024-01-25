@@ -7,12 +7,12 @@ export default function Section6({ data }: Readonly<Data>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const images = [
-    { imageUrl: "/images/Asset-2.webp", label: "Wear Masker" },
-    { imageUrl: "/images/Asset-3.webp", label: "Use Soap " },
-    { imageUrl: "/images/Asset-4.webp", label: "Washing Hand" },
-    { imageUrl: "/images/Asset-5.webp", label: "Avoid the Crowds" },
-    { imageUrl: "/images/Asset-6.webp", label: "Use Hand Sanitizer" },
-    { imageUrl: "/images/Asset-7.webp", label: "No Hand Shake" },
+    { imageUrl: "/images/Asset-2.webp", label: "Menggunakan Masker" },
+    { imageUrl: "/images/Asset-3.webp", label: "Menggunakan Sabun" },
+    { imageUrl: "/images/Asset-4.webp", label: "Mencuci Tangan" },
+    { imageUrl: "/images/Asset-5.webp", label: "Menjaga Jarak" },
+    { imageUrl: "/images/Asset-6.webp", label: "Menggunakan Hand Sanitizer" },
+    { imageUrl: "/images/Asset-7.webp", label: "Tidak bersentuhan" },
   ];
 
   return (
@@ -56,7 +56,7 @@ export default function Section6({ data }: Readonly<Data>) {
           className="font-cormorantGaramond "
           data-aos="fade-up"
         >
-          This event will be held using
+          Acara ini mengedepankan
         </h3>
         <h2
           style={{
@@ -78,7 +78,7 @@ export default function Section6({ data }: Readonly<Data>) {
           }}
           data-aos="fade-up"
         >
-          Health Protocol
+          Protokol Kesehatan
         </h2>
         <div // Text
           style={{
@@ -96,7 +96,7 @@ export default function Section6({ data }: Readonly<Data>) {
           className="font-cormorantGaramond mt-2 md:mt-5"
           data-aos="fade-up"
         >
-          in accordace with government regulations & recommendations
+          sejalan dengan rekomendasi dan regulasi dari pemerintah
         </div>
 
         <div
