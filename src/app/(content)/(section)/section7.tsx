@@ -3,21 +3,21 @@ import WishCard from "@/components/WishCard";
 import { Data, WishMessage } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 import { useGetWish, usePostWish } from "@/hooks/useWish";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Section7({ data }: Readonly<Data>) {
   const [sender, setSender] = useState("");
   const [message, setMessage] = useState("");
   const [qty, setQty] = useState(5);
+  const [lastId, setLastId] = useState(0);
+  const [isLoadingDataWish, setIsLoadingDataWish] = useState(false);
   const { resizeList, windowWidth } = useResizeFont();
-  const {
-    data: dataWish,
-    isLoading: isLoadingDataWish,
-    refetch: refetchData,
-  } = useGetWish(qty);
+
+  const [wishes, setWishes] = useState<any[]>([]);
 
   const postApi = usePostWish();
-  const totalDataWish = dataWish?.data?.total_documents;
+
+  const [totalDataWish, setTotalDataWish] = useState(0);
 
   const postData = async () => {
     // Lakukan sesuatu sebelum atau setelah operasi POST
@@ -28,8 +28,10 @@ export default function Section7({ data }: Readonly<Data>) {
         message: message,
       },
       {
-        onSuccess: () => {
-          refetchData();
+        onSuccess: async () => {
+          const { data: dataWish } = await useGetWish(1, 0);
+          setWishes((current) => [...(dataWish?.wishes || []), ...current]);
+          setTotalDataWish(dataWish?.total_documents);
         },
       }
     );
@@ -37,10 +39,24 @@ export default function Section7({ data }: Readonly<Data>) {
     setMessage("");
   };
 
-  const loadMore = () => {
-    setQty(qty + 3);
-    refetchData();
+  const loadMore = async () => {
+    setIsLoadingDataWish(true);
+    const { data: dataWish } = await useGetWish(qty, lastId);
+    console.log("WISH", dataWish);
+    const list = dataWish?.wishes || [];
+    setWishes((current) => [...current, ...list]);
+    setTotalDataWish(dataWish?.total_documents || 0);
+    setIsLoadingDataWish(false);
   };
+
+  useEffect(() => {
+    setLastId(wishes[wishes.length - 1]?.id || 0);
+  }, [wishes]);
+
+  useEffect(() => {
+    loadMore();
+    setQty(3);
+  }, []);
 
   return (
     <div
@@ -179,7 +195,7 @@ export default function Section7({ data }: Readonly<Data>) {
           {isLoadingDataWish && (
             <div className="text-center text-lg text-white">Loading...</div>
           )}
-          {!dataWish?.data?.wishes?.length && (
+          {!wishes.length && (
             <div className="text-center text-white w-full mt-8 font-josefinSans text-sm">
               Belum ada data
             </div>
@@ -189,18 +205,17 @@ export default function Section7({ data }: Readonly<Data>) {
             data-aos="fade-up"
           >
             <>
-              {dataWish?.data?.wishes?.length &&
-                dataWish?.data?.wishes?.map((item: WishMessage) => (
-                  <WishCard
-                    key={item.id}
-                    name={item.sender}
-                    wish={item.message}
-                    date={item.created_at}
-                  />
-                ))}
+              {wishes.map((item: WishMessage) => (
+                <WishCard
+                  key={item.id}
+                  name={item.sender}
+                  wish={item.message}
+                  date={item.created_at}
+                />
+              ))}
             </>
           </div>
-          {totalDataWish > dataWish?.data?.wishes?.length && (
+          {totalDataWish > wishes.length && (
             <div className="w-full flex justify-center mt-4 md:mt-8">
               <ButtonBase
                 text="Load More"
