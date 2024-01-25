@@ -45,6 +45,7 @@ export default function Section9({ data }: Readonly<Data>) {
           ]),
         }}
         className="mx-16 lg:mx-[300px]"
+        data-aos="fade-up"
       >
         Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
         Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
@@ -57,6 +58,7 @@ export default function Section9({ data }: Readonly<Data>) {
           color: "white",
           fontSize: "15px",
         }}
+        data-aos="fade-up"
       >
         Kami yang berbahagia
       </div>
@@ -75,6 +77,7 @@ export default function Section9({ data }: Readonly<Data>) {
             },
           ]),
         }}
+        data-aos="fade-up"
       >
         {mempelaiPria} & {mempelaiWanita}
       </div>
@@ -144,6 +147,7 @@ export default function Section9({ data }: Readonly<Data>) {
           backgroundColor: "transparent",
           borderRadius: "50%",
         }}
+        data-aos="flip-right"
       />
       <div
         style={{
@@ -160,10 +164,14 @@ export default function Section9({ data }: Readonly<Data>) {
             },
           ]),
         }}
+        data-aos="zoom-in"
       >
         Family Invitation
       </div>
-      <div style={{ display: "flex", marginTop: "20px", gap: "10px" }}>
+      <div
+        style={{ display: "flex", marginTop: "20px", gap: "10px" }}
+        data-aos="zoom-in"
+      >
         <Link href={urlWA + "6289516789565"} target="_blank">
           <FaWhatsapp size={30} color="white" />
         </Link>

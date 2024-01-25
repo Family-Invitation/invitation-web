@@ -94,6 +94,7 @@ export default function Section3({ data }: Readonly<Data>) {
             ]),
             margin: 0,
           }}
+          data-aos="zoom-in"
         >
           Countdown to
         </h3>
@@ -114,6 +115,7 @@ export default function Section3({ data }: Readonly<Data>) {
             fontWeight: 600,
             margin: 0,
           }}
+          data-aos="zoom-in"
         >
           Our Happy Day
         </h2>
@@ -134,6 +136,7 @@ export default function Section3({ data }: Readonly<Data>) {
               },
             ]),
           }}
+          data-aos="zoom-in"
           className="md:w-[70%] w-[85%] my-[50px]"
         >
           <div // Days
@@ -350,6 +353,7 @@ export default function Section3({ data }: Readonly<Data>) {
             fontFamily: "Josefin Sans",
             fontSize: "20px",
           }}
+          data-aos="zoom-in"
         >
           {/* <span>
             The highest happiness on earth is the happiness of marriage.
@@ -403,6 +407,7 @@ export default function Section3({ data }: Readonly<Data>) {
                 alignItems: "center",
                 color: "white",
               }}
+              data-aos="zoom-in"
             >
               {/* <h2
                 style={{
@@ -456,6 +461,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   ]),
                 }}
                 className="px-2"
+                data-aos="zoom-in"
               >
                 <span>
                   <em>Assalamu'alaikum Wr.Wb.</em>
@@ -491,6 +497,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   },
                 ]),
               }}
+              data-aos="fade-up"
             >
               <GiDiamondRing
                 style={{
@@ -716,7 +723,7 @@ export default function Section3({ data }: Readonly<Data>) {
                     margin: "0 5px",
                   }}
                 />
-                <span>Add To Calendar</span>
+                <span>Tambah ke kalender</span>
               </button>
             </div>
             <div // 2
@@ -733,6 +740,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   },
                 ]),
               }}
+              data-aos="fade-up"
             >
               <IoFastFoodOutline
                 style={{
@@ -918,7 +926,7 @@ export default function Section3({ data }: Readonly<Data>) {
                     margin: "0 5px",
                   }}
                 />
-                <span>Open Map</span>
+                <span>Lihat Map</span>
               </button>
               <button // Calendar
                 style={{
@@ -957,7 +965,7 @@ export default function Section3({ data }: Readonly<Data>) {
                     margin: "0 5px",
                   }}
                 />
-                <span>Add To Calendar</span>
+                <span>Tambah ke kalender</span>
               </button>
             </div>
           </div>

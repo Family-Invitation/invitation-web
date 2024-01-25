@@ -135,7 +135,7 @@ const Opening: NextPage<Props> = ({
             },
           ]),
         }}
-        src="/couple.png"
+        src="/img1-squere.jpeg"
         alt=""
       />
       <h2

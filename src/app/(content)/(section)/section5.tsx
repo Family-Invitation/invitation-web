@@ -71,6 +71,7 @@ export default function Section5({ data }: Readonly<Data>) {
           fontWeight: 600,
           margin: 0,
         }}
+        data-aos="zoom-out"
       >
         Gallery
       </h2>
@@ -89,6 +90,7 @@ export default function Section5({ data }: Readonly<Data>) {
             },
           ]),
         }}
+        data-aos="zoom-out"
       >
         <span>Our Moments</span>
         {/* <strong>J. R. R. Tolkien</strong> */}
@@ -119,6 +121,7 @@ export default function Section5({ data }: Readonly<Data>) {
               width={200}
               height={160}
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              data-aos="zoom-out"
             />
           ))}
         </div>

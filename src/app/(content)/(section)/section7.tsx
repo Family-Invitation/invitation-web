@@ -102,6 +102,7 @@ export default function Section7({ data }: Readonly<Data>) {
           flexDirection: "column",
         }}
         className="w-full lg:w-[1000px] px-6 md:px-0 py-[100px]"
+        data-aos="zoom-in-down"
       >
         <h2
           style={{
@@ -121,7 +122,7 @@ export default function Section7({ data }: Readonly<Data>) {
             margin: 0,
           }}
         >
-          Make a Wish
+          Ucapan
         </h2>
         <div // Text
           style={{
@@ -139,9 +140,10 @@ export default function Section7({ data }: Readonly<Data>) {
             ]),
           }}
           className="text-center"
+          data-aos="zoom-in-down"
         >
-          It is an honor and pleasure for us, if you can attend and give us your
-          blessing
+          Suatu kehormatan dan kebahagiaan bagi kami, apabila
+          Bapak/Ibu/Saudara/i berkenan hadir dan memberikan restu kepada kami
         </div>
         <div
           style={{
@@ -150,16 +152,17 @@ export default function Section7({ data }: Readonly<Data>) {
             boxSizing: "border-box",
           }}
           className="py-12 lg:py-12 px-6 lg:px-24 mx-4 w-full rounded-[50px] lg:rounded-[100px]"
+          data-aos="zoom-in-down"
         >
           <input
             type="text"
-            placeholder="Your Name"
+            placeholder="Nama"
             style={{ width: "100%", padding: "10px" }}
             value={sender}
             onChange={(e) => setSender(e.target.value)}
           />
           <textarea
-            placeholder="Your Wish"
+            placeholder="Tulis Ucapan & Doa"
             rows={6}
             style={{ width: "100%", padding: "10px", margin: "30px  0" }}
             value={message}
@@ -167,7 +170,7 @@ export default function Section7({ data }: Readonly<Data>) {
           />
           <div className="text-start">
             <ButtonBase
-              text="Submit"
+              text="Kirim"
               isLink={false}
               isLoading={postApi.isLoading}
               onClick={postData}
@@ -181,7 +184,10 @@ export default function Section7({ data }: Readonly<Data>) {
               Belum ada data
             </div>
           )}
-          <div className="grid grid-cols-1 lg:grid-cols-2  gap-8 md:gap-16 mt-8 w-full">
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2  gap-8 md:gap-16 mt-8 w-full"
+            data-aos="fade-up"
+          >
             <>
               {dataWish?.data?.wishes?.length &&
                 dataWish?.data?.wishes?.map((item: WishMessage) => (
