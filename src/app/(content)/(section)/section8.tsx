@@ -33,8 +33,8 @@ export default function Section8({ data }: Readonly<Data>) {
         style={{
           padding: "40px",
           backgroundColor: "white",
-          borderRadius: "100px",
-          maxWidth: "500px",
+          borderRadius: "20%",
+          maxWidth: "400px",
           boxSizing: "border-box",
           display: "flex",
           flexDirection: "column",
@@ -206,7 +206,7 @@ export default function Section8({ data }: Readonly<Data>) {
               className="font-cormorantGaramond font-semibold"
               data-aos="fade-up"
             >
-              Wedding Gift
+              Beri Hadiah
             </div>
             <div
               style={{

@@ -218,7 +218,7 @@ export default function Section7({ data }: Readonly<Data>) {
           {totalDataWish > wishes.length && (
             <div className="w-full flex justify-center mt-4 md:mt-8">
               <ButtonBase
-                text="Load More"
+                text="Tampilkan Lebih Banyak"
                 isLink={false}
                 isLoading={isLoadingDataWish}
                 onClick={loadMore}

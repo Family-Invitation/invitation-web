@@ -27,7 +27,7 @@ const ButtonBase = ({
         <Link href={link} target="_blank">
           <div
             style={buttonStyles}
-            className=" lg:w-[100px] w-24 text-sm lg:text-base text-center"
+            className=" lg:min-w-[100px] min-w-24 text-sm lg:text-base text-center"
           >
             {text}
           </div>
@@ -35,7 +35,7 @@ const ButtonBase = ({
       ) : (
         <button
           style={buttonStyles}
-          className="lg:w-[100px] w-24 text-sm lg:text-base text-center"
+          className="lg:min-w-[100px] min-w-24 text-sm lg:text-base text-center"
           onClick={onClick}
         >
           {isLoading ? "Loading..." : text}

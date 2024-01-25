@@ -57,6 +57,7 @@ export interface IGiftCard {
 }
 
 export interface IButton {
+  width?: string;
   icon?: string;
   text: string;
   isLink: boolean;
