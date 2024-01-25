@@ -7,6 +7,9 @@ import { Kafka } from "kafkajs";
 import useWebSocket, { useEventSource } from "react-use-websocket";
 import { QueryClientProvider, queryClient } from "../../react-query";
 
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+
 const kafka = new Kafka({
   clientId: "next",
   brokers: ["128.199.143.112:39092"],
@@ -40,7 +43,9 @@ export default function Page() {
   const [showOpening, setShowOpening] = useState(true);
   const [showContent, setShowContent] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

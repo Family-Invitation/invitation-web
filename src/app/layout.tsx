@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import "./globals.css";
+// ..
 
 export const metadata: Metadata = {
   title: "Template",
@@ -25,13 +26,16 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap"
           rel="stylesheet"
         ></link>
-        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        {/* <link
+          rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+        /> */}
       </head>
       <body>
         {/* <Navbar /> */}
         {children}
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>AOS.init();</script>
+        {/* <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>AOS.init();</script> */}
       </body>
     </html>
   );
