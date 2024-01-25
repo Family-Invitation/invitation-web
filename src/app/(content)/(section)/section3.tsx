@@ -639,7 +639,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   </div>
                 </div>
               </div>
-              {/* <button // Map
+              <button // Map
                 style={{
                   margin: "10px 0",
                   fontSize: resizeList(16, [
@@ -678,7 +678,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   }}
                 />
                 <span>Open Map</span>
-              </button> */}
+              </button>
               <button // Calendar
                 style={{
                   margin: "10px 0",
@@ -967,6 +967,7 @@ export default function Section3({ data }: Readonly<Data>) {
               backgroundColor: "white",
               borderBottomLeftRadius: 250,
               borderBottomRightRadius: 250,
+              minHeight: 100,
             }}
           >
             {/* <div // Live Streaming
