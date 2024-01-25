@@ -54,6 +54,7 @@ export default function Section6({ data }: Readonly<Data>) {
             margin: 0,
           }}
           className="font-cormorantGaramond "
+          data-aos="fade-up"
         >
           This event will be held using
         </h3>
@@ -75,6 +76,7 @@ export default function Section6({ data }: Readonly<Data>) {
             fontWeight: 600,
             margin: 0,
           }}
+          data-aos="fade-up"
         >
           Health Protocol
         </h2>
@@ -92,6 +94,7 @@ export default function Section6({ data }: Readonly<Data>) {
             ]),
           }}
           className="font-cormorantGaramond mt-2 md:mt-5"
+          data-aos="fade-up"
         >
           in accordace with government regulations & recommendations
         </div>
@@ -117,6 +120,7 @@ export default function Section6({ data }: Readonly<Data>) {
                 // justifyContent: "center",
                 alignItems: "center",
               }}
+              data-aos="fade-up"
             >
               <Image
                 src={image.imageUrl}
@@ -134,6 +138,7 @@ export default function Section6({ data }: Readonly<Data>) {
                   fontSize: "1rem",
                   fontFamily: "Roboto",
                 }}
+                data-aos="fade-up"
               >
                 {image?.label}
               </div>

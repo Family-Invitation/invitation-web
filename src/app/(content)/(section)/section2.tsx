@@ -125,6 +125,7 @@ export default function Section2({ data }: Readonly<Data>) {
                 fontWeight: 400,
                 fontStyle: "italic",
               }}
+              data-aos="zoom-in"
             >
               <p style={{ margin: "10px 0", fontWeight: 300 }}>
                 Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
@@ -170,6 +171,7 @@ export default function Section2({ data }: Readonly<Data>) {
                   alignItems: "center",
                   // backgroundColor: "red",
                 }}
+                data-aos="zoom-in"
               >
                 <img
                   style={{
@@ -218,88 +220,97 @@ export default function Section2({ data }: Readonly<Data>) {
                   alt=""
                 />
               </div>
-              <h2
+              <div
                 style={{
-                  margin: "10px 0",
-                  color: "#8A584C",
-                  fontFamily: "Cormorant Garamond",
-                  fontSize: resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 600,
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
+                data-aos="zoom-in"
               >
-                {mempelaiPria}
-              </h2>
-              <img
-                style={{
-                  width: resizeList(243, [
-                    {
-                      width: 450,
-                      decreasePercent: 70,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 60,
-                    },
-                  ]),
-                }}
-                src="/divider-rustic.webp"
-                alt=""
-              />
-              <b
-                style={{
-                  fontFamily: "Josefin Sans",
-                  color: "#85865F",
-                  fontSize: resizeList(25, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 600,
-                  margin: "20px 0",
-                }}
-              >
-                Putra Ketujuh dari
-              </b>
-              <p
-                style={{
-                  fontFamily: "Josefin Sans",
-                  color: "#85865F",
-                  fontSize: resizeList(25, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 300,
-                  lineHeight: "1.5",
-                  margin: 0,
-                }}
-              >
-                Bapak {ayahMempelaiPria}
-                <br />
-                &
-                <br />
-                Ibu {ibuMempelaiPria}
-              </p>
-              {/* <div // Sosmed
+                <h2
+                  style={{
+                    margin: "10px 0",
+                    color: "#8A584C",
+                    fontFamily: "Cormorant Garamond",
+                    fontSize: resizeList(40, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 600,
+                  }}
+                >
+                  {mempelaiPria}
+                </h2>
+                <img
+                  style={{
+                    width: resizeList(243, [
+                      {
+                        width: 450,
+                        decreasePercent: 70,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 60,
+                      },
+                    ]),
+                  }}
+                  src="/divider-rustic.webp"
+                  alt=""
+                />
+                <b
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    color: "#85865F",
+                    fontSize: resizeList(25, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 600,
+                    margin: "20px 0",
+                  }}
+                >
+                  Putra Ketujuh dari
+                </b>
+                <p
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    color: "#85865F",
+                    fontSize: resizeList(25, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 300,
+                    lineHeight: "1.5",
+                    margin: 0,
+                  }}
+                >
+                  Bapak {ayahMempelaiPria}
+                  <br />
+                  &
+                  <br />
+                  Ibu {ibuMempelaiPria}
+                </p>
+                {/* <div // Sosmed
                 style={{
                   color: "#8A584C",
                   margin: "20px 0",
@@ -340,6 +351,7 @@ export default function Section2({ data }: Readonly<Data>) {
                   }}
                 />
               </div> */}
+              </div>
             </div>
             <div // Segment 2
               style={{
@@ -384,6 +396,7 @@ export default function Section2({ data }: Readonly<Data>) {
                   justifyContent: "center",
                   alignItems: "center",
                 }}
+                data-aos="zoom-in"
               >
                 &
               </div>
@@ -416,6 +429,7 @@ export default function Section2({ data }: Readonly<Data>) {
                   alignItems: "center",
                   // backgroundColor: "red",
                 }}
+                data-aos="zoom-in"
               >
                 <img
                   style={{
@@ -464,88 +478,98 @@ export default function Section2({ data }: Readonly<Data>) {
                   alt=""
                 />
               </div>
-              <h2
+              <div
                 style={{
-                  margin: "10px 0",
-                  color: "#8A584C",
-                  fontFamily: "Cormorant Garamond",
-                  fontSize: resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 600,
+                  flex: 1,
+                  textAlign: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
                 }}
+                data-aos="zoom-in"
               >
-                {mempelaiWanita}
-              </h2>
-              <img
-                style={{
-                  width: resizeList(243, [
-                    {
-                      width: 450,
-                      decreasePercent: 70,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 60,
-                    },
-                  ]),
-                }}
-                src="/divider-rustic.webp"
-                alt=""
-              />
-              <b
-                style={{
-                  fontFamily: "Josefin Sans",
-                  color: "#85865F",
-                  fontSize: resizeList(25, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 600,
-                  margin: "20px 0",
-                }}
-              >
-                Putri Pertama dari
-              </b>
-              <p
-                style={{
-                  fontFamily: "Josefin Sans",
-                  color: "#85865F",
-                  fontSize: resizeList(25, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontWeight: 300,
-                  lineHeight: "1.5",
-                  margin: 0,
-                }}
-              >
-                Bapak {ayahMempelaiWanita}
-                <br />
-                &
-                <br />
-                Ibu {ibuMempelaiWanita}
-              </p>
-              {/* <div // Sosmed
+                <h2
+                  style={{
+                    margin: "10px 0",
+                    color: "#8A584C",
+                    fontFamily: "Cormorant Garamond",
+                    fontSize: resizeList(40, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 600,
+                  }}
+                >
+                  {mempelaiWanita}
+                </h2>
+                <img
+                  style={{
+                    width: resizeList(243, [
+                      {
+                        width: 450,
+                        decreasePercent: 70,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 60,
+                      },
+                    ]),
+                  }}
+                  src="/divider-rustic.webp"
+                  alt=""
+                />
+                <b
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    color: "#85865F",
+                    fontSize: resizeList(25, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 600,
+                    margin: "20px 0",
+                  }}
+                >
+                  Putri Pertama dari
+                </b>
+                <p
+                  style={{
+                    fontFamily: "Josefin Sans",
+                    color: "#85865F",
+                    fontSize: resizeList(25, [
+                      {
+                        width: 450,
+                        decreasePercent: 50,
+                      },
+                      {
+                        width: 700,
+                        decreasePercent: 30,
+                      },
+                    ]),
+                    fontWeight: 300,
+                    lineHeight: "1.5",
+                    margin: 0,
+                  }}
+                >
+                  Bapak {ayahMempelaiWanita}
+                  <br />
+                  &
+                  <br />
+                  Ibu {ibuMempelaiWanita}
+                </p>
+                {/* <div // Sosmed
                 style={{
                   color: "#8A584C",
                   margin: "20px 0",
@@ -586,6 +610,7 @@ export default function Section2({ data }: Readonly<Data>) {
                   }}
                 />
               </div> */}
+              </div>
             </div>
           </div>
         </div>

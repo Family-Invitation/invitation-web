@@ -132,12 +132,11 @@ export default function Section8({ data }: Readonly<Data>) {
         >
           {!isGift && (
             <ButtonBase
-              text="Copy"
+              text="Salin"
               isLink={false}
               onClick={() => handleCopy(rekNumber)}
             />
           )}
-          <ButtonBase text="Confirm" isLink={true} link={urlWA + nomorWa} />
         </div>
       </div>
     );
@@ -205,6 +204,7 @@ export default function Section8({ data }: Readonly<Data>) {
                 ]),
               }}
               className="font-cormorantGaramond font-semibold"
+              data-aos="fade-up"
             >
               Wedding Gift
             </div>
@@ -224,13 +224,14 @@ export default function Section8({ data }: Readonly<Data>) {
                 ]),
               }}
               className="font-josefinSans"
+              data-aos="fade-up"
             >
               Kehadiran Anda merupakan hadiah terindah. Namun, apabila Anda
               memberikan tanda kasih kepada kami, dapat melalui fitur di bawah
               ini:
             </div>
           </div>
-          <div style={{ width: "100%", margin: "50px 0" }}>
+          <div style={{ width: "100%", margin: "50px 0" }} data-aos="fade-up">
             <GiftCard
               isGift={false}
               bank={namaBankPria}
