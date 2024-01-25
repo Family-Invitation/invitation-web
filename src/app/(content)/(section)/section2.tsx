@@ -196,7 +196,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     borderRadius: "50%",
                     position: "absolute",
                   }}
-                  src="/man.jpeg"
+                  src="/man1.jpg"
                   alt=""
                 />
                 <img
@@ -442,7 +442,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     borderRadius: "50%",
                     position: "absolute",
                   }}
-                  src="/woman.jpeg"
+                  src="/woman1.jpg"
                   alt=""
                 />
                 <img

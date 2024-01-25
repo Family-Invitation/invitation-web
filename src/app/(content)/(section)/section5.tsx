@@ -114,7 +114,7 @@ export default function Section5({ data }: Readonly<Data>) {
           {[1, 2, 3, 4].map((item) => (
             <div
               style={{
-                backgroundColor: "#4f583d",
+                backgroundColor: "#819575",
                 borderRadius: "3%",
               }}
             >
