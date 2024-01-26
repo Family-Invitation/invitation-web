@@ -49,7 +49,7 @@ export default function Section9({ data }: Readonly<Data>) {
       >
         Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
         Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
-        kehadiran dan doa restunya, kamu mengucapkan terima kasih.
+        kehadiran dan doa restunya, kami mengucapkan terima kasih.
         <br />
         <em>Wassalamu'alaikum Wr.Wb.</em>
       </div>
