@@ -133,9 +133,9 @@ export default function Section6({ data }: Readonly<Data>) {
               <div
                 style={{
                   color: "white",
-                  fontSize: "1rem",
                   fontFamily: "Roboto",
                 }}
+                className="text-xs md:text-base"
                 data-aos="fade-up"
               >
                 {image?.label}

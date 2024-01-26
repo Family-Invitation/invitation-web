@@ -1,8 +1,13 @@
 import { Data } from "@/interfaces/dataInterfaces";
 import Image from "next/image";
 import useResizeFont from "@/hooks/useResize";
+import { Gallery, Item } from "react-photoswipe-gallery";
+import "photoswipe/dist/photoswipe.css";
+
 export default function Section5({ data }: Readonly<Data>) {
   const { resizeList, windowWidth } = useResizeFont();
+
+  const images = ["/img1.jpeg", "/img2.jpeg", "/img3.jpeg", "/img4.jpeg"];
 
   return (
     <div
@@ -95,7 +100,7 @@ export default function Section5({ data }: Readonly<Data>) {
         <span>Our Moments</span>
         {/* <strong>J. R. R. Tolkien</strong> */}
       </div>
-      <div style={{ maxWidth: "1140px", marginTop: "60px" }}>
+      <div style={{ maxWidth: "1000px", marginTop: "60px" }}>
         {/* <iframe
           width="1140px"
           height="600px"
@@ -104,38 +109,36 @@ export default function Section5({ data }: Readonly<Data>) {
           frameBorder="0"
           allowFullScreen
         ></iframe> */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            // gap: "20px",
-            paddingTop: "12px",
-          }}
-          className="mx-6 md:mx-0 gap-4 md:gap-5"
-        >
-          {[1, 2, 3, 4].map((item) => (
-            <div
-              style={{
-                backgroundColor: "#819575",
-                borderRadius: "3%",
-              }}
-            >
-              <Image
-                key={item}
-                src={`/img${item}.jpeg`}
-                alt="foto wedding"
-                width={200}
-                height={160}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  borderRadius: "4%",
-                  padding: 5,
-                }}
-              />
-            </div>
-          ))}
+
+        <div className="grid grid-cols-2 gap-4 md:gap-5 mx-6 md:mx-0 pt-3">
+          <Gallery id="my-gallery">
+            {images.map((imgUrl, i) => (
+              <Item<HTMLImageElement>
+                original={imgUrl}
+                thumbnail={imgUrl}
+                width="1600"
+                height="1600"
+                alt="Photo of seashore by Folkert Gorter"
+                // You can pass string id
+                id={i}
+              >
+                {({ ref, open }) => (
+                  <img
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor: "#819575",
+                      borderRadius: "3%",
+                      objectFit: "cover",
+                    }}
+                    src={imgUrl}
+                    ref={ref}
+                    onClick={open}
+                    className="rounded-md p-1"
+                  />
+                )}
+              </Item>
+            ))}
+          </Gallery>
         </div>
       </div>
     </div>
