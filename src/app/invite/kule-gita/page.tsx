@@ -1,11 +1,11 @@
 "use client";
 
-import Opening from "./(opening)/opening";
-import Content from "./(content)/content";
+import Opening from "../../(opening)/opening";
+import Content from "../../(content)/content";
 import { useEffect, useState } from "react";
 import { Kafka } from "kafkajs";
 import useWebSocket, { useEventSource } from "react-use-websocket";
-import { QueryClientProvider, queryClient } from "../../react-query";
+import { QueryClientProvider, queryClient } from "../../../../react-query";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
