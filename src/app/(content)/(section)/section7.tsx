@@ -210,7 +210,7 @@ export default function Section7({ data }: Readonly<Data>) {
           )}
           {!wishes.length && (
             <div className="text-center text-white w-full mt-8 font-josefinSans text-sm">
-              Belum ada data
+              Belum ada ucapan, Yuk kirim ucapan buat kedua mempelai.
             </div>
           )}
           <div
