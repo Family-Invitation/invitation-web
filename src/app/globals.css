@@ -42,3 +42,8 @@ main {
 .Toastify__progress-bar--success {
   background: #8a594c !important;
 }
+
+.pswp img {
+  /* max-width: 1000px !important; */
+  object-fit: cover;
+}
