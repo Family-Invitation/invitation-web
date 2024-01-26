@@ -5,11 +5,11 @@ import "../../globals.css";
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   console.log(params);
   return {
-    title: "...",
-    icons: "",
+    title: "The Wedding of Kule & Gita",
+    icons: "https://www.familydecorative.com/logo.png",
     openGraph: {
-      title: "Test",
-      description: "desc",
+      title: "The Wedding of Kule & Gita",
+      description: "Sabtu, 03 Februari 2024",
       images: "https://www.familydecorative.com/meta.png",
     },
   };
