@@ -686,7 +686,7 @@ export default function Section3({ data }: Readonly<Data>) {
                     margin: "0 5px",
                   }}
                 />
-                <span>Open Map</span>
+                <span>Lihat Map</span>
               </button>
               <button // Calendar
                 style={{
