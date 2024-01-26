@@ -7,6 +7,11 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
     title: "...",
     icons: "",
+    openGraph: {
+      title: "Test",
+      description: "desc",
+      images: "https://www.familydecorative.com/meta.png",
+    },
   };
 }
 
