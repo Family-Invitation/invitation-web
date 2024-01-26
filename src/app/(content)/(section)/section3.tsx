@@ -378,7 +378,7 @@ export default function Section3({ data }: Readonly<Data>) {
             style={{
               width: "100%",
               height: 610,
-              backgroundImage: `url("/img1.jpeg")`,
+              backgroundImage: `url("/back-cover.jpg")`,
               backgroundPosition:
                 windowWidth > 1100
                   ? "0 -250px"
@@ -395,7 +395,8 @@ export default function Section3({ data }: Readonly<Data>) {
               justifyContent: "flex-end",
               boxSizing: "border-box",
               padding: "100px 0",
-              opacity: 0.8,
+              opacity: 1,
+              overflow: "hidden",
             }}
           >
             <div // Text
@@ -448,6 +449,7 @@ export default function Section3({ data }: Readonly<Data>) {
               </h1>
               <div // Text
                 style={{
+                  width: "80%",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -646,7 +648,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   </div>
                 </div>
               </div>
-              {/* <button // Map
+              <button // Map
                 style={{
                   margin: "10px 0",
                   fontSize: resizeList(16, [
@@ -685,7 +687,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   }}
                 />
                 <span>Open Map</span>
-              </button> */}
+              </button>
               <button // Calendar
                 style={{
                   margin: "10px 0",
@@ -975,6 +977,7 @@ export default function Section3({ data }: Readonly<Data>) {
               backgroundColor: "white",
               borderBottomLeftRadius: 250,
               borderBottomRightRadius: 250,
+              minHeight: 100,
             }}
           >
             {/* <div // Live Streaming

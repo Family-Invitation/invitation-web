@@ -33,7 +33,7 @@ export default function Section9({ data }: Readonly<Data>) {
     >
       <div
         style={{
-          color: "white",
+          color: "#efefef",
           marginBottom: "30px",
           // marginLeft: "300px",
           // marginRight: "300px",
@@ -65,7 +65,8 @@ export default function Section9({ data }: Readonly<Data>) {
       <div
         style={{
           marginTop: "30px",
-          color: "#85875F",
+          // color: "#85875F",
+          color: "white",
           fontSize: resizeList(60, [
             {
               width: 450,
@@ -156,7 +157,7 @@ export default function Section9({ data }: Readonly<Data>) {
           fontSize: resizeList(15, [
             {
               width: 450,
-              decreasePercent: 50,
+              decreasePercent: 40,
             },
             {
               width: 700,
