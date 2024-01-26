@@ -119,7 +119,7 @@ const Opening: NextPage<Props> = ({
         alignItems: "center",
         zIndex: 20,
       }}
-      className={` bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
+      className={`bg-cover bg-no-repeat bg-center bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
     >
       <img
         data-aos="zoom-in"
