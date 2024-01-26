@@ -5,7 +5,7 @@ import { useQuery, useMutation } from "react-query";
 
 // Custom hook untuk melakukan operasi GET ke API
 const useGetWish = async (qty: number, lastId?: number) => {
-  const { data } = await axios.get(baseUrl + "wish/1", {
+  const { data } = await axios.get(baseUrl + "wish/244315", {
     params: {
       qty,
       lastId,
