@@ -36,7 +36,7 @@ export default function Section7({ data }: Readonly<Data>) {
     // Lakukan sesuatu sebelum atau setelah operasi POST
     await postApi.mutate(
       {
-        invitation_id: 1,
+        invitation_id: 244315,
         sender: sender,
         message: message,
       },
