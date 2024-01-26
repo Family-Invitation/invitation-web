@@ -1,4 +1,5 @@
 "use client";
+import { formatInvitationName } from "@/helpers/formatInvitationName";
 import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
@@ -23,7 +24,7 @@ const Opening: NextPage<Props> = ({
 
   const searchParams = useSearchParams();
 
-  const toInvitation = searchParams.get("to");
+  const toParam = searchParams.get("to") ?? "";
 
   function resizeList(
     normalSize: number,
@@ -185,7 +186,13 @@ const Opening: NextPage<Props> = ({
           margin: 0,
         }}
       >
-        {mempelaiPria} & {mempelaiWanita}
+        {windowWidth < 768 ? (
+          <>
+            {mempelaiPria} <br /> & <br /> {mempelaiWanita}
+          </>
+        ) : (
+          `${mempelaiPria} & ${mempelaiWanita}`
+        )}
       </h2>
       <h3
         style={{
@@ -234,7 +241,7 @@ const Opening: NextPage<Props> = ({
           marginBottom: 40,
         }}
       >
-        {toInvitation}
+        {formatInvitationName(toParam)}
       </h2>
       {/* <h3
         style={{

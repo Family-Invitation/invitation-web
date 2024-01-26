@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FaGift } from "react-icons/fa6";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Zoom } from "react-toastify";
 import { Data, IButton, IGiftCard } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 import ButtonBase from "@/components/ButtonBase";
@@ -25,6 +25,7 @@ export default function Section8({ data }: Readonly<Data>) {
       toast.success("Nomor rekening berhasil disalin", {
         position: "top-center",
         autoClose: 5000,
+        transition: Zoom,
       });
     };
 

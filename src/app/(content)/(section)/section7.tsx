@@ -4,16 +4,29 @@ import { Data, WishMessage } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 import { useGetWish, usePostWish } from "@/hooks/useWish";
 import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { formatInvitationName } from "@/helpers/formatInvitationName";
 
 export default function Section7({ data }: Readonly<Data>) {
   const [sender, setSender] = useState("");
   const [message, setMessage] = useState("");
+  const [wishes, setWishes] = useState<any[]>([]);
   const [qty, setQty] = useState(5);
   const [lastId, setLastId] = useState(0);
   const [isLoadingDataWish, setIsLoadingDataWish] = useState(false);
   const { resizeList, windowWidth } = useResizeFont();
 
-  const [wishes, setWishes] = useState<any[]>([]);
+  const searchParams = useSearchParams();
+
+  const groupParam = searchParams.get("group") ?? "0";
+  const toParam = searchParams.get("to") ?? "";
+
+  useEffect(() => {
+    if (groupParam === "0") {
+      const sender = formatInvitationName(toParam);
+      setSender(sender);
+    }
+  }, [groupParam]);
 
   const postApi = usePostWish();
 
