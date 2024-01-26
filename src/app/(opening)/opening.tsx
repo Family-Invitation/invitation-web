@@ -290,7 +290,7 @@ const Opening: NextPage<Props> = ({
           setShowContent(true);
         }}
       >
-        Open Invitation
+        Buka Undangan
       </button>
     </div>
   );
