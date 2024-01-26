@@ -57,7 +57,7 @@ export default function Section3({ data }: Readonly<Data>) {
       id="section3"
       style={{
         width: "100%",
-        backgroundImage: `linear-gradient(180deg, #FFFFFF 0%, #FFFFFF00 100%), url("https://i0.wp.com/zeinvitation.com/wp-content/uploads/2022/07/BACKGROUND_LEAVES_WATERCOLOR-01-Vertical-scaled.jpg?fit=1707%2C2560&ssl=1")`,
+        backgroundImage: `linear-gradient(180deg, #ffffffff 10%, #ffffff00 75%, #ffffffff), url("https://i0.wp.com/zeinvitation.com/wp-content/uploads/2022/07/BACKGROUND_LEAVES_WATERCOLOR-01-Vertical-scaled.jpg?fit=1707%2C2560&ssl=1")`,
         zIndex: 0,
         backgroundPosition: "center",
         backgroundSize: "cover",

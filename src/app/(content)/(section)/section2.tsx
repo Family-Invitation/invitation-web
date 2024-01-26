@@ -19,7 +19,8 @@ export default function Section2({ data }: Readonly<Data>) {
         boxSizing: "border-box",
         // padding: "100px 50px",
         width: "100%",
-        backgroundImage: 'url("/bg-section2.webp")',
+        backgroundImage:
+          'linear-gradient(180deg, #ffffff00, #ffffff00, #ffffff00, #ffffffff), url("/bg-section2.webp")',
         backgroundSize: "cover !important",
         backgroundRepeat: "repeat",
         // backgroundPosition: "center",
