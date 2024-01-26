@@ -2,11 +2,13 @@ import { Metadata } from "next";
 import "../../globals.css";
 // ..
 
-export const metadata: Metadata = {
-  title: "Template",
-  icons:
-    "https://png.pngtree.com/png-clipart/20220721/ourmid/pngtree-ilustrasi-bingkai-bunga-hiasan-undangan-pernikahan-png-image_6032290.png",
-};
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  console.log(params);
+  return {
+    title: "...",
+    icons: "",
+  };
+}
 
 export default function RootLayout({
   children,
@@ -16,6 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta property="og:image" content="/meta.png" />
+        <meta property="og:title" content="Your Title" />
+        <meta property="og:description" content="Your description." />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
