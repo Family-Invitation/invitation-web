@@ -2,7 +2,7 @@ import useResizeFont from "@/hooks/useResize";
 import { Data } from "@/interfaces/dataInterfaces";
 
 export default function Section1({ data }: Readonly<Data>) {
-  const { resizeList } = useResizeFont();
+  const { resizeList, windowWidth } = useResizeFont();
 
   const fontSizeTitle = resizeList(40, [
     { width: 450, decreasePercent: 50 },
@@ -37,7 +37,13 @@ export default function Section1({ data }: Readonly<Data>) {
         className="font-cormorantGaramond text-[#8FA6AC] font-extrabold leading-none m-4"
         style={{ fontSize: fontSizeMempelai }}
       >
-        {mempelaiPria} & {mempelaiWanita}
+        {windowWidth < 768 ? (
+          <>
+            {mempelaiPria} <br /> & <br /> {mempelaiWanita}
+          </>
+        ) : (
+          `${mempelaiPria} & ${mempelaiWanita}`
+        )}
       </h1>
       <h3
         className="font-cormorantGaramond text-[#CEB793] font-light leading-45"

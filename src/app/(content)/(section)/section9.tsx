@@ -141,12 +141,12 @@ export default function Section9({ data }: Readonly<Data>) {
         src="/logo.png"
         alt="logo"
         style={{
-          aspectRatio: "1:1",
+          // aspectRatio: "1:1",
           width: "80px",
           marginTop: "30px",
-          mixBlendMode: "color-burn",
-          backgroundColor: "transparent",
-          borderRadius: "50%",
+          // mixBlendMode: "color-burn",
+          // backgroundColor: "transparent",
+          // borderRadius: "50%",
         }}
         data-aos="flip-right"
       />

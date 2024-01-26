@@ -103,10 +103,8 @@ export default function Section6({ data }: Readonly<Data>) {
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "40px",
-            // margin: "50px",
           }}
-          className="m-4 md:m-12"
+          className="m-4 md:m-12 gap-5 md:gap-10"
         >
           {images.map((image) => (
             <div
