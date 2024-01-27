@@ -10,7 +10,7 @@ import { formatInvitationName } from "@/helpers/formatInvitationName";
 export default function Section7({ data }: Readonly<Data>) {
   const [sender, setSender] = useState("");
   const [message, setMessage] = useState("");
-  const [wishes, setWishes] = useState<any[]>([]);
+  const [wishes, setWishes] = useState<WishMessage[]>([]);
   const [qty, setQty] = useState(5);
   const [lastId, setLastId] = useState(0);
   const [isLoadingDataWish, setIsLoadingDataWish] = useState(false);
@@ -42,7 +42,7 @@ export default function Section7({ data }: Readonly<Data>) {
       },
       {
         onSuccess: async () => {
-          const { data: dataWish } = await useGetWish(1, 0);
+          const { data: dataWish } = await useGetWish(1, 0, toParam);
           setWishes((current) => [...(dataWish?.wishes || []), ...current]);
           setTotalDataWish(dataWish?.total_documents);
         },
@@ -54,7 +54,7 @@ export default function Section7({ data }: Readonly<Data>) {
 
   const loadMore = async () => {
     setIsLoadingDataWish(true);
-    const { data: dataWish } = await useGetWish(qty, lastId);
+    const { data: dataWish } = await useGetWish(qty, lastId, toParam);
     console.log("WISH", dataWish);
     const list = dataWish?.wishes || [];
     setWishes((current) => [...current, ...list]);
@@ -221,9 +221,13 @@ export default function Section7({ data }: Readonly<Data>) {
               {wishes.map((item: WishMessage) => (
                 <WishCard
                   key={item.id}
+                  id={item.id}
                   name={item.sender}
                   wish={item.message}
                   date={item.created_at}
+                  likeCount={item.like_count}
+                  isLiked={item.is_liked}
+                  user={toParam}
                 />
               ))}
             </>

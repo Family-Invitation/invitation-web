@@ -1,14 +1,57 @@
 import { IWishItem } from "@/interfaces/dataInterfaces";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCalendar, FaClock } from "react-icons/fa";
-import { FaRegClock } from "react-icons/fa6";
+import { FaHeart, FaRegClock } from "react-icons/fa6";
 import { format } from "date-fns";
-import { id } from "date-fns/locale";
+import { id as localeId } from "date-fns/locale";
+import { usePostLike } from "@/hooks/useWish";
+import { Zoom, toast } from "react-toastify";
 
-const WishCard = ({ name, wish, date }: IWishItem) => {
+const WishCard = ({
+  id,
+  name,
+  wish,
+  date,
+  likeCount: likeQty,
+  isLiked: liked,
+  user,
+}: IWishItem) => {
   // Memformat tanggal dan waktu dengan date-fns
-  const formattedDate = format(date, "dd MMMM yyyy", { locale: id });
+  const formattedDate = format(date, "dd MMMM yyyy", { locale: localeId });
   const formattedTime = format(date, "HH.mm");
+
+  const [isLiked, setIsLiked] = useState(false);
+  const [likeCount, setLikeCount] = useState(0);
+
+  const postApiLike = usePostLike();
+  // console.log("KEY", key);
+  const postLike = async (state: boolean) => {
+    if (state) {
+      setIsLiked(false);
+      setLikeCount((c) => c - 1);
+    } else {
+      setIsLiked(true);
+      setLikeCount((c) => c + 1);
+    }
+
+    postApiLike.mutate(
+      {
+        wish_id: id,
+        user: user,
+        liked: !state,
+      },
+      {
+        onSuccess: (data) => {
+          console.log("LIKE", data, id, user, !state);
+        },
+      }
+    );
+  };
+
+  useEffect(() => {
+    setLikeCount(likeQty);
+    setIsLiked(liked);
+  }, []);
 
   return (
     <div
@@ -36,28 +79,76 @@ const WishCard = ({ name, wish, date }: IWishItem) => {
         style={{ border: "1px solid #ADADAD", width: "100%" }}
         className="md:my-7 my-4"
       ></div>
-      <div style={{ display: "flex", color: "#ADADAD", alignItems: "center" }}>
+      {/* Container Bottom */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        {/* Time, Calendar */}
         <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
+          style={{ display: "flex", color: "#ADADAD", alignItems: "center" }}
         >
-          <FaCalendar size={16} color="#ADADAD" />
-          <div style={{ marginLeft: "4px", marginRight: "20px" }}>
-            {formattedDate}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <FaCalendar size={16} color="#ADADAD" />
+            <div style={{ marginLeft: "4px", marginRight: "20px" }}>
+              {formattedDate}
+            </div>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <FaRegClock size={16} color="#ADADAD" />
+            <div style={{ marginLeft: "4px" }}> {formattedTime}</div>
           </div>
         </div>
+        {/* Likes */}
         <div
           style={{
             display: "flex",
-            justifyContent: "center",
+            color: "#ADADAD",
             alignItems: "center",
           }}
         >
-          <FaRegClock size={16} color="#ADADAD" />
-          <div style={{ marginLeft: "4px" }}> {formattedTime}</div>
+          <button
+            style={{
+              display: "flex",
+              alignItems: "center",
+              padding: 10,
+            }}
+            onClick={() => {
+              if (user != "") {
+                postLike(isLiked);
+              } else {
+                toast.warning(
+                  "Kamu tidak terdaftar sebagai penerima undangan",
+                  {
+                    position: "top-center",
+                    autoClose: 5000,
+                    transition: Zoom,
+                  }
+                );
+              }
+            }}
+          >
+            {likeCount > 0 && (
+              <div style={{ marginLeft: "4px", marginRight: "4px" }}>
+                {likeCount}
+              </div>
+            )}
+            <FaHeart size={16} color={isLiked ? "#e36a6a" : "#adadad"} />
+          </button>
         </div>
       </div>
     </div>

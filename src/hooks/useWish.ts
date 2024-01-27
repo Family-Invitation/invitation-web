@@ -1,14 +1,19 @@
-import { PostWishParams, WishMessage } from "@/interfaces/dataInterfaces";
+import {
+  PostLikeParams,
+  PostWishParams,
+  WishMessage,
+} from "@/interfaces/dataInterfaces";
 import { baseUrl } from "@/lib/constants";
 import axios from "axios";
 import { useQuery, useMutation } from "react-query";
 
 // Custom hook untuk melakukan operasi GET ke API
-const useGetWish = async (qty: number, lastId?: number) => {
+const useGetWish = async (qty: number, lastId?: number, user?: string) => {
   const { data } = await axios.get(baseUrl + "wish/244315", {
     params: {
       qty,
       lastId,
+      user,
     },
   });
   return data;
@@ -22,4 +27,11 @@ const usePostWish = () => {
   });
 };
 
-export { useGetWish, usePostWish };
+const usePostLike = () => {
+  return useMutation(async (params: PostLikeParams) => {
+    const response = await axios.post(baseUrl + "wish/like", params);
+    return response.data;
+  });
+};
+
+export { useGetWish, usePostWish, usePostLike };
