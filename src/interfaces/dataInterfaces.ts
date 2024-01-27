@@ -79,15 +79,21 @@ export interface ICarouselItem {
 }
 
 export interface IWishItem {
+  id: number;
   name: string;
   wish: string;
   date: string;
+  likeCount: number;
+  isLiked: boolean;
+  user: string;
 }
 
 export interface WishMessage {
   id: number;
   sender: string;
   message: string;
+  like_count: number;
+  is_liked: boolean;
   created_at: string;
   updated_at: string;
   deleted_at: string | null;
@@ -97,4 +103,10 @@ export interface PostWishParams {
   invitation_id: number;
   sender: string;
   message: string;
+}
+
+export interface PostLikeParams {
+  wish_id: number;
+  user: string;
+  liked: boolean;
 }
