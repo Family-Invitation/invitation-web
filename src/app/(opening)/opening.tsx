@@ -5,6 +5,8 @@ import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
 import { useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
 
 interface Props {
   showOpening: boolean;
@@ -55,6 +57,7 @@ const Opening: NextPage<Props> = ({
       const docOpening = document.getElementById("opening");
       if (docOpening) {
         docOpening.style.display = "none";
+        AOS.init();
       }
     }, 750);
   }
