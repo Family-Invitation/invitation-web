@@ -16,9 +16,11 @@ const config: Config = {
       fontFamily: {
         cormorantGaramond: ["Cormorant Garamond"],
         josefinSans: ["Josefin Sans"],
+        twCent: ["TW Cent"],
+        philosopher: ["Philosopher"],
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 };
 export default config;
