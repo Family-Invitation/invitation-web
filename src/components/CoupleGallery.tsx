@@ -58,17 +58,17 @@ const CoupleGallery = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-20 bg-white rounded-lg flex flex-col justify-center items-center w-full text-pink-500">
-      <h2 className="w-full text-center text-5xl font-philosopher font-semibold">
+    <div className="max-w-7xl mx-4 md:mx-auto my-20 bg-white rounded-lg flex flex-col justify-center items-center w-auto md:w-full text-pink-500">
+      <h2 className="w-full text-center text-3xl md:text-5xl font-philosopher tracking-wider font-semibold">
         Couple Gallery
       </h2>
-      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full z-0">
+      <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 w-full">
         {weddings.map((wedding) => (
           <div key={wedding.id} className="relative group">
             <img
               src={wedding.image}
               alt="Wedding"
-              className="object-cover w-full h-64 rounded-lg transition duration-300 transform group-hover:scale-105 z-0"
+              className="object-cover w-full h-64 rounded-lg transition duration-300 transform group-hover:scale-105 z-0 relative"
             />
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-transparent bg-opacity-75 text-white rounded-b-lg ">
               <h2 className="text-xl font-semibold">{`${wedding.bride} & ${wedding.groom}`}</h2>

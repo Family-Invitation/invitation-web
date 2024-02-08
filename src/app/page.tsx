@@ -6,10 +6,12 @@ import CoupleGallery from "@/components/CoupleGallery";
 import Testimoni from "@/components/Testimoni";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 
 export default function Page() {
   return (
     <>
+      <Navbar />
       <Header />
       <FiturKenyamanan />
       <OurJourney />

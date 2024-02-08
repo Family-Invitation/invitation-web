@@ -3,8 +3,8 @@ import { FaTiktok, FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="max-w-7xl mx-auto mt-20 mb-4 bg-white rounded-lg flex flex-col justify-center items-center w-full text-black font-twCent">
-      <div className="grid grid-cols-3 gap-8 w-full">
+    <footer className="max-w-7xl mx-4 md:mx-auto mt-14 md:mt-20 mb-4 bg-white rounded-lg flex flex-col justify-center items-center w-auto md:w-full text-black font-twCent">
+      <div className="grid  grid-cols-1 md:grid-cols-3 gap-8 w-full">
         <div className="flex flex-col">
           <div className="font-semibold text-lg">Tentang Kami</div>
           <div className="mt-5 tracking-wider">

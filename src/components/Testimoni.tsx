@@ -63,17 +63,19 @@ const Testimoni = () => {
     tablet: {
       breakpoint: { max: 1024, min: 464 },
       items: 2,
+      partialVisibilityGutter: 40,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
+      // partialVisibilityGutter: 20,
     },
   };
 
   return (
     <div className="bg-pink-100">
-      <div className="max-w-7xl mx-auto my-20 rounded-lg flex flex-col justify-center items-center w-full ">
-        <h2 className="w-full text-center text-5xl font-philosopher font-semibold text-pink-500">
+      <div className="max-w-7xl mx-4  md:mx-auto my-14 md:my-20 rounded-lg flex flex-col justify-center items-center w-auto  md:w-full ">
+        <h2 className="w-full text-center  text-3xl md:text-5xl font-philosopher font-semibold tracking-wider text-pink-500">
           Apa Kata Mereka?
         </h2>
         <div className="w-full mt-8">
@@ -99,7 +101,7 @@ const Testimoni = () => {
             {dataImages.map((data, index) => (
               <div
                 key={data?.id}
-                className="flex justify-center items-center flex-col h-[500px] mr-8"
+                className="flex justify-center items-center flex-col h-[400px] md:h-[500px] mr-0 md:mr-8"
               >
                 <img
                   key={data?.id}
@@ -112,7 +114,9 @@ const Testimoni = () => {
                     <div className="text-pink-500 font-semibold">
                       {data?.name}
                     </div>
-                    <div className="text-xs mb-3 text-gray-800">Sabtu, 10 Januari 2020</div>
+                    <div className="text-xs mb-3 text-gray-800">
+                      Sabtu, 10 Januari 2020
+                    </div>
                     <div className="text-sm text-gray-900">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Voluptatibus vel facilis quos ipsam esse debitis,

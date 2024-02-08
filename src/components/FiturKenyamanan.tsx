@@ -22,7 +22,7 @@ const Card = ({ Icon, title, description }: ICard) => {
 const FiturKenyamanan = () => {
   return (
     <div className="bg-white flex justify-center items-center my-20 flex-col max-w-7xl md:mx-auto mx-4 text-center ">
-      <h2 className="text-2xl md:text-5xl text-pink-500 font-philosopher tracking-wider font-semibold">
+      <h2 className="text-3xl md:text-5xl text-pink-500 font-philosopher tracking-wider font-semibold">
         Fitur Kenyamanan Pengguna
       </h2>
       <h3 className="text-base md:text-lg mt-5 w-full md:w-[50%] text-center tracking-wider text-[#686868]">

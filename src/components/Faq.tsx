@@ -20,8 +20,8 @@ const Faq = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto my-20 bg-white rounded-lg flex flex-col justify-center items-center w-full">
-      <h2 className="w-full text-center text-5xl font-philosopher font-semibold text-pink-500">
+    <div className="max-w-7xl mx-4 md:mx-auto my-14 md:my-20 bg-white rounded-lg flex flex-col justify-center items-center w-auto md:w-full">
+      <h2 className="w-full text-center text-3xl md:text-5xl font-philosopher font-semibold tracking-wider text-pink-500">
         FAQ
       </h2>
       <div className=" mt-8 w-full">

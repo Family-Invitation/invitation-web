@@ -7,11 +7,10 @@ const Header = () => {
       className="relative bg-cover bg-center h-screen px-4 md:px-12 opacity-95"
       style={{ backgroundImage: 'url("/images/bg-header.jpg")' }}
     >
-      <Navbar />
       <div className="flex items-start h-screen flex-col justify-center  text-center md:text-left">
-        <h2 className="text-white text-3xl md:text-5xl font-philosopher md:w-[40%] w-full px-8 md:px-0 leading-10">
+        <h1 className="text-white text-3xl md:text-5xl font-philosopher md:w-[40%] w-full px-8 md:px-0 leading-10">
           Solusi Digital Pernikahan Impian.
-        </h2>
+        </h1>
         <h3 className="text-white text-base md:text-lg font-twCent mt-8 md:w-[40%] w-full leading-8">
           Jadikan pernikahan impianmu lebih modern dan efisien dengan Viding,
           Solusi digital pernikahan terlengkap!
