@@ -12,8 +12,8 @@ import {
 import { MdOutlineDateRange } from "react-icons/md";
 import { Data } from "@/interfaces/dataInterfaces";
 
-export default function Section3({ data }: Readonly<Data>) {
-  const targetDate = new Date("February 3, 2024 00:00:00").getTime();
+export default function Section3({ data }: Readonly<any>) {
+  const targetDate = new Date(data.section3.date).getTime();
 
   const calculateTimeLeft = () => {
     const now = new Date().getTime();
@@ -42,9 +42,6 @@ export default function Section3({ data }: Readonly<Data>) {
 
     return () => clearInterval(countdownInterval);
   }, []);
-
-  const lokasiAkad = data?.lokasiAkad;
-  const lokasiResepsi = data?.lokasiResepsi;
 
   const { resizeList, windowWidth } = useResizeFont();
 
@@ -96,7 +93,7 @@ export default function Section3({ data }: Readonly<Data>) {
           }}
           data-aos="zoom-in"
         >
-          Countdown to
+          {data.section3.text_countdown}
         </h3>
         <h2
           style={{
@@ -117,7 +114,7 @@ export default function Section3({ data }: Readonly<Data>) {
           }}
           data-aos="zoom-in"
         >
-          Our Happy Day
+          {data.section3.text_our_happy_day}
         </h2>
         <div // Countdown Group
           style={{
@@ -358,7 +355,7 @@ export default function Section3({ data }: Readonly<Data>) {
           {/* <span>
             The highest happiness on earth is the happiness of marriage.
           </span> */}
-          <strong>Sabtu, 3 Februari 2024</strong>
+          <strong>{data.section3.formatted.date}</strong>
         </div>
         <div // Space
           style={{
@@ -378,7 +375,7 @@ export default function Section3({ data }: Readonly<Data>) {
             style={{
               width: "100%",
               height: 610,
-              backgroundImage: `url("/back-cover.jpg")`,
+              backgroundImage: `url("${data.section3.content_box.background_box_picture}")`,
               backgroundPosition:
                 windowWidth > 1100
                   ? "0 -250px"
@@ -445,7 +442,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   margin: "20px 0",
                 }}
               >
-                Wedding Day
+                {data.section3.content_box.text_title}
               </h1>
               <div // Text
                 style={{
@@ -465,13 +462,17 @@ export default function Section3({ data }: Readonly<Data>) {
                 className="px-2"
                 data-aos="zoom-in"
               >
-                <span>
-                  <em>Assalamu'alaikum Wr.Wb.</em>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: data.section3.content_box.text_invite,
+                  }}
+                >
+                  {/* <em>Assalamu'alaikum Wr.Wb.</em>
                   <br />
                   <br />
                   Tanpa mengurangi rasa hormat, kami mengundang
                   Bapak/Ibu/Saudara/i untuk hadir dihari bahagia Pernikahan kami
-                  yang akan di laksanakan pada:
+                  yang akan di laksanakan pada: */}
                 </span>
                 {/* <strong>Albert Einstein</strong> */}
               </div>
@@ -534,7 +535,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   margin: "10px 0",
                 }}
               >
-                Akad Nikah
+                {data.section3.content_box.wedding.text_title}
               </h2>
               <img
                 style={{
@@ -582,7 +583,7 @@ export default function Section3({ data }: Readonly<Data>) {
                       margin: "0 5px",
                     }}
                   />
-                  <span>Jum'at, 2 Februari 2024</span>
+                  <span>{data.section3.content_box.wedding.date}</span>
                 </div>
                 <div // Time
                   style={{
@@ -607,7 +608,7 @@ export default function Section3({ data }: Readonly<Data>) {
                       margin: "0 5px",
                     }}
                   />
-                  <span>08.00 - Selesai</span>
+                  <span>{data.section3.content_box.wedding.time}</span>
                 </div>
                 <div // Location
                   style={{
@@ -640,92 +641,97 @@ export default function Section3({ data }: Readonly<Data>) {
                       flexDirection: "column",
                     }}
                   >
-                    <span>
-                      KUA, Jl. Inpres Cimpaeun No.1, Cimpaeun, Kec. Tapos, Kota
-                      Depok, Jawa Barat 16459
-                    </span>
+                    <span>{data.section3.content_box.wedding.address}</span>
                   </div>
                 </div>
               </div>
-              {/* <button // Map
-                style={{
-                  margin: "10px 0",
-                  fontSize: resizeList(16, [
-                    {
-                      width: 450,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontFamily: "Josefin Sans",
-                  backgroundColor: "#8A584C",
-                  color: "white",
-                  padding: "12px 24px",
-                  borderRadius: 3,
-                  border: 0,
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-                onClick={() => redirectToMap(lokasiAkad)}
-              >
-                <IoLocationSharp
+              {data.section3.content_box.wedding.button.map.enabled && (
+                <button // Map
                   style={{
-                    width: resizeList(16, [
+                    margin: "10px 0",
+                    fontSize: resizeList(16, [
                       {
                         width: 450,
                         decreasePercent: 30,
                       },
                     ]),
-                    height: resizeList(16, [
-                      {
-                        width: 450,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    margin: "0 5px",
+                    fontFamily: "Josefin Sans",
+                    backgroundColor: "#8A584C",
+                    color: "white",
+                    padding: "12px 24px",
+                    borderRadius: 3,
+                    border: 0,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
                   }}
-                />
-                <span>Lihat Map</span>
-              </button> */}
-              <button // Calendar
-                style={{
-                  margin: "10px 0",
-                  fontSize: resizeList(16, [
-                    {
-                      width: 450,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontFamily: "Josefin Sans",
-                  backgroundColor: "#8A584C",
-                  color: "white",
-                  padding: "12px 24px",
-                  borderRadius: 3,
-                  border: 0,
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <MdOutlineDateRange
+                  onClick={() => redirectToMap("")}
+                >
+                  <IoLocationSharp
+                    style={{
+                      width: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      height: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      margin: "0 5px",
+                    }}
+                  />
+                  <span>
+                    {data.section3.content_box.wedding.button.map.text}
+                  </span>
+                </button>
+              )}
+              {data.section3.content_box.wedding.button.calendar.enabled && (
+                <button // Calendar
                   style={{
-                    width: resizeList(16, [
+                    margin: "10px 0",
+                    fontSize: resizeList(16, [
                       {
                         width: 450,
                         decreasePercent: 30,
                       },
                     ]),
-                    height: resizeList(16, [
-                      {
-                        width: 450,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    margin: "0 5px",
+                    fontFamily: "Josefin Sans",
+                    backgroundColor: "#8A584C",
+                    color: "white",
+                    padding: "12px 24px",
+                    borderRadius: 3,
+                    border: 0,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
                   }}
-                />
-                <span>Tambah ke kalender</span>
-              </button>
+                >
+                  <MdOutlineDateRange
+                    style={{
+                      width: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      height: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      margin: "0 5px",
+                    }}
+                  />
+                  <span>
+                    {data.section3.content_box.wedding.button.calendar.text}
+                  </span>
+                </button>
+              )}
             </div>
             <div // 2
               style={{
@@ -776,7 +782,7 @@ export default function Section3({ data }: Readonly<Data>) {
                   margin: "10px 0",
                 }}
               >
-                Resepsi
+                {data.section3.content_box.reception.text_title}
               </h2>
               <img
                 style={{
@@ -823,7 +829,7 @@ export default function Section3({ data }: Readonly<Data>) {
                       margin: "0 5px",
                     }}
                   />
-                  <span> Sabtu, 3 Februari 2024</span>
+                  <span>{data.section3.content_box.reception.date}</span>
                 </div>
                 <div // Time
                   style={{
@@ -848,7 +854,7 @@ export default function Section3({ data }: Readonly<Data>) {
                       margin: "0 5px",
                     }}
                   />
-                  <span>09.00 - Selesai</span>
+                  <span>{data.section3.content_box.reception.time}</span>
                 </div>
                 <div // Location
                   style={{
@@ -882,92 +888,97 @@ export default function Section3({ data }: Readonly<Data>) {
                     }}
                   >
                     {/* <strong>Shangri-La Hotel Jakarta</strong> */}
-                    <span>
-                      Simpangan Depok, Jatijajar 2, Gang Persada, RT 007/RW 007,
-                      Tapos, Depok
-                    </span>
+                    <span>{data.section3.content_box.reception.address}</span>
                   </div>
                 </div>
               </div>
-              <button // Map
-                style={{
-                  margin: "10px 0",
-                  fontSize: resizeList(16, [
-                    {
-                      width: 450,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontFamily: "Josefin Sans",
-                  backgroundColor: "#8A584C",
-                  color: "white",
-                  padding: "12px 24px",
-                  borderRadius: 3,
-                  border: 0,
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-                onClick={() => redirectToMap(lokasiResepsi)}
-              >
-                <IoLocationSharp
+              {data.section3.content_box.reception.button.map.enabled && (
+                <button // Map
                   style={{
-                    width: resizeList(16, [
+                    margin: "10px 0",
+                    fontSize: resizeList(16, [
                       {
                         width: 450,
                         decreasePercent: 30,
                       },
                     ]),
-                    height: resizeList(16, [
-                      {
-                        width: 450,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    margin: "0 5px",
+                    fontFamily: "Josefin Sans",
+                    backgroundColor: "#8A584C",
+                    color: "white",
+                    padding: "12px 24px",
+                    borderRadius: 3,
+                    border: 0,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
                   }}
-                />
-                <span>Lihat Map</span>
-              </button>
-              <button // Calendar
-                style={{
-                  margin: "10px 0",
-                  fontSize: resizeList(16, [
-                    {
-                      width: 450,
-                      decreasePercent: 30,
-                    },
-                  ]),
-                  fontFamily: "Josefin Sans",
-                  backgroundColor: "#8A584C",
-                  color: "white",
-                  padding: "12px 24px",
-                  borderRadius: 3,
-                  border: 0,
-                  cursor: "pointer",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                <MdOutlineDateRange
+                  onClick={() => redirectToMap("")}
+                >
+                  <IoLocationSharp
+                    style={{
+                      width: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      height: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      margin: "0 5px",
+                    }}
+                  />
+                  <span>
+                    {data.section3.content_box.reception.button.map.text}
+                  </span>
+                </button>
+              )}
+              {data.section3.content_box.reception.button.calendar.enabled && (
+                <button // Calendar
                   style={{
-                    width: resizeList(16, [
+                    margin: "10px 0",
+                    fontSize: resizeList(16, [
                       {
                         width: 450,
                         decreasePercent: 30,
                       },
                     ]),
-                    height: resizeList(16, [
-                      {
-                        width: 450,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    margin: "0 5px",
+                    fontFamily: "Josefin Sans",
+                    backgroundColor: "#8A584C",
+                    color: "white",
+                    padding: "12px 24px",
+                    borderRadius: 3,
+                    border: 0,
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
                   }}
-                />
-                <span>Tambah ke kalender</span>
-              </button>
+                >
+                  <MdOutlineDateRange
+                    style={{
+                      width: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      height: resizeList(16, [
+                        {
+                          width: 450,
+                          decreasePercent: 30,
+                        },
+                      ]),
+                      margin: "0 5px",
+                    }}
+                  />
+                  <span>
+                    {data.section3.content_box.reception.button.calendar.text}
+                  </span>
+                </button>
+              )}
             </div>
           </div>
           <div // Footer

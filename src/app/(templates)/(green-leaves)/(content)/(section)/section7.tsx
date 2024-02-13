@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { formatInvitationName } from "@/helpers/formatInvitationName";
 
-export default function Section7({ data }: Readonly<Data>) {
+export default function Section7({ data }: Readonly<any>) {
   const [sender, setSender] = useState("");
   const [message, setMessage] = useState("");
   const [wishes, setWishes] = useState<WishMessage[]>([]);
@@ -36,13 +36,13 @@ export default function Section7({ data }: Readonly<Data>) {
     // Lakukan sesuatu sebelum atau setelah operasi POST
     await postApi.mutate(
       {
-        invitation_id: 244315,
+        invitation_id: data.code,
         sender: sender,
         message: message,
       },
       {
         onSuccess: async () => {
-          const { data: dataWish } = await useGetWish(1, 0, toParam);
+          const { data: dataWish } = await useGetWish(1, data.code, 0, toParam);
           setWishes((current) => [...(dataWish?.wishes || []), ...current]);
           setTotalDataWish(dataWish?.total_documents);
         },
@@ -54,7 +54,12 @@ export default function Section7({ data }: Readonly<Data>) {
 
   const loadMore = async () => {
     setIsLoadingDataWish(true);
-    const { data: dataWish } = await useGetWish(qty, lastId, toParam);
+    const { data: dataWish } = await useGetWish(
+      qty,
+      data.code,
+      lastId,
+      toParam
+    );
     console.log("WISH", dataWish);
     const list = dataWish?.wishes || [];
     setWishes((current) => [...current, ...list]);
@@ -151,7 +156,7 @@ export default function Section7({ data }: Readonly<Data>) {
             margin: 0,
           }}
         >
-          Ucapan
+          {data.section7.text_title}
         </h2>
         <div // Text
           style={{
@@ -171,8 +176,7 @@ export default function Section7({ data }: Readonly<Data>) {
           className="text-center"
           data-aos="zoom-in-down"
         >
-          Suatu kehormatan dan kebahagiaan bagi kami, apabila
-          Bapak/Ibu/Saudara/i berkenan hadir dan memberikan restu kepada kami
+          {data.section7.text_subtitle}
         </div>
         <div
           style={{
@@ -199,7 +203,7 @@ export default function Section7({ data }: Readonly<Data>) {
           />
           <div className="text-start">
             <ButtonBase
-              text="Kirim"
+              text={data.section7.button.send.text}
               isLink={false}
               isLoading={postApi.isLoading}
               onClick={postData}
@@ -235,7 +239,7 @@ export default function Section7({ data }: Readonly<Data>) {
           {totalDataWish > wishes.length && (
             <div className="w-full flex justify-center mt-4 md:mt-8">
               <ButtonBase
-                text="Tampilkan Lebih Banyak"
+                text={data.section7.button.more.text}
                 isLink={false}
                 isLoading={isLoadingDataWish}
                 onClick={loadMore}

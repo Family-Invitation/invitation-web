@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Data } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 
-export default function Section6({ data }: Readonly<Data>) {
+export default function Section6({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const images = [
@@ -56,7 +56,7 @@ export default function Section6({ data }: Readonly<Data>) {
           className="font-cormorantGaramond "
           data-aos="fade-up"
         >
-          Acara ini mengedepankan
+          {data.section6.text_subtitle_before}
         </h3>
         <h2
           style={{
@@ -78,7 +78,7 @@ export default function Section6({ data }: Readonly<Data>) {
           }}
           data-aos="fade-up"
         >
-          Protokol Kesehatan
+          {data.section6.text_title}
         </h2>
         <div // Text
           style={{
@@ -96,7 +96,7 @@ export default function Section6({ data }: Readonly<Data>) {
           className="font-cormorantGaramond mt-2 md:mt-5"
           data-aos="fade-up"
         >
-          sejalan dengan rekomendasi dan regulasi dari pemerintah
+          {data.section6.text_subtitle_after}
         </div>
 
         <div
@@ -106,9 +106,9 @@ export default function Section6({ data }: Readonly<Data>) {
           }}
           className="m-4 md:m-12 gap-5 md:gap-10"
         >
-          {images.map((image) => (
+          {data.section6.images.map(({ url, label }: any, i: number) => (
             <div
-              key={image.imageUrl}
+              key={i}
               style={{
                 width: "100%",
                 overflow: "hidden",
@@ -121,7 +121,7 @@ export default function Section6({ data }: Readonly<Data>) {
               data-aos="fade-up"
             >
               <Image
-                src={image.imageUrl}
+                src={url}
                 alt="image"
                 width={120}
                 height={120}
@@ -138,7 +138,7 @@ export default function Section6({ data }: Readonly<Data>) {
                 className="text-xs md:text-base"
                 data-aos="fade-up"
               >
-                {image?.label}
+                {label}
               </div>
             </div>
           ))}

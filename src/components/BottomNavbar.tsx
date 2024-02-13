@@ -22,7 +22,7 @@ const Menu = ({ to, children }: IMenu) => {
     </ScrollLink>
   );
 };
-const BottomNavbar: React.FC = () => {
+const BottomNavbar = ({ data }: any) => {
   const { resizeList } = useResizeFont();
 
   const fontSizeMenu = resizeList(40, [
@@ -56,12 +56,28 @@ const BottomNavbar: React.FC = () => {
         className="gap-6 lg:gap-12 p-0 lg:p-3"
       >
         <Menu to="section1">
-          <img
-            src="/img1-squere.jpeg"
-            alt="couple"
-            style={{ borderRadius: "50%" }}
-            className="lg:w-[80px] lg:h-[80px] w-12 h-12"
-          />
+          <div
+            style={{
+              width: fontSizeMenu,
+              height: fontSizeMenu,
+              borderRadius: "50%",
+              backgroundColor: "#CEB793",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={data.bottom_navbar.picture}
+              alt="couple"
+              style={{
+                borderRadius: "50%",
+                width: "90%",
+                height: "90%",
+              }}
+              // className="lg:w-[80px] lg:h-[80px] w-12 h-12"
+            />
+          </div>
         </Menu>
         <Menu to="section2">
           {/* <div className="w-6 lg:w-10">

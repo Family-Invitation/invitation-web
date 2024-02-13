@@ -9,13 +9,16 @@ import Section7 from "./(section)/section7";
 import Section8 from "./(section)/section8";
 import Section9 from "./(section)/section9";
 import BottomNavbar from "@/components/BottomNavbar";
-import useGetData from "@/hooks/useGetData";
+import { useGetData } from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 
-export default function Content({ showContent }: { showContent: boolean }) {
-  const dataKonsumen: Data = useGetData();
-  const { data } = dataKonsumen;
-
+export default function Content({
+  showContent,
+  data,
+}: {
+  showContent: boolean;
+  data: any;
+}) {
   return (
     <div id="content" style={{ width: "100%", zIndex: 10 }}>
       <Section1 data={data} />
@@ -27,8 +30,8 @@ export default function Content({ showContent }: { showContent: boolean }) {
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
-      <MusicPlayer showContent={showContent} />
-      <BottomNavbar />
+      <MusicPlayer showContent={showContent} audioSource={data.music.url} />
+      <BottomNavbar data={data} />
       <div
         style={{
           width: "100%",

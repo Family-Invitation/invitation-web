@@ -4,7 +4,7 @@ import useResizeFont from "@/hooks/useResize";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 
-export default function Section5({ data }: Readonly<Data>) {
+export default function Section5({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const images = ["/img1.jpeg", "/img2.jpeg", "/img3.jpeg", "/img4.jpeg"];
@@ -78,7 +78,7 @@ export default function Section5({ data }: Readonly<Data>) {
         }}
         data-aos="zoom-out"
       >
-        Gallery
+        {data.section5.text_gallery}
       </h2>
       <div // Text
         style={{
@@ -97,8 +97,7 @@ export default function Section5({ data }: Readonly<Data>) {
         }}
         data-aos="zoom-out"
       >
-        <span>Our Moments</span>
-        {/* <strong>J. R. R. Tolkien</strong> */}
+        <span>{data.section5.text_moments}</span>
       </div>
       <div style={{ maxWidth: "1000px", marginTop: "60px" }}>
         {/* <iframe
@@ -112,32 +111,34 @@ export default function Section5({ data }: Readonly<Data>) {
 
         <div className="grid grid-cols-2 gap-4 md:gap-5 mx-6 md:mx-0 pt-3">
           <Gallery id="my-gallery">
-            {images.map((imgUrl, i) => (
-              <Item<HTMLImageElement>
-                original={imgUrl}
-                thumbnail={imgUrl}
-                width="1600"
-                height="1600"
-                alt="Photo of seashore by Folkert Gorter"
-                // You can pass string id
-                id={i}
-              >
-                {({ ref, open }) => (
-                  <img
-                    style={{
-                      cursor: "pointer",
-                      backgroundColor: "#819575",
-                      borderRadius: "3%",
-                      objectFit: "cover",
-                    }}
-                    src={imgUrl}
-                    ref={ref}
-                    onClick={open}
-                    className="rounded-md p-1"
-                  />
-                )}
-              </Item>
-            ))}
+            {data.section5.pictures.map(
+              ({ url: imgUrl }: { url: string }, i: number) => (
+                <Item<HTMLImageElement>
+                  original={imgUrl}
+                  thumbnail={imgUrl}
+                  width="1600"
+                  height="1600"
+                  alt="Photo of seashore by Folkert Gorter"
+                  // You can pass string id
+                  id={i}
+                >
+                  {({ ref, open }) => (
+                    <img
+                      style={{
+                        cursor: "pointer",
+                        backgroundColor: "#819575",
+                        borderRadius: "3%",
+                        objectFit: "cover",
+                      }}
+                      src={imgUrl}
+                      ref={ref}
+                      onClick={open}
+                      className="rounded-md p-1"
+                    />
+                  )}
+                </Item>
+              )
+            )}
           </Gallery>
         </div>
       </div>

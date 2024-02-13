@@ -54,6 +54,7 @@ export interface IGiftCard {
   recipientName?: string;
   address?: string;
   nomorWa?: string;
+  copyText?: string;
 }
 
 export interface IButton {
@@ -100,7 +101,7 @@ export interface WishMessage {
 }
 
 export interface PostWishParams {
-  invitation_id: number;
+  invitation_id: string;
   sender: string;
   message: string;
 }
