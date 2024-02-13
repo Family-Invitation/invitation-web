@@ -1,6 +1,8 @@
 // src/hooks/useGetData.ts
 import { useState, useEffect } from "react";
 import { Data } from "@/interfaces/dataInterfaces";
+import axios from "axios";
+import { baseUrl } from "@/lib/constants";
 
 const useGetData = (): Data => {
   const [data, setData] = useState<Data>({} as Data);
@@ -22,4 +24,9 @@ const useGetData = (): Data => {
   return data;
 };
 
-export default useGetData;
+const useGetDataV2 = async (slug: string): Promise<any> => {
+  const { data } = await axios.get(baseUrl + "/v1/invitation/" + slug);
+  return data;
+};
+
+export { useGetData, useGetDataV2 };

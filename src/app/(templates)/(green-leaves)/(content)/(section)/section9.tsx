@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 import useResizeFont from "@/hooks/useResize";
 
-export default function Section9({ data }: Readonly<Data>) {
+export default function Section9({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const mempelaiPria = data?.mempelaiPria?.namaPanggilan;
@@ -46,13 +46,8 @@ export default function Section9({ data }: Readonly<Data>) {
         }}
         className="mx-16 lg:mx-[300px]"
         data-aos="fade-up"
-      >
-        Merupakan suatu kehormatan dan kebahagiaan bagi kami, apabila
-        Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu. Atas
-        kehadiran dan doa restunya, kami mengucapkan terima kasih.
-        <br />
-        <em>Wassalamu'alaikum Wr.Wb.</em>
-      </div>
+        dangerouslySetInnerHTML={{ __html: data.section9.text_gratitude }}
+      ></div>
       <div
         style={{
           color: "white",
@@ -60,7 +55,7 @@ export default function Section9({ data }: Readonly<Data>) {
         }}
         data-aos="fade-up"
       >
-        Kami yang berbahagia
+        {data.section9.text_regards}
       </div>
       <div
         style={{
@@ -80,7 +75,7 @@ export default function Section9({ data }: Readonly<Data>) {
         }}
         data-aos="fade-up"
       >
-        {mempelaiPria} & {mempelaiWanita}
+        {data.section9.couples}
       </div>
       {/* <div
         style={{

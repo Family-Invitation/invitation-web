@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-const MusicPlayer = ({ showContent }: { showContent: boolean }) => {
+const MusicPlayer = ({
+  showContent,
+  audioSource,
+}: {
+  showContent: boolean;
+  audioSource: string;
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -21,7 +27,6 @@ const MusicPlayer = ({ showContent }: { showContent: boolean }) => {
 
   useEffect(() => {
     // URL sumber audio
-    const audioSource = "/beautiful-in-white.mp3";
 
     if (audioRef.current) {
       audioRef.current.src = audioSource;

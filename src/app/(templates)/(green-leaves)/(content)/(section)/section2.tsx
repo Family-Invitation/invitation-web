@@ -1,16 +1,15 @@
 import useResizeFont from "@/hooks/useResize";
 import { Data } from "@/interfaces/dataInterfaces";
-import { FaInstagram, FaFacebook, FaTiktok } from "react-icons/fa6";
+import {
+  FaInstagram,
+  FaFacebook,
+  FaTiktok,
+  FaTwitter,
+  FaXTwitter,
+} from "react-icons/fa6";
 
-export default function Section2({ data }: Readonly<Data>) {
+export default function Section2({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
-
-  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
-  const ayahMempelaiPria = data?.mempelaiPria?.namaOrangTua?.bapak;
-  const ibuMempelaiPria = data?.mempelaiPria?.namaOrangTua?.ibu;
-  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
-  const ayahMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.bapak;
-  const ibuMempelaiWanita = data?.mempelaiWanita?.namaOrangTua?.ibu;
 
   return (
     <div
@@ -128,13 +127,12 @@ export default function Section2({ data }: Readonly<Data>) {
               }}
               data-aos="zoom-in"
             >
-              <p style={{ margin: "10px 0", fontWeight: 300 }}>
-                Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-                pasangan-pasangan untukmu dari jenismu sendiri,agar kamu
-                cenderung dan merasa tentram kepadanya, dan Dia menjadikandi
-                antaramu rasa kasih dan sayang. <br />
-                <br /> ( Ar-Rum 21 )
-              </p>
+              <p
+                style={{ margin: "10px 0", fontWeight: 300 }}
+                dangerouslySetInnerHTML={{
+                  __html: data.section2.quotes.replaceAll("\n", "<br>"),
+                }}
+              ></p>
               {/* <strong>Unknown</strong> */}
             </div>
           </div>
@@ -199,7 +197,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     borderRadius: "50%",
                     position: "absolute",
                   }}
-                  src="/man1.jpg"
+                  src={data.section2.man.picture}
                   alt=""
                 />
                 <img
@@ -248,7 +246,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     fontWeight: 600,
                   }}
                 >
-                  {mempelaiPria}
+                  {data.section2.man.name}
                 </h2>
                 <img
                   style={{
@@ -284,7 +282,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: "20px 0",
                   }}
                 >
-                  Putra Ketujuh dari
+                  {data.section2.man.text_son_of}
                 </b>
                 <p
                   style={{
@@ -305,53 +303,92 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: 0,
                   }}
                 >
-                  Bapak {ayahMempelaiPria}
+                  {data.section2.man.dad}
                   <br />
                   &
                   <br />
-                  Ibu {ibuMempelaiPria}
+                  {data.section2.man.mom}
                 </p>
-                {/* <div // Sosmed
-                style={{
-                  color: "#8A584C",
-                  margin: "20px 0",
-                  display: "flex",
-                }}
-              >
-                <FaFacebook
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
+                <div // Sosmed
                   style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                    color: "#8A584C",
+                    margin: "20px 0",
+                    display: "flex",
                   }}
-                />
-                <FaTiktok
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
-                  style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                  }}
-                />
-                <FaInstagram
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
-                  style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                  }}
-                />
-              </div> */}
+                >
+                  {data.section2.man.social_media.facebook.enabled && (
+                    <a
+                      href={data.section2.man.social_media.facebook.href}
+                      target="_blank"
+                    >
+                      <FaFacebook
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.man.social_media.tiktok.enabled && (
+                    <a
+                      href={data.section2.man.social_media.tiktok.href}
+                      target="_blank"
+                    >
+                      <FaTiktok
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.man.social_media.instagram.enabled && (
+                    <a
+                      href={data.section2.man.social_media.instagram.href}
+                      target="_blank"
+                    >
+                      <FaInstagram
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.man.social_media.twitter.enabled && (
+                    <a
+                      href={data.section2.man.social_media.twitter.href}
+                      target="_blank"
+                    >
+                      <FaXTwitter
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
             <div // Segment 2
@@ -457,7 +494,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     borderRadius: "50%",
                     position: "absolute",
                   }}
-                  src="/woman1.jpg"
+                  src={data.section2.woman.picture}
                   alt=""
                 />
                 <img
@@ -507,7 +544,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     fontWeight: 600,
                   }}
                 >
-                  {mempelaiWanita}
+                  {data.section2.woman.name}
                 </h2>
                 <img
                   style={{
@@ -543,7 +580,7 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: "20px 0",
                   }}
                 >
-                  Putri Pertama dari
+                  {data.section2.woman.text_daughter_of}
                 </b>
                 <p
                   style={{
@@ -564,53 +601,92 @@ export default function Section2({ data }: Readonly<Data>) {
                     margin: 0,
                   }}
                 >
-                  Bapak {ayahMempelaiWanita}
+                  {data.section2.woman.dad}
                   <br />
                   &
                   <br />
-                  Ibu {ibuMempelaiWanita}
+                  {data.section2.woman.mom}
                 </p>
-                {/* <div // Sosmed
-                style={{
-                  color: "#8A584C",
-                  margin: "20px 0",
-                  display: "flex",
-                }}
-              >
-                <FaFacebook
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
+                <div // Sosmed
                   style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                    color: "#8A584C",
+                    margin: "20px 0",
+                    display: "flex",
                   }}
-                />
-                <FaTiktok
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
-                  style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                  }}
-                />
-                <FaInstagram
-                  size={resizeList(40, [
-                    {
-                      width: 450,
-                      decreasePercent: 50,
-                    },
-                  ])}
-                  style={{
-                    margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                  }}
-                />
-              </div> */}
+                >
+                  {data.section2.woman.social_media.facebook.enabled && (
+                    <a
+                      href={data.section2.woman.social_media.facebook.href}
+                      target="_blank"
+                    >
+                      <FaFacebook
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.woman.social_media.tiktok.enabled && (
+                    <a
+                      href={data.section2.woman.social_media.tiktok.href}
+                      target="_blank"
+                    >
+                      <FaTiktok
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.woman.social_media.instagram.enabled && (
+                    <a
+                      href={data.section2.woman.social_media.instagram.href}
+                      target="_blank"
+                    >
+                      <FaInstagram
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                  {data.section2.woman.social_media.twitter.enabled && (
+                    <a
+                      href={data.section2.woman.social_media.twitter.href}
+                      target="_blank"
+                    >
+                      <FaXTwitter
+                        size={resizeList(40, [
+                          {
+                            width: 450,
+                            decreasePercent: 50,
+                          },
+                        ])}
+                        style={{
+                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                        }}
+                      />
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           </div>
