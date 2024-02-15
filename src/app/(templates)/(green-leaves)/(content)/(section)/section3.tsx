@@ -665,7 +665,11 @@ export default function Section3({ data }: Readonly<any>) {
                     display: "flex",
                     alignItems: "center",
                   }}
-                  onClick={() => redirectToMap("")}
+                  onClick={() =>
+                    redirectToMap(
+                      data.section3.content_box.wedding.button.map.href
+                    )
+                  }
                 >
                   <IoLocationSharp
                     style={{
@@ -912,7 +916,11 @@ export default function Section3({ data }: Readonly<any>) {
                     display: "flex",
                     alignItems: "center",
                   }}
-                  onClick={() => redirectToMap("")}
+                  onClick={() =>
+                    redirectToMap(
+                      data.section3.content_box.wedding.button.map.href
+                    )
+                  }
                 >
                   <IoLocationSharp
                     style={{
