@@ -12,7 +12,9 @@ export async function generateMetadata({ params }: any): Promise<Metadata> {
       data: {
         data: { metadata },
       },
-    } = await axios.get(baseUrl + "/v1/invitation/" + params.slug);
+    } = await axios.get(
+      baseUrl + "/v1/invitation/" + params.slug + "/metadata"
+    );
 
     console.log(metadata);
     return {
