@@ -1,18 +1,19 @@
 "use client";
 import { formatInvitationName } from "@/helpers/formatInvitationName";
-import useGetData from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
 import { useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { useGetData } from "@/hooks/useGetData";
 
 interface Props {
   showOpening: boolean;
   showContent: boolean;
   setShowOpening: Dispatch<SetStateAction<boolean>>;
   setShowContent: Dispatch<SetStateAction<boolean>>;
+  data: any;
 }
 
 const Opening: NextPage<Props> = ({
@@ -20,6 +21,7 @@ const Opening: NextPage<Props> = ({
   showContent,
   setShowOpening,
   setShowContent,
+  data,
 }) => {
   const [windowWidth, setWindowWidth] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -96,12 +98,12 @@ const Opening: NextPage<Props> = ({
     };
   }, [showContent]);
 
-  const dataKonsumen: Data = useGetData();
+  // const dataKonsumen: Data = useGetData();
 
-  const { data } = dataKonsumen;
+  // const { data } = dataKonsumen;
 
-  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
-  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
+  // const mempelaiPria = data?.mempelaiPria?.namaLengkap;
+  // const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
 
   return (
     // <div>tes</div>
@@ -112,7 +114,13 @@ const Opening: NextPage<Props> = ({
         transition: "ease-in 300ms",
         width: "100%",
         height: "100vh",
-        backgroundColor: "#e9ede8",
+        backgroundColor: data.theme?.background.colors.color1 || "#e9ede8",
+        backgroundImage: `url('${
+          windowWidth > 900
+            ? data.opening.theme?.background || "/bg-section1.webp"
+            : data.opening.theme?.background_mobile ||
+              "/images/bg-section1-mobile.webp"
+        }')`,
         backgroundSize: "cover !important",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -120,9 +128,9 @@ const Opening: NextPage<Props> = ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 20,
+        // zIndex: 20,
       }}
-      className={`bg-cover bg-no-repeat bg-center bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')] px-6 text-center`}
+      className={`bg-cover bg-no-repeat bg-center px-6 text-center`}
     >
       <img
         data-aos="zoom-in"
@@ -138,8 +146,19 @@ const Opening: NextPage<Props> = ({
               decresePercent: 30,
             },
           ]),
+          height: resizeList(216, [
+            {
+              width: 450,
+              decresePercent: 50,
+            },
+            {
+              width: 700,
+              decresePercent: 30,
+            },
+          ]),
+          objectFit: "cover",
         }}
-        src="/img1-squere.jpeg"
+        src={data.opening.couple_picture}
         alt=""
       />
       <h2
@@ -155,7 +174,7 @@ const Opening: NextPage<Props> = ({
             },
           ]),
           fontWeight: 400,
-          color: "#85865f",
+          color: data.theme?.font.colors.color1 || "#85865f",
           fontFamily: "Josefin Sans",
           margin: resizeList(20, [
             {
@@ -169,7 +188,7 @@ const Opening: NextPage<Props> = ({
           ]),
         }}
       >
-        The Wedding of
+        {data.opening.text_title}
       </h2>
       <h2
         style={{
@@ -184,17 +203,17 @@ const Opening: NextPage<Props> = ({
             },
           ]),
           fontWeight: 600,
-          color: "#4f583d",
+          color: data.theme?.font.colors.color2 || "#4f583d",
           fontFamily: "Cormorant Garamond",
           margin: 0,
         }}
       >
         {windowWidth < 768 ? (
           <>
-            {mempelaiPria} <br /> & <br /> {mempelaiWanita}
+            {data?.man} <br /> & <br /> {data?.woman}
           </>
         ) : (
-          `${mempelaiPria} & ${mempelaiWanita}`
+          data?.opening.couple_name
         )}
       </h2>
       <h3
@@ -210,7 +229,7 @@ const Opening: NextPage<Props> = ({
             },
           ]),
           fontWeight: 400,
-          color: "#8fa6ac",
+          color: data.theme?.font.colors.color3 || "#8fa6ac",
           fontFamily: "Josefin Sans",
           margin: `${resizeList(30, [
             {
@@ -224,7 +243,7 @@ const Opening: NextPage<Props> = ({
           ])}px 0px`,
         }}
       >
-        Kepada Bpk/Ibu/Saudara/i
+        {data.opening.text_to}
       </h3>
       <h2
         style={{
@@ -239,7 +258,7 @@ const Opening: NextPage<Props> = ({
             },
           ]),
           fontWeight: 400,
-          color: "#8fa6ac",
+          color: data.theme?.font.colors.color3 || "#8fa6ac",
           fontFamily: "Josefin Sans",
           marginBottom: 40,
         }}
@@ -279,7 +298,7 @@ const Opening: NextPage<Props> = ({
           ]),
           fontWeight: 400,
           fontFamily: "Josefin Sans",
-          backgroundColor: "#8a584c",
+          backgroundColor: data.theme?.button.colors.color1 || "#8a584c",
           borderRadius: 100,
           color: "white",
           fill: "white",
@@ -293,7 +312,7 @@ const Opening: NextPage<Props> = ({
           setShowContent(true);
         }}
       >
-        Buka Undangan
+        {data.opening.text_button}
       </button>
     </div>
   );

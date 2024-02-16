@@ -8,7 +8,7 @@ import ButtonBase from "@/components/ButtonBase";
 import "react-toastify/dist/ReactToastify.css";
 import { urlWA } from "@/lib/constants";
 
-export default function Section8({ data }: Readonly<Data>) {
+export default function Section8({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const GiftCard = ({
@@ -19,6 +19,7 @@ export default function Section8({ data }: Readonly<Data>) {
     recipientName = "",
     address = "",
     nomorWa = "",
+    copyText = "Salin",
   }: IGiftCard) => {
     const handleCopy = (textToCopy: string) => {
       navigator.clipboard.writeText(textToCopy);
@@ -133,7 +134,7 @@ export default function Section8({ data }: Readonly<Data>) {
         >
           {!isGift && (
             <ButtonBase
-              text="Salin"
+              text={copyText}
               isLink={false}
               onClick={() => handleCopy(rekNumber)}
             />
@@ -207,7 +208,7 @@ export default function Section8({ data }: Readonly<Data>) {
               className="font-cormorantGaramond font-semibold"
               data-aos="fade-up"
             >
-              Beri Hadiah
+              {data.section8.text_title}
             </div>
             <div
               style={{
@@ -227,26 +228,30 @@ export default function Section8({ data }: Readonly<Data>) {
               className="font-josefinSans"
               data-aos="fade-up"
             >
-              Kehadiran Anda merupakan hadiah terindah. Namun, apabila Anda
-              memberikan tanda kasih kepada kami, dapat melalui fitur di bawah
-              ini:
+              {data.section8.text_subtitle}
             </div>
           </div>
           <div style={{ width: "100%", margin: "50px 0" }} data-aos="fade-up">
-            <GiftCard
-              isGift={false}
-              bank={namaBankPria}
-              rekName={namaMempelaiPria}
-              rekNumber={nomorRekeningPria}
-              nomorWa={nomorWaPria}
-            />
+            {data.section8.content_box.map(
+              ({ name, no, title, button }: any) => (
+                <GiftCard
+                  isGift={false}
+                  bank={title}
+                  rekName={name}
+                  rekNumber={no}
+                  nomorWa={""}
+                  copyText={button.copy.text}
+                />
+              )
+            )}
+            {/* 
             <GiftCard
               isGift={false}
               bank={namaBankWanita}
               rekName={namaMempelaiWanita}
               rekNumber={nomorRekeningWanita}
               nomorWa={nomorWaWanita}
-            />
+            /> */}
           </div>
           {/* <div className="w-full lg:w-[500px]">
             <div

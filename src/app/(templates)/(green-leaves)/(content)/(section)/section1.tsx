@@ -1,7 +1,7 @@
 import useResizeFont from "@/hooks/useResize";
 import { Data } from "@/interfaces/dataInterfaces";
 
-export default function Section1({ data }: Readonly<Data>) {
+export default function Section1({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
   const fontSizeTitle = resizeList(40, [
@@ -19,19 +19,24 @@ export default function Section1({ data }: Readonly<Data>) {
     { width: 700, decreasePercent: 40 },
   ]);
 
-  const mempelaiPria = data?.mempelaiPria?.namaLengkap;
-  const mempelaiWanita = data?.mempelaiWanita?.namaLengkap;
-
   return (
     <div
       id="section1"
-      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-center bg-[url('/images/bg-section1-mobile.webp')] md:bg-[url('/bg-section1.webp')]"
+      style={{
+        backgroundImage: `url("${
+          windowWidth > 900
+            ? data.section1.theme?.background || "/bg-section1.webp"
+            : data.section1.theme?.background_mobile ||
+              "/images/bg-section1-mobile.webp"
+        }")`,
+      }}
+      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-center"
     >
       <h2
         className="font-josefinSans text-[#CEB793] font-semibold leading-53 mb-2"
         style={{ fontSize: fontSizeTitle }}
       >
-        The Wedding of
+        {data.section1.text_title}
       </h2>
       <h1
         className="font-cormorantGaramond text-[#8FA6AC] font-extrabold leading-none m-4"
@@ -39,17 +44,17 @@ export default function Section1({ data }: Readonly<Data>) {
       >
         {windowWidth < 768 ? (
           <>
-            {mempelaiPria} <br /> & <br /> {mempelaiWanita}
+            {data.man} <br /> & <br /> {data.woman}
           </>
         ) : (
-          `${mempelaiPria} & ${mempelaiWanita}`
+          data.section1.couple_name
         )}
       </h1>
       <h3
         className="font-cormorantGaramond text-[#CEB793] font-light leading-45"
         style={{ fontSize: fontSizeDate }}
       >
-        03.02.2024
+        {data.section1.formatted.date}
       </h3>
     </div>
   );
