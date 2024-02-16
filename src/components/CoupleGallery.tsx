@@ -1,4 +1,7 @@
-import React from "react";
+"use client";
+
+import { useGetCouple } from "@/hooks/landing-page/useCouple";
+import React, { useEffect } from "react";
 
 const CoupleGallery = () => {
   const weddings = [
@@ -56,6 +59,10 @@ const CoupleGallery = () => {
     },
     // Tambahkan data card lain di sini
   ];
+
+  useEffect(() => {
+    useGetCouple();
+  }, []);
 
   return (
     <div className="max-w-7xl mx-4 md:mx-auto my-20 bg-white rounded-lg flex flex-col justify-center items-center w-auto md:w-full text-pink-500">

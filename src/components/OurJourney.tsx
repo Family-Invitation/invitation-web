@@ -1,9 +1,15 @@
-import React from "react";
+"use client";
+
+import React, { useEffect } from "react";
 import { GiBigDiamondRing } from "react-icons/gi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { IoMdPersonAdd } from "react-icons/io";
+import { useGetOurJourney } from "@/hooks/landing-page/useOurJourney";
 
 const OurJourney = () => {
+  useEffect(() => {
+    useGetOurJourney();
+  }, []);
   return (
     <div className="max-w-7xl mx-4 md:mx-auto my-14 md:my-20 bg-pink-500 p-10 rounded-lg flex flex-col justify-center items-center text-white w-auto md:w-full">
       <h2 className="w-full text-center text-3xl md:text-5xl font-philosopher tracking-wider font-semibold">

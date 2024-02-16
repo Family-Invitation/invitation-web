@@ -1,12 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import { useGetTestimoni } from "@/hooks/landing-page/useTestimoni";
+import React, { useEffect, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Testimoni = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
   const dataImages = [
     {
       id: 1,
@@ -71,6 +73,10 @@ const Testimoni = () => {
       // partialVisibilityGutter: 20,
     },
   };
+
+  useEffect(() => {
+    useGetTestimoni();
+  }, []);
 
   return (
     <div className="bg-pink-100">
