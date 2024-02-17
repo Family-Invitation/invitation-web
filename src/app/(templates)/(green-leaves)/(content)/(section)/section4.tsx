@@ -2,8 +2,12 @@ import Carousel from "@/components/Carousel";
 import { Data } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 
-export default function Section4({ data }: Readonly<Data>) {
+export default function Section4({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
+
+  const { stories, text_title } = data?.section4 ?? null;
+
+  if (!stories) return null;
 
   return (
     <div
@@ -122,7 +126,7 @@ export default function Section4({ data }: Readonly<Data>) {
           How it all started
         </div> */}
         <div className="w-full">
-          <Carousel />
+          <Carousel stories={stories} />
         </div>
       </div>
       <div // Footer

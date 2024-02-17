@@ -7,7 +7,7 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-const ResponsiveCarousel: React.FC = () => {
+const ResponsiveCarousel = ({ stories }: { stories: any }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const dataImages: ICarouselItem[] = [
@@ -57,11 +57,11 @@ const ResponsiveCarousel: React.FC = () => {
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
-      items: 3,
+      items: 2,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 2,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -101,22 +101,22 @@ const ResponsiveCarousel: React.FC = () => {
         slidesToSlide={1}
         swipeable
       >
-        {dataImages.map((data, index) => (
+        {stories.map((item: any) => (
           <div
-            key={data?.id}
+            key={item?.date}
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
-              padding: "70px",
             }}
+            className="p-8"
           >
-            <div
+            {/* <div
               style={{
                 width: "100%",
                 height: "50px",
-                backgroundColor: "white",
+                // backgroundColor: "white",
                 marginBottom: "30px",
                 color: "#8A594C",
                 display: "flex",
@@ -124,10 +124,11 @@ const ResponsiveCarousel: React.FC = () => {
                 alignItems: "center",
                 position: "relative",
                 fontStyle: "italic",
+                fontWeight: 600,
               }}
-              className="font-josefinSans"
+              className="font-josefinSan text-gray-800 text-2xl"
             >
-              {data.label}
+              {item.title}
               <IoMdArrowDropdown
                 color="white"
                 size={26}
@@ -137,10 +138,47 @@ const ResponsiveCarousel: React.FC = () => {
                   marginLeft: "5px",
                 }}
               />
+            </div> */}
+            <div className="rounded-lg overflow-auto shadow-lg bg-white p-6 relative  h-[300px] rounded-bl-[50px] rounded-tr-[50px] w-full">
+              <div
+                style={{
+                  width: "100%",
+                  height: "50px",
+
+                  color: "#8A594C",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  position: "relative",
+                  fontStyle: "italic",
+                  fontWeight: 600,
+                }}
+                className="font-josefinSan text-gray-800 text-2xl md:mb-8 mb-4"
+              >
+                {item.title}
+                {/* <IoMdArrowDropdown
+                color="white"
+                size={26}
+                style={{
+                  position: "absolute",
+                  bottom: "-16px",
+                  marginLeft: "5px",
+                }}
+              /> */}
+              </div>
+              <p
+                style={{ fontFamily: ` "Droid Serif", "Sans-serif"` }}
+                className="text-gray-800 text-lg italic"
+              >
+                "{item?.content}"
+              </p>
+              <p className="font-cormorantGaramond text-gray-600 text-md mt-6 float-right">
+                {item?.date}
+              </p>
             </div>
-            <img
-              key={data?.id}
-              src={data.imageUrl}
+            {/* <img
+              key={item?.id}
+              src={item.imageUrl}
               alt={`Slide ${index + 1}`}
               style={{
                 width: "70%",
@@ -148,13 +186,13 @@ const ResponsiveCarousel: React.FC = () => {
                 borderRadius: "50%",
                 aspectRatio: "1/1",
               }}
-            />
-            <div
+            /> */}
+            {/* <div
               style={{ color: "white", marginTop: "30px", fontSize: "30px" }}
               className="font-cormorantGaramond"
             >
-              {data.year}
-            </div>
+              {item?.date}
+            </div> */}
           </div>
         ))}
       </Carousel>

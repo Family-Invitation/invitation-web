@@ -24,13 +24,17 @@ export default function Content({
       <Section1 data={data} />
       <Section2 data={data} />
       <Section3 data={data} />
-      {/* <Section4 data={data} /> */}
+      <Section4 data={data} />
       <Section5 data={data} />
       <Section6 data={data} />
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
-      <MusicPlayer showContent={showContent} audioSource={data.music.url} />
+      <MusicPlayer
+        showContent={showContent}
+        audioSource={data.music.url}
+        template={""}
+      />
       <BottomNavbar data={data} />
       <div
         style={{
