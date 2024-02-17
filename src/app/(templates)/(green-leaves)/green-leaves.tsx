@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Content from "./(content)/content";
 import Opening from "./(opening)/opening";
 import AOS from "aos";
+import { QueryClientProvider, queryClient } from "../../../../react-query";
 
 export default function GreenLeaves({ data }: any) {
   const [showOpening, setShowOpening] = useState(false);
@@ -13,15 +14,17 @@ export default function GreenLeaves({ data }: any) {
   }, []);
 
   return (
-    <main>
-      <Opening
-        showOpening={showOpening}
-        showContent={showContent}
-        setShowOpening={setShowOpening}
-        setShowContent={setShowContent}
-        data={data}
-      />
-      {showContent && <Content showContent={showContent} data={data} />}
-    </main>
+    <QueryClientProvider client={queryClient}>
+      <main>
+        <Opening
+          showOpening={showOpening}
+          showContent={showContent}
+          setShowOpening={setShowOpening}
+          setShowContent={setShowContent}
+          data={data}
+        />
+        {showContent && <Content showContent={showContent} data={data} />}
+      </main>
+    </QueryClientProvider>
   );
 }
