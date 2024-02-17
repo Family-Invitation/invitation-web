@@ -5,7 +5,7 @@ import useResizeFont from "@/hooks/useResize";
 export default function Section4({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
-  const { stories, text_title } = data?.section4 ?? null;
+  const { stories, text_title, text_subtitle } = data?.section4 ?? {};
 
   if (!stories) return null;
 
@@ -84,7 +84,7 @@ export default function Section4({ data }: Readonly<any>) {
             margin: 0,
           }}
         >
-          The Journey
+          {text_title || "The Journey"}
         </h3>
         <h2
           style={{
@@ -105,7 +105,7 @@ export default function Section4({ data }: Readonly<any>) {
             margin: 0,
           }}
         >
-          Our Love Story
+          {text_subtitle || "Our Love Story"}
         </h2>
         {/* <div // Text
           style={{
