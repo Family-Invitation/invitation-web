@@ -13,12 +13,12 @@ export default function Section4({ data }: Readonly<any>) {
     <div
       style={{
         width: "100%",
-        minHeight: "100vh",
         backgroundColor: "#84865f",
         display: "flex",
         flexDirection: "column",
         fontFamily: "Josefin Sans",
       }}
+      className="min-h-[80vh] md:min-h-screen"
     >
       <div // Header
       >

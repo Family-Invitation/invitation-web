@@ -85,7 +85,7 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
     >
       <Carousel
         responsive={responsive}
-        infinite
+        infinite={false}
         containerClass="carousel-container"
         showDots={false}
         ssr
@@ -110,7 +110,7 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
               justifyContent: "center",
               alignItems: "center",
             }}
-            className="p-8"
+            className="p-6 md:p-8 w-full"
           >
             {/* <div
               style={{
