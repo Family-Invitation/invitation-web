@@ -1,16 +1,10 @@
 "use client";
 
-import Opening from "../../(templates)/(green-leaves)/(opening)/opening";
-import Content from "../../(templates)/(green-leaves)/(content)/content";
 import { useEffect, useState } from "react";
-import { Kafka } from "kafkajs";
-import useWebSocket, { useEventSource } from "react-use-websocket";
-import { QueryClientProvider, queryClient } from "../../../../react-query";
 
-import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
 import { useGetDataV2 } from "@/hooks/useGetData";
 import GreenLeaves from "@/app/(templates)/(green-leaves)/green-leaves";
+import ReactLoading from "react-loading";
 
 export default function Page({ params }: any) {
   const [data, setData] = useState(null);
@@ -30,16 +24,26 @@ export default function Page({ params }: any) {
     getData(params.slug);
   }, []);
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      {TemplateSelection(data)}
-    </QueryClientProvider>
-  );
+  if (notFound) {
+    return <NotFound />;
+  }
+
+  return <TemplateSelection data={data} />;
 }
 
-function TemplateSelection(data: any) {
-  if (!data) {
-    return <></>;
+function TemplateSelection({ data }: any) {
+  const [isloaded, setIsLoaded] = useState(false);
+  useEffect(() => {
+    // console.log("Test", data);
+    if (data) {
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 1000);
+    }
+  }, [data]);
+
+  if (!isloaded) {
+    return <Loading />;
   }
 
   switch (data.template as string) {
@@ -47,5 +51,38 @@ function TemplateSelection(data: any) {
       return <GreenLeaves data={data} />;
   }
 
-  return <></>;
+  return <NotFound />;
+}
+
+function Loading() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#fff",
+      }}
+    >
+      <ReactLoading delay={0} type="bubbles" color="rgb(128, 80, 68)" />
+    </div>
+  );
+}
+
+function NotFound() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100vh",
+        backgroundColor: "#000000",
+        color: "white",
+      }}
+    >
+      <h1>404 | Not Found</h1>
+    </div>
+  );
 }
