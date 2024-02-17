@@ -1,12 +1,10 @@
 "use client";
 import { formatInvitationName } from "@/helpers/formatInvitationName";
-import { Data } from "@/interfaces/dataInterfaces";
 import { NextPage } from "next";
 import { useSearchParams } from "next/navigation";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
-import { useGetData } from "@/hooks/useGetData";
 
 interface Props {
   showOpening: boolean;
@@ -157,6 +155,7 @@ const Opening: NextPage<Props> = ({
             },
           ]),
           objectFit: "cover",
+          backgroundColor: "grey",
         }}
         src={data.opening.couple_picture}
         alt=""
