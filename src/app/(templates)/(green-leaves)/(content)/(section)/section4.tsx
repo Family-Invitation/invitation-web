@@ -129,7 +129,7 @@ export default function Section4({ data }: Readonly<any>) {
           <Carousel stories={stories} />
         </div>
       </div>
-      <div // Footer
+      {/* <div // Footer
         style={
           {
             //   height: 180,
@@ -155,7 +155,7 @@ export default function Section4({ data }: Readonly<any>) {
             speechify-initial-font-size="16px"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 }

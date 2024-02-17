@@ -144,16 +144,14 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
                 style={{
                   width: "100%",
                   height: "50px",
-
                   color: "#8A594C",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
                   position: "relative",
-                  fontStyle: "italic",
                   fontWeight: 600,
                 }}
-                className="font-josefinSan text-gray-800 text-2xl md:mb-8 mb-4"
+                className="font-josefinSans text-gray-800 text-2xl md:mb-8 mb-4"
               >
                 {item.title}
                 {/* <IoMdArrowDropdown
