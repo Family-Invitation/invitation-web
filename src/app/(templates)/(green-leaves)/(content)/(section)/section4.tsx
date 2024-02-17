@@ -2,8 +2,12 @@ import Carousel from "@/components/Carousel";
 import { Data } from "@/interfaces/dataInterfaces";
 import useResizeFont from "@/hooks/useResize";
 
-export default function Section4({ data }: Readonly<Data>) {
+export default function Section4({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
+
+  const { stories, text_title, text_subtitle } = data?.section4 ?? {};
+
+  if (!stories) return null;
 
   return (
     <div
@@ -80,7 +84,7 @@ export default function Section4({ data }: Readonly<Data>) {
             margin: 0,
           }}
         >
-          The Journey
+          {text_title || "The Journey"}
         </h3>
         <h2
           style={{
@@ -101,7 +105,7 @@ export default function Section4({ data }: Readonly<Data>) {
             margin: 0,
           }}
         >
-          Our Love Story
+          {text_subtitle || "Our Love Story"}
         </h2>
         {/* <div // Text
           style={{
@@ -122,10 +126,10 @@ export default function Section4({ data }: Readonly<Data>) {
           How it all started
         </div> */}
         <div className="w-full">
-          <Carousel />
+          <Carousel stories={stories} />
         </div>
       </div>
-      <div // Footer
+      {/* <div // Footer
         style={
           {
             //   height: 180,
@@ -151,7 +155,7 @@ export default function Section4({ data }: Readonly<Data>) {
             speechify-initial-font-size="16px"
           ></path>
         </svg>
-      </div>
+      </div> */}
     </div>
   );
 }

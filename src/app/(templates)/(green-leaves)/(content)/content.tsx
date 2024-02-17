@@ -24,7 +24,7 @@ export default function Content({
       <Section1 data={data} />
       <Section2 data={data} />
       <Section3 data={data} />
-      {/* <Section4 data={data} /> */}
+      <Section4 data={data} />
       <Section5 data={data} />
       <Section6 data={data} />
       <Section7 data={data} />
