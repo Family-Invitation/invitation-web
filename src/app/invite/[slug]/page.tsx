@@ -62,7 +62,7 @@ function Loading() {
         justifyContent: "center",
         alignItems: "center",
         height: "100vh",
-        backgroundColor: "#fff2da",
+        backgroundColor: "#fff",
       }}
     >
       <ReactLoading delay={0} type="bubbles" color="rgb(128, 80, 68)" />
