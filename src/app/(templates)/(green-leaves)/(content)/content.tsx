@@ -30,11 +30,7 @@ export default function Content({
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
-      <MusicPlayer
-        showContent={showContent}
-        audioSource={data.music.url}
-        template={""}
-      />
+      <MusicPlayer showContent={showContent} audioSource={data.music.url} />
       <BottomNavbar data={data} />
       <div
         style={{
