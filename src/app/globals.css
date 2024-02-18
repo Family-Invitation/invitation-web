@@ -49,10 +49,10 @@ main {
 }
 
 .react-multiple-carousel__arrow--right {
-  right: -4px !important;
+  right: -8px !important;
   color: "#8A594C";
 }
 
 .react-multiple-carousel__arrow--left {
-  left: -4px !important;
+  left: -8px !important;
 }
