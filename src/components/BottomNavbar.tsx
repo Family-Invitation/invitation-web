@@ -22,13 +22,14 @@ const Menu = ({ to, children }: IMenu) => {
     </ScrollLink>
   );
 };
-const BottomNavbar = ({ data }: any) => {
+const BottomNavbar = ({ data, template }: any) => {
   const { resizeList } = useResizeFont();
 
   const fontSizeMenu = resizeList(40, [
     // { width: 450, decreasePercent: 50 },
     { width: 700, decreasePercent: 30 },
   ]);
+
   return (
     <nav
       style={{
@@ -37,6 +38,7 @@ const BottomNavbar = ({ data }: any) => {
         left: "50%",
         transform: "translateX(-50%)",
         backgroundColor: "#8A594C",
+        // backgroundImage: `url("/art-paper.jpg")`,
         color: "#fff",
         display: "flex",
         zIndex: "999",
@@ -80,28 +82,18 @@ const BottomNavbar = ({ data }: any) => {
           </div>
         </Menu>
         <Menu to="section2">
-          {/* <div className="w-6 lg:w-10">
-          </div> */}
           <FaRestroom color="#CEB793" size={fontSizeMenu} />
         </Menu>
         <Menu to="section3">
-          {/* <div className="w-6 lg:w-10">
-          </div> */}
           <FaCalendarAlt color="#CEB793" size={fontSizeMenu} />
         </Menu>
         <Menu to="section5">
-          {/* <div className="w-6 lg:w-10">
-          </div> */}
           <FaCameraRetro color="#CEB793" size={fontSizeMenu} />
         </Menu>
         <Menu to="section7">
-          {/* <div className="w-6 lg:w-10">
-          </div> */}
           <FaInbox color="#CEB793" size={fontSizeMenu} />
         </Menu>
         <Menu to="section8">
-          {/* <div className="w-6 lg:w-10">
-          </div> */}
           <FaGift color="#CEB793" size={fontSizeMenu} />
         </Menu>
       </ul>

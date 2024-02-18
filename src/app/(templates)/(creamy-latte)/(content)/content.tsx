@@ -19,6 +19,7 @@ export default function Content({
   showContent: boolean;
   data: any;
 }) {
+  console.log({ data });
   return (
     <div id="content" style={{ width: "100%", zIndex: 10 }}>
       <Section1 data={data} />
@@ -30,9 +31,13 @@ export default function Content({
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
-      <MusicPlayer showContent={showContent} audioSource={data.music.url} template={data?.template}/>
-      <BottomNavbar data={data} />
-      <div
+      <MusicPlayer
+        showContent={showContent}
+        audioSource={data.music.url}
+        template={""}
+      />
+      <BottomNavbar data={data} template={""} />
+      {/* <div
         style={{
           width: "100%",
           height: "100vh",
@@ -53,7 +58,7 @@ export default function Content({
               "linear-gradient(180deg, #00000000 0%, #000000 100%)",
           }}
         ></div>
-      </div>
+      </div> */}
     </div>
   );
 }

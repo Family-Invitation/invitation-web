@@ -4,12 +4,16 @@ import { FaPlay, FaPause } from "react-icons/fa";
 const MusicPlayer = ({
   showContent,
   audioSource,
+  template,
 }: {
   showContent: boolean;
   audioSource: string;
+  template: string;
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const mainColor = template === "green-leaves" ? "#4F583D" : "#D2B591";
 
   const handleTogglePlayPause = () => {
     if (audioRef.current) {
@@ -56,9 +60,9 @@ const MusicPlayer = ({
         onClick={handleTogglePlayPause}
         style={{
           backgroundColor: "white",
-          color: "#4F583D",
+          color: mainColor,
           borderRadius: "50%",
-          border: "5px solid #4F583D",
+          border: `5px solid ${mainColor}`,
           cursor: "pointer",
           outline: "none",
         }}

@@ -16,7 +16,7 @@ export default function Section5({ data }: Readonly<any>) {
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundImage: `linear-gradient(180deg, #FFFFFFFF 10%, #FFFFFF00 100%), url("https://i0.wp.com/zeinvitation.com/wp-content/uploads/2022/07/BACKGROUND_LEAVES_WATERCOLOR-01-Vertical-scaled.jpg?fit=1707%2C2560&ssl=1")`,
+        backgroundImage: `url("/art-paper.jpg")`,
         zIndex: 0,
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -62,7 +62,7 @@ export default function Section5({ data }: Readonly<any>) {
       </h3> */}
       <h2
         style={{
-          color: "#4F583D",
+          color: "#333",
           fontFamily: "Cormorant Garamond",
           fontSize: resizeList(60, [
             {
@@ -87,7 +87,7 @@ export default function Section5({ data }: Readonly<any>) {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          color: "#CEB793",
+          color: "#333",
           fontFamily: "Josefin Sans",
           fontSize: resizeList(20, [
             {
@@ -111,6 +111,37 @@ export default function Section5({ data }: Readonly<any>) {
         ></iframe> */}
 
         <div className="grid grid-cols-2 gap-4 md:gap-5 mx-6 md:mx-0 pt-3">
+          {/* <Gallery id="my-gallery">
+            {data.section5.pictures.map(
+              ({ url: imgUrl }: { url: string }, i: number) => (
+                <Item<HTMLImageElement>
+                  original={imgUrl}
+                  thumbnail={imgUrl}
+                  width="1600"
+                  height="1600"
+                  alt="Photo of seashore by Folkert Gorter"
+                  // You can pass string id
+                  id={i}
+                >
+                  {({ ref, open }) => (
+                    <img
+                      style={{
+                        cursor: "pointer",
+                        backgroundColor: "#819575",
+                        borderRadius: "3%",
+                        objectFit: "cover",
+                      }}
+                      src={imgUrl}
+                      ref={ref}
+                      onClick={open}
+                      className="rounded-md p-1"
+                    />
+                  )}
+                </Item>
+              )
+            )}
+          </Gallery> */}
+
           <GalleryComponent data={data} />
         </div>
       </div>
