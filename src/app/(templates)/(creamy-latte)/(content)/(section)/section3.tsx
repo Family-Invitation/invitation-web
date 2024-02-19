@@ -64,25 +64,25 @@ export default function Section3({ data }: Readonly<any>) {
     >
       <div
         style={{
-          margin: "100px auto",
+          // margin: "100px auto",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
         }}
-        className="max-w-7xl bg-[#75634e82] rounded-t-[800px] rounded-b-[300px] px-14"
+        className="max-w-7xl bg-[#75634e82] rounded-t-[800px] rounded-b-[500px] md:rounded-b-[300px] px-0 md:px-14 md:mx-auto mx-6 md:my-[100px] my-12"
       >
         <div
           style={{
-            margin: "100px auto",
+            // margin: "100px auto",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
           }}
-          className="my-8"
+          className="my-8 md:my-[100px] mx-auto"
         >
           <h3
             style={{
-              marginTop: "20%",
+              // marginTop: "20%",
               color: "#fff",
               fontFamily: "Josefin Sans",
               fontSize: resizeList(30, [
@@ -95,9 +95,10 @@ export default function Section3({ data }: Readonly<any>) {
                   decreasePercent: 30,
                 },
               ]),
-              margin: 0,
+              // margin: 0,
             }}
             data-aos="zoom-in"
+            className="mx-0 mt-6 md:mt-0"
           >
             {data.section3.text_countdown}
           </h3>
@@ -364,9 +365,7 @@ export default function Section3({ data }: Readonly<any>) {
             <strong>{data.section3.formatted.date}</strong>
           </div>
           <div // Space
-            style={{
-              height: 100,
-            }}
+            className="h-12 md:h-[100px]"
           />
           <div // Picture & Detail
             style={{

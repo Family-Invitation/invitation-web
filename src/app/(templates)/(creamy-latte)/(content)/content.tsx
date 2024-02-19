@@ -19,10 +19,24 @@ export default function Content({
   showContent: boolean;
   data: any;
 }) {
-  console.log({ data });
   return (
     <div id="content" style={{ width: "100%", zIndex: 10 }}>
       <Section1 data={data} />
+      <div className=" relative">
+        <div className="h-full rotate-180 w-full absolute inset-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+            fill="white"
+          >
+            <path
+              className="elementor-shape-fill"
+              d="M194,99c186.7,0.7,305-78.3,306-97.2c1,18.9,119.3,97.9,306,97.2c114.3-0.3,194,0.3,194,0.3s0-91.7,0-100c0,0,0,0,0-0 L0,0v99.3C0,99.3,79.7,98.7,194,99z"
+            ></path>
+          </svg>
+        </div>
+      </div>
       <Section2 data={data} />
       <Section3 data={data} />
       <Section4 data={data} />
@@ -34,9 +48,9 @@ export default function Content({
       <MusicPlayer
         showContent={showContent}
         audioSource={data.music.url}
-        template={""}
+        template={data?.template ?? ""}
       />
-      <BottomNavbar data={data} template={""} />
+      <BottomNavbar data={data} template={data?.template ?? ""} />
       {/* <div
         style={{
           width: "100%",

@@ -51,7 +51,7 @@ export default function Section8({ data }: Readonly<any>) {
             <FaGift size={60} color="#4F583D" />
             <div
               style={{
-                color: "#4F583D",
+                color: "#333",
                 marginTop: "20px",
                 fontSize: resizeList(30, [
                   {
@@ -65,7 +65,7 @@ export default function Section8({ data }: Readonly<any>) {
             </div>
             <div
               style={{
-                color: "#85865F",
+                color: "#333",
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
@@ -83,7 +83,7 @@ export default function Section8({ data }: Readonly<any>) {
             {/* <Image src="/barcode.webp" alt="barcode" width={200} height={200} /> */}
             <div
               style={{
-                color: "#4F583D",
+                color: "#333",
                 marginTop: "20px",
                 fontSize: resizeList(30, [
                   {
@@ -97,7 +97,7 @@ export default function Section8({ data }: Readonly<any>) {
             </div>
             <div
               style={{
-                color: "#85865F",
+                color: "#333",
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
@@ -111,7 +111,7 @@ export default function Section8({ data }: Readonly<any>) {
             </div>
             <div
               style={{
-                color: "#85865F",
+                color: "#333",
                 marginTop: "20px",
                 fontSize: resizeList(20, [
                   {
@@ -159,7 +159,7 @@ export default function Section8({ data }: Readonly<any>) {
       style={{
         width: "100%",
         minHeight: "100vh",
-        backgroundColor: "#84865f",
+        backgroundColor: "#D2B591",
         zIndex: -1,
       }}
     >

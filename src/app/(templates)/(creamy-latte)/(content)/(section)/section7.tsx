@@ -92,7 +92,7 @@ export default function Section7({ data }: Readonly<any>) {
         alignItems: "center",
       }}
     >
-      <div
+      {/* <div
         style={{
           position: "absolute",
           width: "100%",
@@ -126,7 +126,7 @@ export default function Section7({ data }: Readonly<any>) {
             speechify-initial-font-size="16px"
           ></path>
         </svg>
-      </div>
+      </div> */}
       <div
         style={{
           margin: "0 auto",

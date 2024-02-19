@@ -6,6 +6,9 @@ type GalleryComponentProps = {
 };
 
 const GalleryComponent = ({ data }: GalleryComponentProps) => {
+  const templateActive = data?.template;
+  const borderColor =
+    templateActive === "green-leavess" ? "#4F583D" : "#D2B591";
   return (
     <Gallery id="my-gallery">
       {data.section5.pictures.map(
@@ -26,7 +29,8 @@ const GalleryComponent = ({ data }: GalleryComponentProps) => {
                 onClick={open}
               >
                 <img
-                  className="bg-[#819575] rounded-md p-1 transition-transform duration-300 transform hover:scale-105"
+                  style={{ background: borderColor }}
+                  className={`rounded-md p-1 transition-transform duration-300 transform`}
                   src={imgUrl}
                   ref={ref}
                   alt=""

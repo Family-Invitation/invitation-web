@@ -25,6 +25,9 @@ const Menu = ({ to, children }: IMenu) => {
 const BottomNavbar = ({ data, template }: any) => {
   const { resizeList } = useResizeFont();
 
+  const templateActive = data?.template;
+  // const
+
   const fontSizeMenu = resizeList(40, [
     // { width: 450, decreasePercent: 50 },
     { width: 700, decreasePercent: 30 },
@@ -37,8 +40,12 @@ const BottomNavbar = ({ data, template }: any) => {
         bottom: 0,
         left: "50%",
         transform: "translateX(-50%)",
-        backgroundColor: "#8A594C",
-        // backgroundImage: `url("/art-paper.jpg")`,
+        backgroundColor:
+          templateActive === "green-leaves" ? "#8A594C" : undefined,
+        backgroundImage:
+          templateActive === "creamy-latte"
+            ? `url("/art-paper.jpg")`
+            : undefined,
         color: "#fff",
         display: "flex",
         zIndex: "999",

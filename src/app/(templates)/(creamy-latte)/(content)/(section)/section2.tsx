@@ -25,21 +25,6 @@ export default function Section2({ data }: Readonly<any>) {
         backgroundPosition: "bottom center",
       }}
     >
-      <div className="relative">
-        <div className="absolute rotate-180 w-full inset-x-0 bottom-[-1px]">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            fill="white"
-          >
-            <path
-              className="elementor-shape-fill"
-              d="M194,99c186.7,0.7,305-78.3,306-97.2c1,18.9,119.3,97.9,306,97.2c114.3-0.3,194,0.3,194,0.3s0-91.7,0-100c0,0,0,0,0-0 L0,0v99.3C0,99.3,79.7,98.7,194,99z"
-            ></path>
-          </svg>
-        </div>
-      </div>
       <div
         style={{
           backgroundColor: "transparent",
@@ -52,7 +37,7 @@ export default function Section2({ data }: Readonly<any>) {
           padding: "100px 0",
         }}
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-4 md:mx-auto">
           <div // Text
             style={{
               display: "flex",
@@ -182,32 +167,33 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <img
                   style={{
-                    width: resizeList(330, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    height: resizeList(400, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    borderRadius: "25%",
+                    // width: resizeList(330, [
+                    //   {
+                    //     width: 450,
+                    //     decreasePercent: 70,
+                    //   },
+                    //   {
+                    //     width: 700,
+                    //     decreasePercent: 60,
+                    //   },
+                    // ]),
+                    // height: resizeList(400, [
+                    //   {
+                    //     width: 450,
+                    //     decreasePercent: 70,
+                    //   },
+                    //   {
+                    //     width: 700,
+                    //     decreasePercent: 60,
+                    //   },
+                    // ]),
+                    // borderRadius: "25%",
                     position: "absolute",
                     backgroundSize: "cover",
                   }}
                   src={data.section2.man.picture}
                   alt=""
+                  className="md:rounded-[30%] rounded-[40%] w-full md:px-10 px-4 h-36 md:h-[400px]"
                 />
               </div>
               <div
@@ -466,32 +452,32 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <img
                   style={{
-                    width: resizeList(330, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    height: resizeList(400, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    borderRadius: "25%",
+                    // width: resizeList(330, [
+                    //   {
+                    //     width: 450,
+                    //     decreasePercent: 70,
+                    //   },
+                    //   {
+                    //     width: 700,
+                    //     decreasePercent: 60,
+                    //   },
+                    // ]),
+                    // height: resizeList(400, [
+                    //   {
+                    //     width: 450,
+                    //     decreasePercent: 70,
+                    //   },
+                    //   {
+                    //     width: 700,
+                    //     decreasePercent: 60,
+                    //   },
+                    // ]),
                     position: "absolute",
                     backgroundSize: "cover",
                   }}
                   src={data.section2.woman.picture}
                   alt=""
+                  className="md:rounded-[30%] rounded-[40%] w-full md:px-10 px-4 h-36 md:h-[400px]"
                 />
               </div>
               <div

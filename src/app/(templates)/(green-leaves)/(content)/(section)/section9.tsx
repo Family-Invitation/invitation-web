@@ -19,7 +19,7 @@ export default function Section9({ data }: Readonly<any>) {
     <div
       style={{
         width: "100%",
-        minHeight: "60vh",
+        minHeight: "80vh",
         display: "flex",
         flexDirection: "column",
         backgroundColor: "transparent",

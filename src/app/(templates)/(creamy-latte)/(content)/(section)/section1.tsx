@@ -30,7 +30,7 @@ export default function Section1({ data }: Readonly<any>) {
               "/images/bg-section1-mobile.webp"
         }")`,
       }}
-      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-center"
+      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-center bg-fixed"
     >
       <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
       <div className="relative">
