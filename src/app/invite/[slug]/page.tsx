@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { useGetDataV2 } from "@/hooks/useGetData";
 import GreenLeaves from "@/app/(templates)/(green-leaves)/green-leaves";
 import ReactLoading from "react-loading";
+import CreamyLatte from "@/app/(templates)/(creamy-latte)/creamy-latte";
 
 export default function Page({ params }: any) {
   const [data, setData] = useState(null);
@@ -49,6 +50,8 @@ function TemplateSelection({ data }: any) {
   switch (data.template as string) {
     case "green-leaves":
       return <GreenLeaves data={data} />;
+    case "creamy-latte":
+      return <CreamyLatte data={data} />;
   }
 
   return <NotFound />;

@@ -91,7 +91,7 @@ export default function Section7({ data }: Readonly<any>) {
         alignItems: "center",
       }}
     >
-      <div
+      {/* <div
         style={{
           position: "absolute",
           width: "100%",
@@ -125,7 +125,7 @@ export default function Section7({ data }: Readonly<any>) {
             speechify-initial-font-size="16px"
           ></path>
         </svg>
-      </div>
+      </div> */}
       <div
         style={{
           margin: "0 auto",
@@ -139,7 +139,7 @@ export default function Section7({ data }: Readonly<any>) {
       >
         <h2
           style={{
-            color: "#4F583D",
+            color: "#333",
             marginTop: 24,
             fontSize: resizeList(60, [
               {
@@ -163,7 +163,7 @@ export default function Section7({ data }: Readonly<any>) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            color: "#85865F",
+            color: "#333",
             fontFamily: "Josefin Sans",
             fontSize: resizeList(20, [
               {
@@ -179,7 +179,7 @@ export default function Section7({ data }: Readonly<any>) {
         </div>
         <div
           style={{
-            backgroundColor: "#4F583DAB",
+            backgroundColor: "#D2B591",
             marginTop: "30px",
             boxSizing: "border-box",
           }}
@@ -192,6 +192,7 @@ export default function Section7({ data }: Readonly<any>) {
             style={{ width: "100%", padding: "10px" }}
             value={sender}
             onChange={(e) => setSender(e.target.value)}
+            className="input input-bordered bg-white text-black"
           />
           <textarea
             placeholder="Tulis Ucapan & Doa"
@@ -199,6 +200,7 @@ export default function Section7({ data }: Readonly<any>) {
             style={{ width: "100%", padding: "10px", margin: "30px  0" }}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className="textarea textarea-bordered bg-white text-black"
           />
           <div className="text-start">
             <ButtonBase
