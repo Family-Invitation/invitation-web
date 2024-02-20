@@ -196,11 +196,11 @@ const Opening: NextPage<Props> = ({
             fontSize: resizeList(60, [
               {
                 width: 450,
-                decresePercent: 50,
+                decresePercent: 30,
               },
               {
                 width: 700,
-                decresePercent: 30,
+                decresePercent: 20,
               },
             ]),
             fontWeight: 600,
@@ -211,7 +211,7 @@ const Opening: NextPage<Props> = ({
         >
           {windowWidth < 768 ? (
             <>
-              {data?.man} <br /> & <br /> {data?.woman}
+              {data?.man_called} & {data?.woman_called}
             </>
           ) : (
             data?.opening.couple_name

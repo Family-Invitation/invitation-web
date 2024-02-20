@@ -25,6 +25,21 @@ export default function Section2({ data }: Readonly<any>) {
         backgroundPosition: "bottom center",
       }}
     >
+      <div className=" relative">
+        <div className="h-full rotate-180 w-full absolute inset-0">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1000 100"
+            preserveAspectRatio="none"
+            fill="white"
+          >
+            <path
+              className="elementor-shape-fill"
+              d="M194,99c186.7,0.7,305-78.3,306-97.2c1,18.9,119.3,97.9,306,97.2c114.3-0.3,194,0.3,194,0.3s0-91.7,0-100c0,0,0,0,0-0 L0,0v99.3C0,99.3,79.7,98.7,194,99z"
+            ></path>
+          </svg>
+        </div>
+      </div>
       <div
         style={{
           backgroundColor: "transparent",
@@ -189,7 +204,7 @@ export default function Section2({ data }: Readonly<any>) {
                     // ]),
                     // borderRadius: "25%",
                     position: "absolute",
-                    backgroundSize: "cover",
+                    objectFit: "cover",
                   }}
                   src={data.section2.man.picture}
                   alt=""
@@ -365,6 +380,7 @@ export default function Section2({ data }: Readonly<any>) {
                         ])}
                         style={{
                           margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                          color: "#69727d",
                         }}
                       />
                     </a>
@@ -473,7 +489,7 @@ export default function Section2({ data }: Readonly<any>) {
                     //   },
                     // ]),
                     position: "absolute",
-                    backgroundSize: "cover",
+                    objectFit: "cover",
                   }}
                   src={data.section2.woman.picture}
                   alt=""
@@ -634,6 +650,7 @@ export default function Section2({ data }: Readonly<any>) {
                         ])}
                         style={{
                           margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                          color: "#69727d",
                         }}
                       />
                     </a>

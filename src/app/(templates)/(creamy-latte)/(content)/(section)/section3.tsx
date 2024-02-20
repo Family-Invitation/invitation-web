@@ -398,11 +398,14 @@ export default function Section3({ data }: Readonly<any>) {
                 boxSizing: "border-box",
                 padding: "100px 0",
                 opacity: 1,
-                overflow: "hidden",
+                // overflow: "hidden",
                 position: "relative",
+                color: "white",
               }}
             >
-              <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
+              {/* <div
+                className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"
+              ></div> */}
               <div // Text
                 style={{
                   //   backgroundColor: "red",

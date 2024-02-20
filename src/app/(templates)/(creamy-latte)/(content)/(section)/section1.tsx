@@ -4,19 +4,19 @@ import { Data } from "@/interfaces/dataInterfaces";
 export default function Section1({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
-  const fontSizeTitle = resizeList(40, [
+  const fontSizeTitle = resizeList(30, [
     { width: 450, decreasePercent: 50 },
-    { width: 700, decreasePercent: 30 },
+    { width: 900, decreasePercent: 40 },
   ]);
 
   const fontSizeDate = resizeList(45, [
     { width: 450, decreasePercent: 50 },
-    { width: 700, decreasePercent: 30 },
+    { width: 900, decreasePercent: 30 },
   ]);
 
   const fontSizeMempelai = resizeList(84, [
     { width: 450, decreasePercent: 50 },
-    { width: 700, decreasePercent: 40 },
+    { width: 900, decreasePercent: 40 },
   ]);
 
   return (
@@ -30,10 +30,10 @@ export default function Section1({ data }: Readonly<any>) {
               "/images/bg-section1-mobile.webp"
         }")`,
       }}
-      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center items-center text-center bg-fixed"
+      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center text-center bg-fixed"
     >
       <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
-      <div className="relative">
+      <div className="relative" style={{ transform: "translateY(150px)" }}>
         <h2
           className="font-josefinSans text-white font-semibold leading-53 mb-2"
           style={{ fontSize: fontSizeTitle }}
@@ -41,12 +41,12 @@ export default function Section1({ data }: Readonly<any>) {
           {data.section1.text_title}
         </h2>
         <h1
-          className="font-cormorantGaramond text-white font-extrabold leading-none m-4"
+          className="font-cormorantGaramond text-white font-extrabold leading-none m-4 mt-5"
           style={{ fontSize: fontSizeMempelai }}
         >
           {windowWidth < 768 ? (
             <>
-              {data.man} <br /> & <br /> {data.woman}
+              {data.man_called} & {data.woman_called}
             </>
           ) : (
             data.section1.couple_name

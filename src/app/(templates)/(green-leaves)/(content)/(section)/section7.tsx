@@ -60,7 +60,6 @@ export default function Section7({ data }: Readonly<any>) {
       lastId,
       toParam
     );
-    console.log("WISH", dataWish);
     const list = dataWish?.wishes || [];
     setWishes((current) => [...current, ...list]);
     setTotalDataWish(dataWish?.total_documents || 0);

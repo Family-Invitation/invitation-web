@@ -5,7 +5,7 @@ import useResizeFont from "@/hooks/useResize";
 export default function Section4({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
 
-  const { stories, text_title } = data?.section4 ?? null;
+  const { stories, text_title } = data?.section4 ?? {};
 
   if (!stories) return null;
 
