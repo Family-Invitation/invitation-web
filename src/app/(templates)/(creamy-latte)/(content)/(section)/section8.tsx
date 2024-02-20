@@ -233,8 +233,9 @@ export default function Section8({ data }: Readonly<any>) {
           </div>
           <div style={{ width: "100%", margin: "50px 0" }} data-aos="fade-up">
             {data.section8.content_box.map(
-              ({ name, no, title, button }: any) => (
+              ({ name, no, title, button }: any, index: number) => (
                 <GiftCard
+                  key={index}
                   isGift={false}
                   bank={title}
                   rekName={name}
