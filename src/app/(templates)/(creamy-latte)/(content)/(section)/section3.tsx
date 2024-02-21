@@ -920,7 +920,7 @@ export default function Section3({ data }: Readonly<any>) {
                     }}
                     onClick={() =>
                       redirectToMap(
-                        data.section3.content_box.wedding.button.map.href
+                        data.section3.content_box.reception.button.map.href
                       )
                     }
                   >
