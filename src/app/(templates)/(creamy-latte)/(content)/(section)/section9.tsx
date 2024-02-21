@@ -82,7 +82,7 @@ export default function Section9({ data }: Readonly<any>) {
                 "/images/bg-section1-mobile.webp"
           }")`,
           backgroundColor: "white",
-          backgroundSize: "auto 100vh",
+          backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
         }}
