@@ -60,7 +60,7 @@ export default function Section3({ data }: Readonly<any>) {
         alignItems: "center",
         margin: "0 auto",
       }}
-      className="bg-opacity-50 bg-[#845A27]"
+      className="bg-[#D2B591]"
     >
       <div
         style={{

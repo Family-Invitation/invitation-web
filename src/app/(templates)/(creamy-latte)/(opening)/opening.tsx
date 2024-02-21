@@ -131,7 +131,7 @@ const Opening: NextPage<Props> = ({
       }}
       className={`bg-cover bg-no-repeat bg-center px-6 text-center`}
     >
-      <div className="absolute inset-0 bg-black opacity-50 transition-opacity duration-300"></div>
+      <div className="absolute h-screen inset-0 bg-black opacity-50 transition-opacity duration-300"></div>
       <div className="relative flex flex-col justify-center items-center">
         <img
           data-aos="zoom-in"

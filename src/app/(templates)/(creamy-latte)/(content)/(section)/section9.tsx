@@ -7,24 +7,88 @@ import useResizeFont from "@/hooks/useResize";
 
 export default function Section9({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
+  const [showBackground, setShowBackground] = useState(false);
+
+  function handleCheckScroll(doc: HTMLElement | null) {
+    if (doc?.offsetTop && !showBackground && window.scrollY > doc?.offsetTop) {
+      // console.log(
+      //   "Scroll position:",
+      //   window.scrollY,
+      //   doc?.offsetTop,
+      //   showBackground
+      // );
+      setShowBackground(true);
+    } else if (
+      doc?.offsetTop &&
+      showBackground &&
+      window.scrollY < doc?.offsetTop
+    ) {
+      setShowBackground(false);
+    }
+  }
+
+  // console.log("BACK", showBackground);
+
+  useEffect(() => {
+    const doc = document.getElementById("section7");
+
+    // Function to handle scroll event
+    const handleScroll = () => {
+      // Log the scroll position
+      handleCheckScroll(doc);
+    };
+
+    // Add event listener when component mounts
+    window.addEventListener("scroll", handleScroll);
+
+    // Remove event listener when component unmounts
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
 
   return (
     <div
-      style={{
-        backgroundImage: `url("${
-          windowWidth > 900
-            ? data.section9.theme?.background || "/bg-section1.webp"
-            : data.section9.theme?.background_mobile ||
-              "/images/bg-section1-mobile.webp"
-        }")`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      style={
+        {
+          // backgroundImage: `url("${
+          //   windowWidth > 900
+          //     ? data.section9.theme?.background || "/bg-section1.webp"
+          //     : data.section9.theme?.background_mobile ||
+          //       "/images/bg-section1-mobile.webp"
+          // }")`,
+          // backgroundColor: "white",
+          // backgroundSize: "auto 100vh",
+          // backgroundRepeat: "no-repeat",
+          // backgroundPosition: "center",
+          // backgroundAttachment: "fixed",
+          // zIndex: 0,
+        }
+      }
       className="relative w-full h-screen flex flex-col  justify-center content-center text-center items-center font-JosefinSans box-border"
     >
-      <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
+      <div
+        style={{
+          display: showBackground ? "block" : "none",
+          width: "100vw",
+          height: "100vh",
+          position: "fixed",
+          zIndex: "-9",
+          bottom: 0,
+          backgroundImage: `url("${
+            windowWidth > 900
+              ? data.section9.theme?.background || "/bg-section1.webp"
+              : data.section9.theme?.background_mobile ||
+                "/images/bg-section1-mobile.webp"
+          }")`,
+          backgroundColor: "white",
+          backgroundSize: "auto 100vh",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
+      </div>
       <div className="relative flex flex-col  justify-center items-center">
         <div
           style={{

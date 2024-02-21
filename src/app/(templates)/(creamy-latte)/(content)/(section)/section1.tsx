@@ -29,10 +29,16 @@ export default function Section1({ data }: Readonly<any>) {
             : data.section1.theme?.background_mobile ||
               "/images/bg-section1-mobile.webp"
         }")`,
+        backgroundSize: "auto 100vh",
+        // backgroundRepeat: "no-repeat",
+        // backgroundAttachment: "fixed",
+        backgroundPosition: "top",
+        position: "fixed",
+        zIndex: -10,
       }}
-      className="w-full h-screen bg-cover bg-no-repeat bg-center flex flex-col justify-center text-center bg-fixed"
+      className="w-full h-screen flex flex-col justify-center text-center"
     >
-      <div className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
+      <div className="h-screen absolute inset-0  bg-black opacity-30 transition-opacity duration-300"></div>
       <div className="relative" style={{ transform: "translateY(150px)" }}>
         <h2
           className="font-josefinSans text-white font-semibold leading-53 mb-2"
