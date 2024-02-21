@@ -18,39 +18,35 @@ export default function Section2({ data }: Readonly<any>) {
         marginTop: "100vh",
         boxSizing: "border-box",
         width: "100%",
-        backgroundImage:
-          'linear-gradient(180deg, #ffffff00, #ffffff00, #ffffff00, #ffffffff), url("/bg-section2.webp")',
-        backgroundSize: "cover !important",
-        backgroundRepeat: "repeat",
-        backgroundColor: "#fff",
-        backgroundPosition: "bottom center",
+        position: "relative",
       }}
     >
-      <div className=" relative">
-        <div className="h-full rotate-180 w-full absolute inset-0">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1000 100"
-            preserveAspectRatio="none"
-            fill="white"
-          >
-            <path
-              className="elementor-shape-fill"
-              d="M194,99c186.7,0.7,305-78.3,306-97.2c1,18.9,119.3,97.9,306,97.2c114.3-0.3,194,0.3,194,0.3s0-91.7,0-100c0,0,0,0,0-0 L0,0v99.3C0,99.3,79.7,98.7,194,99z"
-            ></path>
-          </svg>
-        </div>
+      <div className="rotate-180 w-full relative top-1">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          fill="white"
+        >
+          <path
+            className="elementor-shape-fill"
+            d="M194,99c186.7,0.7,305-78.3,306-97.2c1,18.9,119.3,97.9,306,97.2c114.3-0.3,194,0.3,194,0.3s0-91.7,0-100c0,0,0,0,0-0 L0,0v99.3C0,99.3,79.7,98.7,194,99z"
+          ></path>
+        </svg>
       </div>
       <div
         style={{
-          backgroundColor: "transparent",
           backgroundImage:
-            "linear-gradient(180deg, #FFFFFF 0%, #FFFFFF00 100%)",
+            'linear-gradient(180deg, #FFFFFF 0%, #FFFFFF00 100%), url("/bg-section2.webp")',
           opacity: 1,
+          backgroundSize: "cover !important",
+          backgroundRepeat: "repeat",
+          backgroundColor: "#fff",
+          backgroundPosition: "bottom center",
           transition: "background 0.3s, border-radius 0.3s, opacity 0.3s",
           height: "100%",
           width: "100%",
-          padding: "100px 0",
+          padding: "50px 0 100px 0",
         }}
       >
         <div className="max-w-7xl mx-4 md:mx-auto">
