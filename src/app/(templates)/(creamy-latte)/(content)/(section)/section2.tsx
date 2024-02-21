@@ -15,6 +15,7 @@ export default function Section2({ data }: Readonly<any>) {
     <div
       id="section2"
       style={{
+        marginTop: "100vh",
         boxSizing: "border-box",
         width: "100%",
         backgroundImage:
