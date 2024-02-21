@@ -192,6 +192,7 @@ export default function Section7({ data }: Readonly<any>) {
             style={{ width: "100%", padding: "10px" }}
             value={sender}
             onChange={(e) => setSender(e.target.value)}
+            className="input input-bordered bg-white text-black"
           />
           <textarea
             placeholder="Tulis Ucapan & Doa"
@@ -199,6 +200,7 @@ export default function Section7({ data }: Readonly<any>) {
             style={{ width: "100%", padding: "10px", margin: "30px  0" }}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            className="textarea textarea-bordered bg-white text-black"
           />
           <div className="text-start">
             <ButtonBase
