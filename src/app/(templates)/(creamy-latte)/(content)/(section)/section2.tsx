@@ -183,33 +183,14 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <img
                   style={{
-                    // width: resizeList(330, [
-                    //   {
-                    //     width: 450,
-                    //     decreasePercent: 70,
-                    //   },
-                    //   {
-                    //     width: 700,
-                    //     decreasePercent: 60,
-                    //   },
-                    // ]),
-                    // height: resizeList(400, [
-                    //   {
-                    //     width: 450,
-                    //     decreasePercent: 70,
-                    //   },
-                    //   {
-                    //     width: 700,
-                    //     decreasePercent: 60,
-                    //   },
-                    // ]),
-                    // borderRadius: "25%",
                     position: "absolute",
                     objectFit: "cover",
+                    backgroundColor: "#75634e82",
+                    width: "80%",
                   }}
                   src={data.section2.man.picture}
                   alt=""
-                  className="md:rounded-[30%] rounded-[40%] w-full md:px-10 px-4 h-36 md:h-[400px]"
+                  className="md:rounded-[30%] rounded-[40%] md:px-10 h-36 md:h-[400px]"
                 />
               </div>
               <div
@@ -469,32 +450,14 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <img
                   style={{
-                    // width: resizeList(330, [
-                    //   {
-                    //     width: 450,
-                    //     decreasePercent: 70,
-                    //   },
-                    //   {
-                    //     width: 700,
-                    //     decreasePercent: 60,
-                    //   },
-                    // ]),
-                    // height: resizeList(400, [
-                    //   {
-                    //     width: 450,
-                    //     decreasePercent: 70,
-                    //   },
-                    //   {
-                    //     width: 700,
-                    //     decreasePercent: 60,
-                    //   },
-                    // ]),
                     position: "absolute",
                     objectFit: "cover",
+                    backgroundColor: "#75634e82",
+                    width: "80%",
                   }}
                   src={data.section2.woman.picture}
                   alt=""
-                  className="md:rounded-[30%] rounded-[40%] w-full md:px-10 px-4 h-36 md:h-[400px]"
+                  className="md:rounded-[30%] rounded-[40%] md:px-10 h-36 md:h-[400px]"
                 />
               </div>
               <div

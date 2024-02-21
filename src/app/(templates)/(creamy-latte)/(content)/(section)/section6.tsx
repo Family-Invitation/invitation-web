@@ -122,12 +122,14 @@ export default function Section6({ data }: Readonly<any>) {
             >
               <Image
                 src={url}
-                alt="image"
+                alt=""
                 width={120}
                 height={120}
                 style={{
                   aspectRatio: "1/1",
                   margin: 20,
+                  backgroundColor: "#75634e82",
+                  borderRadius: "50%",
                 }}
               />
               <div
