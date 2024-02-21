@@ -158,6 +158,7 @@ const Opening: NextPage<Props> = ({
               },
             ]),
             objectFit: "cover",
+            backgroundColor: "#75634e82",
           }}
           src={data.opening.couple_picture}
           alt=""

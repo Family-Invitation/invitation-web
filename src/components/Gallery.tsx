@@ -7,8 +7,7 @@ type GalleryComponentProps = {
 
 const GalleryComponent = ({ data }: GalleryComponentProps) => {
   const templateActive = data?.template;
-  const borderColor =
-    templateActive === "green-leavess" ? "#4F583D" : "#D2B591";
+  const borderColor = "#D2B591";
   return (
     <Gallery id="my-gallery">
       {data.section5.pictures.map(
@@ -29,7 +28,12 @@ const GalleryComponent = ({ data }: GalleryComponentProps) => {
                 onClick={open}
               >
                 <img
-                  style={{ background: borderColor }}
+                  style={{
+                    background: borderColor,
+                    width: 1600,
+                    aspectRatio: "9/16",
+                    objectFit: "cover",
+                  }}
                   className={`rounded-md p-1 transition-transform duration-300 transform`}
                   src={imgUrl}
                   ref={ref}
