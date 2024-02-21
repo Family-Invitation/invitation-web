@@ -29,7 +29,7 @@ export default function Section1({ data }: Readonly<any>) {
             : data.section1.theme?.background_mobile ||
               "/images/bg-section1-mobile.webp"
         }")`,
-        backgroundSize: "auto 100vh",
+        backgroundSize: "cover",
         // backgroundRepeat: "no-repeat",
         // backgroundAttachment: "fixed",
         backgroundPosition: "top",

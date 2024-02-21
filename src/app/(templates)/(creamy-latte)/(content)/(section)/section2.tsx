@@ -63,45 +63,6 @@ export default function Section2({ data }: Readonly<any>) {
               marginBottom: 50,
             }}
           >
-            {/* <h2
-            style={{
-              fontFamily: "Josefin Sans",
-              color: "#85865F",
-              fontSize: resizeList(30, [
-                {
-                  width: 450,
-                  decresePercent: 50,
-                },
-                {
-                  width: 700,
-                  decresePercent: 30,
-                },
-              ]),
-              margin: 0,
-            }}
-          >
-            The Beloved
-          </h2> */}
-            {/* <h1
-            style={{
-              fontFamily: "Cormorant Garamond",
-              color: "#4F583D",
-              fontSize: resizeList(60, [
-                {
-                  width: 450,
-                  decresePercent: 50,
-                },
-                {
-                  width: 700,
-                  decresePercent: 30,
-                },
-              ]),
-              fontWeight: 600,
-              margin: 0,
-            }}
-          >
-            Groom & Bride
-          </h1> */}
             <div
               style={{
                 display: "flex",
@@ -190,7 +151,7 @@ export default function Section2({ data }: Readonly<any>) {
                   }}
                   src={data.section2.man.picture}
                   alt=""
-                  className="md:rounded-[30%] rounded-[40%] md:px-10 h-36 md:h-[400px]"
+                  className="md:rounded-[30%] rounded-[40%] h-36 md:h-[400px]"
                 />
               </div>
               <div
@@ -457,7 +418,7 @@ export default function Section2({ data }: Readonly<any>) {
                   }}
                   src={data.section2.woman.picture}
                   alt=""
-                  className="md:rounded-[30%] rounded-[40%] md:px-10 h-36 md:h-[400px]"
+                  className="md:rounded-[30%] rounded-[40%] h-36 md:h-[400px]"
                 />
               </div>
               <div

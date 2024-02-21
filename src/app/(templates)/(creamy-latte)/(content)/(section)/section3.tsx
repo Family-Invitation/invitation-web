@@ -547,14 +547,6 @@ export default function Section3({ data }: Readonly<any>) {
                 >
                   {data.section3.content_box.wedding.text_title}
                 </h2>
-                {/* <img
-                style={{
-                  width: "100%",
-                  maxWidth: 243,
-                }}
-                src="/divider-rustic.webp"
-                alt=""
-              /> */}
                 <div // Detail
                   style={{
                     fontFamily: "Josefin Sans",
