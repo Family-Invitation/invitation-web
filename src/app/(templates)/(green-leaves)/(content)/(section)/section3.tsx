@@ -45,7 +45,7 @@ export default function Section3({ data }: Readonly<any>) {
 
   const { resizeList, windowWidth } = useResizeFont();
 
-  const redirectToMap = (location: string) => {
+  const redirectTo = (location: string) => {
     window.open(location, "_blank");
   };
 
@@ -666,7 +666,7 @@ export default function Section3({ data }: Readonly<any>) {
                     alignItems: "center",
                   }}
                   onClick={() =>
-                    redirectToMap(
+                    redirectTo(
                       data.section3.content_box.wedding.button.map.href
                     )
                   }
@@ -713,6 +713,11 @@ export default function Section3({ data }: Readonly<any>) {
                     display: "flex",
                     alignItems: "center",
                   }}
+                  onClick={() =>
+                    redirectTo(
+                      data.section3.content_box.wedding.button.calendar.href
+                    )
+                  }
                 >
                   <MdOutlineDateRange
                     style={{
@@ -917,8 +922,8 @@ export default function Section3({ data }: Readonly<any>) {
                     alignItems: "center",
                   }}
                   onClick={() =>
-                    redirectToMap(
-                      data.section3.content_box.wedding.button.map.href
+                    redirectTo(
+                      data.section3.content_box.reception.button.map.href
                     )
                   }
                 >
@@ -964,6 +969,11 @@ export default function Section3({ data }: Readonly<any>) {
                     display: "flex",
                     alignItems: "center",
                   }}
+                  onClick={() =>
+                    redirectTo(
+                      data.section3.content_box.reception.button.calendar.href
+                    )
+                  }
                 >
                   <MdOutlineDateRange
                     style={{
