@@ -7,6 +7,10 @@ export default function Page({ params }: any) {
   const [recipient, setRecipient] = useState("");
   const [mode, setMode] = useState("");
   const [textCopy, setTextCopy] = useState("Salin");
+  const [selectTemplateOption, setSelectTemplateOption] =
+    useState<string>("default");
+  const [template, setTemplate] = useState<string>("");
+  const [customTemplate, setCustomTemplate] = useState<string>("");
 
   const templateInvitaion = `
 Assalamu'alaikum Wr. Wb & Bismillahirahmanirrahim.
@@ -57,7 +61,7 @@ Wassalamu'alaikum Wr. Wb.`;
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(templateInvitaion);
+    navigator.clipboard.writeText(template);
     setTextCopy("Tersalin");
     setTimeout(() => {
       setTextCopy("Salin");
@@ -77,21 +81,37 @@ Wassalamu'alaikum Wr. Wb.`;
     setMode("");
   };
 
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectTemplateOption(event.target.value);
+    setMode("");
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+
+    setCustomTemplate(value);
+  };
+
   useEffect(() => {
     const invitationURL = generateInvitationURL(params.slug, recipient);
     setUrl(invitationURL);
+
+    if (!recipient) {
+      setMode("");
+    }
   }, [params.slug, recipient]);
 
   return (
     <div className="w-full mx-auto">
-      <main className="max-w-7xl mx-6 md:mx-auto my-20">
-        <h1 className="text-3xl text-black font-semibold text-center">
+      <main className="max-w-7xl mx-6 md:mx-auto my-10">
+        <h1 className="md:text-3xl text-2xl text-black font-semibold text-center">
           Generate Undangan
         </h1>
         <div className="py-4 px-4 md:px-8 border m-4 rounded-xl w-full md:w-[600px]">
-          <div>
+          {/* url undangan */}
+          <div className="mt-2">
             <div className="label">
-              <span className="label-text">Url Undangan</span>
+              <span className="label-text text-gray-800">Url Undangan</span>
             </div>
             <input
               type="text"
@@ -102,9 +122,25 @@ Wassalamu'alaikum Wr. Wb.`;
             />
           </div>
 
+          {/* select template */}
+          <div>
+            <div className="label">
+              <span className="label-text text-gray-800">Pilih Template</span>
+            </div>
+            <select
+              className="select select-bordered w-full bg-white"
+              value={selectTemplateOption}
+              onChange={handleSelectChange}
+            >
+              <option value="default">Default Template</option>
+              <option value="custom">Custom Template</option>
+            </select>
+          </div>
+
+          {/* input recipient */}
           <div className="mt-2">
             <div className="label">
-              <span className="label-text">Nama Penerima</span>
+              <span className="label-text text-gray-800">Nama Penerima</span>
             </div>
             <div className="relative">
               <input
@@ -125,12 +161,56 @@ Wassalamu'alaikum Wr. Wb.`;
             </div>
           </div>
 
+          {selectTemplateOption === "custom" && (
+            <div className="mt-2">
+              <div>
+                <div className="label">
+                  <span className="label-text text-gray-800">
+                    Template Undangan
+                  </span>
+                </div>
+                <textarea
+                  className="textarea textarea-bordered h-40 w-full bg-white"
+                  placeholder="Ketik template undangan disini"
+                  value={customTemplate}
+                  onChange={handleInputChange}
+                />
+              </div>
+              <div className="text-xs text-gray-800">
+                Note: Tambahkan{" "}
+                <strong>
+                  {"{"}
+                  {"{"} url {"}"}
+                  {"}"}
+                </strong>{" "}
+                pada template undangan untuk memasukkan url undangan
+              </div>
+            </div>
+          )}
+
           <div className="mt-4">
             <button
               className="btn btn-secondary text-white w-full"
-              onClick={() => setMode("create")}
+              onClick={() => {
+                setMode("create");
+                if (selectTemplateOption === "custom") {
+                  const invitationURL = generateInvitationURL(
+                    params.slug,
+                    recipient
+                  );
+                  setUrl(invitationURL);
+                  const updatedInvitationText = customTemplate.replace(
+                    "{{url}}",
+                    invitationURL
+                  );
+
+                  setTemplate(updatedInvitationText);
+                } else {
+                  setTemplate(templateInvitaion);
+                }
+              }}
             >
-              Buat
+              Lihat Preview
             </button>
           </div>
         </div>
@@ -151,7 +231,7 @@ Wassalamu'alaikum Wr. Wb.`;
                 {textCopy}
               </button>
             </div>
-            <pre className="w-full overflow-auto px-4">{templateInvitaion}</pre>
+            <pre className="w-full overflow-auto px-4">{template}</pre>
           </div>
         )}
       </main>

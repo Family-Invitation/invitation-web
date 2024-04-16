@@ -2,15 +2,13 @@ import { Metadata } from "next";
 import "../../globals.css";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
-  console.log(params);
-
   return {
-    title: "Generate URL",
-    description: "Generate URL for your invitation",
+    title: "Generate Invitation",
+    description: "Generate Invitation for your invitation",
     icons: "https://www.familydecorative.com/logo.png",
     openGraph: {
-      title: "Generate URL",
-      description: "Generate URL for your invitation",
+      title: "Generate Invitation",
+      description: "Generate Invitation for your invitation",
       //   images: metadata.images,
     },
   };
