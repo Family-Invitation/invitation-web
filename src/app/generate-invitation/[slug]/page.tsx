@@ -68,9 +68,11 @@ Wassalamu'alaikum Wr. Wb.`;
     }, 2000);
   };
 
-  const handleWhatsApp = () => {
+  const handleWhatsApp = (text: string) => {
+    text = encodeURIComponent(text);
+    console.log(text);
     // URL WhatsApp Web
-    const url = "https://web.whatsapp.com/";
+    const url = "https://api.whatsapp.com/send?text=" + text;
 
     // Buka WhatsApp Web dalam jendela baru
     window.open(url, "_blank");
@@ -215,7 +217,7 @@ Wassalamu'alaikum Wr. Wb.`;
             <div className="flex  justify-end m-4 gap-2">
               <button
                 className="btn btn-sm btn-success text-white "
-                onClick={handleWhatsApp}
+                onClick={() => handleWhatsApp(template)}
               >
                 Kirim WA
               </button>
