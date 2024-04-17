@@ -111,11 +111,11 @@ Wassalamu'alaikum Wr. Wb.`;
           {/* url undangan */}
           <div className="mt-2">
             <div className="label">
-              <span className="label-text text-gray-800">Url Undangan</span>
+              <span className="label-text text-gray-800">Link Undangan</span>
             </div>
             <input
               type="text"
-              placeholder="Masukkan Url Undangan"
+              placeholder="Masukkan Link Undangan"
               className="input input-bordered w-full bg-white text-sm md:text-md"
               value={url}
               readOnly
@@ -171,19 +171,14 @@ Wassalamu'alaikum Wr. Wb.`;
                 </div>
                 <textarea
                   className="textarea textarea-bordered h-40 w-full bg-white"
-                  placeholder="Ketik template undangan disini"
+                  placeholder={"ex: Assalamu'alaikum\n[LINK]\nTerimakasih"}
                   value={customTemplate}
                   onChange={handleInputChange}
                 />
               </div>
               <div className="text-xs text-gray-800">
-                Note: Tambahkan{" "}
-                <strong>
-                  {"{"}
-                  {"{"} url {"}"}
-                  {"}"}
-                </strong>{" "}
-                pada template undangan untuk memasukkan url undangan
+                Note: Tambahkan tulisan <strong>{`[LINK]`}</strong> pada
+                template undangan untuk menempatkan link undangan
               </div>
             </div>
           )}
@@ -200,7 +195,7 @@ Wassalamu'alaikum Wr. Wb.`;
                   );
                   setUrl(invitationURL);
                   const updatedInvitationText = customTemplate.replace(
-                    "{{url}}",
+                    /\[link\]/i,
                     invitationURL
                   );
 
