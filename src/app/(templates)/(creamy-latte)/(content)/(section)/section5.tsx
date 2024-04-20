@@ -4,6 +4,7 @@ import useResizeFont from "@/hooks/useResize";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import "photoswipe/dist/photoswipe.css";
 import GalleryComponent from "@/components/Gallery";
+import YoutubeVideo from "@/components/YoutubeVideo";
 
 export default function Section5({ data }: Readonly<any>) {
   const { resizeList, windowWidth } = useResizeFont();
@@ -101,47 +102,9 @@ export default function Section5({ data }: Readonly<any>) {
         <span>{data.section5.text_moments}</span>
       </div>
       <div style={{ maxWidth: "1000px", marginTop: "60px" }}>
-        {/* <iframe
-          width="1140px"
-          height="600px"
-          src="https://www.youtube.com/embed/64ojWgAzl94"
-          title="Video YouTube"
-          frameBorder="0"
-          allowFullScreen
-        ></iframe> */}
+        <YoutubeVideo videoId={data.section5?.video_id ?? ""} />
 
-        <div className="grid grid-cols-2 gap-4 md:gap-5 mx-6 md:mx-0 pt-3">
-          {/* <Gallery id="my-gallery">
-            {data.section5.pictures.map(
-              ({ url: imgUrl }: { url: string }, i: number) => (
-                <Item<HTMLImageElement>
-                  original={imgUrl}
-                  thumbnail={imgUrl}
-                  width="1600"
-                  height="1600"
-                  alt="Photo of seashore by Folkert Gorter"
-                  // You can pass string id
-                  id={i}
-                >
-                  {({ ref, open }) => (
-                    <img
-                      style={{
-                        cursor: "pointer",
-                        backgroundColor: "#819575",
-                        borderRadius: "3%",
-                        objectFit: "cover",
-                      }}
-                      src={imgUrl}
-                      ref={ref}
-                      onClick={open}
-                      className="rounded-md p-1"
-                    />
-                  )}
-                </Item>
-              )
-            )}
-          </Gallery> */}
-
+        <div className="grid grid-cols-2 gap-3 md:gap-4 mx-6 md:mx-0 pt-3 md:pt-4">
           <GalleryComponent data={data} />
         </div>
       </div>
