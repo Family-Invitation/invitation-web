@@ -189,10 +189,11 @@ export default function Section9({ data }: Readonly<any>) {
         Lord {ayahMempelaiWanita} & Lady {ibuMempelaiWanita}
       </div> */}
         <img
-          src="/logo.png"
+          src={data.section9.vendor?.picture || "/logo.png"}
           alt="logo"
           style={{
             // aspectRatio: "1:1",
+            borderRadius: 10,
             width: "80px",
             marginTop: "30px",
             // mixBlendMode: "color-burn",
@@ -218,22 +219,24 @@ export default function Section9({ data }: Readonly<any>) {
           }}
           data-aos="zoom-in"
         >
-          Family Invitation
+          {data.section9.vendor?.name || "Family Invitation"}
         </div>
-        <div
-          style={{ display: "flex", marginTop: "20px", gap: "10px" }}
-          data-aos="zoom-in"
-        >
-          <Link href={urlWA + "6289516789565"} target="_blank">
-            <FaWhatsapp size={30} color="white" />
-          </Link>
-          <Link
-            href="https://www.instagram.com/familyinvitation_/"
-            target="_blank"
+        {!data.section9.vendor && (
+          <div
+            style={{ display: "flex", marginTop: "20px", gap: "10px" }}
+            data-aos="zoom-in"
           >
-            <FaInstagram size={30} color="white" />
-          </Link>
-        </div>
+            <Link href={urlWA + "6289516789565"} target="_blank">
+              <FaWhatsapp size={30} color="white" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/familyinvitation_/"
+              target="_blank"
+            >
+              <FaInstagram size={30} color="white" />
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
