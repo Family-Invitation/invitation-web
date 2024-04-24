@@ -16,6 +16,8 @@ const config: Config = {
       fontFamily: {
         cormorantGaramond: ["Cormorant Garamond"],
         josefinSans: ["Josefin Sans"],
+        portSans: ['"Port Lligat Sans", "sans-serif"'],
+        qagettoSans: ["qagetto", "Sans-serif"],
       },
     },
   },

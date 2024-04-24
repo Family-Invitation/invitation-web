@@ -4,8 +4,14 @@ import { useEffect, useState } from "react";
 
 import { useGetDataV2 } from "@/hooks/useGetData";
 import GreenLeaves from "@/app/(templates)/(green-leaves)/green-leaves";
-import ReactLoading from "react-loading";
 import CreamyLatte from "@/app/(templates)/(creamy-latte)/creamy-latte";
+import Floral from "@/app/(templates)/(floral)/floral";
+import ReactLoading from "react-loading";
+
+import {
+  TemplateInvitation,
+  TemplateInvitationInterface,
+} from "@/interfaces/templateInterfaces";
 
 export default function Page({ params }: any) {
   const [data, setData] = useState(null);
@@ -47,12 +53,19 @@ function TemplateSelection({ data }: any) {
     return <Loading />;
   }
 
-  switch (data.template as string) {
-    case "green-leaves":
-      return <GreenLeaves data={data} />;
-    case "creamy-latte":
-      return <CreamyLatte data={data} />;
-  }
+  const floral = "floral";
+
+  // switch (data.template as string) {
+  //   case TemplateInvitation.GreenLeaves:
+  //     return <GreenLeaves data={data} />;
+  //   case TemplateInvitation.CreamyLatte:
+  //     return <CreamyLatte data={data} />;
+  //   case TemplateInvitation.Floral:
+  //     return <Floral data={data} />;
+
+  // }
+
+  return <Floral data={data} />;
 
   return <NotFound />;
 }
