@@ -35,6 +35,8 @@ export default function Section3({ data }: Readonly<any>) {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft);
 
+  const isDarkerImage = data?.section3?.content_box?.is_darker_image ?? false;
+
   useEffect(() => {
     const countdownInterval = setInterval(() => {
       setTimeLeft(calculateTimeLeft);
@@ -403,9 +405,9 @@ export default function Section3({ data }: Readonly<any>) {
                 color: "white",
               }}
             >
-              {/* <div
-                className="absolute inset-0  bg-black opacity-30 transition-opacity duration-300"
-              ></div> */}
+              {isDarkerImage && (
+                <div className="absolute inset-0  bg-black opacity-10 transition-opacity duration-300 rounded-t-[250px]"></div>
+              )}
               <div // Text
                 style={{
                   //   backgroundColor: "red",
