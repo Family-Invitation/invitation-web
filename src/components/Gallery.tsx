@@ -11,12 +11,20 @@ const GalleryComponent = ({ data }: GalleryComponentProps) => {
   return (
     <Gallery id="my-gallery">
       {data.section5.pictures.map(
-        ({ url: imgUrl }: { url: string }, i: number) => (
+        (
+          {
+            url: imgUrl,
+            width = 1600,
+            height = 1600,
+          }: { url: string; width: number; height: number },
+          i: number
+        ) => (
           <Item<HTMLImageElement>
             original={imgUrl}
             thumbnail={imgUrl}
-            width="1600"
-            height="1600"
+            width={width}
+            height={height}
+            // cropped={false}
             alt="Photo of seashore by Folkert Gorter"
             // You can pass string id
             id={i}

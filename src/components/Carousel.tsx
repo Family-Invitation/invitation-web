@@ -139,7 +139,7 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
                 }}
               />
             </div> */}
-            <div className="rounded-lg overflow-auto shadow-lg bg-white p-6 relative  h-[300px] rounded-bl-[50px] rounded-tr-[50px] w-full">
+            <div className="rounded-lg shadow-lg bg-white p-6 relative   rounded-bl-[50px] rounded-tr-[50px] w-full">
               <div
                 style={{
                   width: "100%",
@@ -151,7 +151,7 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
                   position: "relative",
                   fontWeight: 600,
                 }}
-                className="font-josefinSans text-gray-800 text-2xl md:mb-8 mb-4"
+                className="font-josefinSans text-gray-800 text-2xl md:mb-6 mb-4"
               >
                 {item.title}
                 {/* <IoMdArrowDropdown
@@ -166,7 +166,7 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
               </div>
               <p
                 style={{ fontFamily: ` "Droid Serif", "Sans-serif"` }}
-                className="text-gray-800 text-lg italic"
+                className="text-gray-800 text-lg italic overflow-auto relative h-[180px] w-full"
               >
                 "{item?.content}"
               </p>
@@ -174,23 +174,6 @@ const ResponsiveCarousel = ({ stories }: { stories: any }) => {
                 {item?.date}
               </p>
             </div>
-            {/* <img
-              key={item?.id}
-              src={item.imageUrl}
-              alt={`Slide ${index + 1}`}
-              style={{
-                width: "70%",
-                objectFit: "cover",
-                borderRadius: "50%",
-                aspectRatio: "1/1",
-              }}
-            /> */}
-            {/* <div
-              style={{ color: "white", marginTop: "30px", fontSize: "30px" }}
-              className="font-cormorantGaramond"
-            >
-              {item?.date}
-            </div> */}
           </div>
         ))}
       </Carousel>

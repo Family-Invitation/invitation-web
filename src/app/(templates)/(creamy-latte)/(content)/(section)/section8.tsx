@@ -48,7 +48,7 @@ export default function Section8({ data }: Readonly<any>) {
       >
         {isGift ? (
           <>
-            <FaGift size={60} color="#4F583D" />
+            <FaGift size={60} color="#8A594C" />
             <div
               style={{
                 color: "#333",
@@ -73,6 +73,7 @@ export default function Section8({ data }: Readonly<any>) {
                     decreasePercent: 30,
                   },
                 ]),
+                textAlign: "center",
               }}
             >
               {address}
@@ -132,11 +133,17 @@ export default function Section8({ data }: Readonly<any>) {
             marginTop: "20px",
           }}
         >
-          {!isGift && (
+          {!isGift ? (
             <ButtonBase
               text={copyText}
               isLink={false}
               onClick={() => handleCopy(rekNumber)}
+            />
+          ) : (
+            <ButtonBase
+              text="Konfirmasi"
+              isLink={true}
+              link={urlWA + nomorWa}
             />
           )}
         </div>
@@ -153,6 +160,7 @@ export default function Section8({ data }: Readonly<any>) {
   const nomorRekeningWanita = data?.mempelaiWanita?.nomorRekening;
   const nomorWaWanita = data?.mempelaiWanita?.nomorWA;
   const namaBankWanita = data?.mempelaiWanita?.namaBank;
+
   return (
     <div
       id="section8"
@@ -245,14 +253,19 @@ export default function Section8({ data }: Readonly<any>) {
                 />
               )
             )}
-            {/* 
-            <GiftCard
-              isGift={false}
-              bank={namaBankWanita}
-              rekName={namaMempelaiWanita}
-              rekNumber={nomorRekeningWanita}
-              nomorWa={nomorWaWanita}
-            /> */}
+            {data?.section8?.send_gift?.name && (
+              <div data-aos="fade-up">
+                <h2 className="text-white font-cormorantGaramond font-semibold text-2xl md:text-5xl mt-12 text-center">
+                  Kirim Kado
+                </h2>
+                <GiftCard
+                  isGift={true}
+                  recipientName={data?.section8?.send_gift?.name}
+                  address={data?.section8?.send_gift?.address}
+                  nomorWa={data?.section8?.send_gift?.no}
+                />
+              </div>
+            )}
           </div>
           {/* <div className="w-full lg:w-[500px]">
             <div
