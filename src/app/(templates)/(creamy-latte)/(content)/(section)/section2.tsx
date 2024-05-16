@@ -152,6 +152,7 @@ export default function Section2({ data }: Readonly<any>) {
               </div>
               <div
                 style={{
+                  width: "100%",
                   flex: 1,
                   display: "flex",
                   flexDirection: "column",
@@ -161,8 +162,13 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <h2
                   style={{
-                    margin: "70px 0 10px 0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "70px 0px 10px",
                     color: "#333",
+                    width: "100%",
+                    height: 70,
                     fontFamily: "Cormorant Garamond",
                     fontSize: resizeList(40, [
                       {
@@ -179,7 +185,10 @@ export default function Section2({ data }: Readonly<any>) {
                 >
                   {data.section2.man.name}
                 </h2>
-                <div className="divider before:bg-[#D2B591] after:bg-[#D2B591]"></div>
+                <div
+                  className="divider before:bg-[#D2B591] after:bg-[#D2B591]"
+                  style={{ width: "100%" }}
+                ></div>
                 {/* <img
                   style={{
                     width: resizeList(243, [
@@ -420,6 +429,7 @@ export default function Section2({ data }: Readonly<any>) {
               <div
                 style={{
                   flex: 1,
+                  width: "100%",
                   textAlign: "center",
                   display: "flex",
                   flexDirection: "column",
@@ -429,8 +439,13 @@ export default function Section2({ data }: Readonly<any>) {
               >
                 <h2
                   style={{
-                    margin: "70px 0 10px 0",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    margin: "70px 0px 10px",
                     color: "#333",
+                    width: "100%",
+                    height: 70,
                     fontFamily: "Cormorant Garamond",
                     fontSize: resizeList(40, [
                       {
