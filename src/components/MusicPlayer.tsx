@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
+type Template = "green-leaves" | "creamy-latte" | "floral";
 const MusicPlayer = ({
   showContent,
   audioSource,
@@ -8,12 +9,18 @@ const MusicPlayer = ({
 }: {
   showContent: boolean;
   audioSource: string;
-  template: string;
+  template: Template;
 }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  const mainColor = template === "green-leaves" ? "#4F583D" : "#D2B591";
+  const colors = {
+    "green-leaves": "#4F583D",
+    "creamy-latte": "#D2B591",
+    floral: "#D79872",
+  };
+
+  const mainColor = colors[template];
 
   const handleTogglePlayPause = () => {
     if (audioRef.current) {

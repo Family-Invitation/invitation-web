@@ -65,6 +65,7 @@ export interface IButton {
   link?: string;
   isLoading?: boolean;
   onClick?: () => void;
+  bgColor?: string;
 }
 
 export interface IMenu {
