@@ -3,7 +3,3 @@ export enum TemplateInvitation {
   CreamyLatte = "creamy-latte",
   Floral = "floral",
 }
-
-export interface TemplateInvitationInterface {
-  data: TemplateInvitation;
-}

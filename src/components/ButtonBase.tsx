@@ -9,10 +9,11 @@ const ButtonBase = ({
   link = "",
   isLoading = false,
   onClick,
+  bgColor = "#8A594C",
 }: IButton) => {
   const buttonStyles = {
-    border: "#8A594C",
-    backgroundColor: "#8A594C",
+    border: bgColor,
+    backgroundColor: bgColor,
     cursor: "pointer",
     padding: "10px",
     borderRadius: "5px",

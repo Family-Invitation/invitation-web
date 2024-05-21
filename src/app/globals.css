@@ -56,3 +56,8 @@ main {
 .react-multiple-carousel__arrow--left {
   left: -8px !important;
 }
+
+.elementor-shape .elementor-shape-fill {
+  transform-origin: center;
+  transform: rotateY(0deg);
+}
