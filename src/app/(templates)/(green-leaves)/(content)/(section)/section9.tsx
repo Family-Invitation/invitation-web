@@ -145,6 +145,9 @@ export default function Section9({ data }: Readonly<any>) {
           // borderRadius: "50%",
         }}
         data-aos="flip-right"
+        onClick={() => {
+          window.open(data.section9.vendor?.url, "_blank");
+        }}
       />
       <div
         style={{
