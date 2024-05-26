@@ -44,7 +44,15 @@ export default function Section1({ data }: Readonly<any>) {
       >
         {windowWidth < 768 ? (
           <>
-            {data.man} <br /> & <br /> {data.woman}
+            {data?.switch_couple ? (
+              <>
+                {data?.woman_called} <br /> & <br /> {data?.man_called}
+              </>
+            ) : (
+              <>
+                {data?.man_called} <br /> & <br /> {data?.woman_called}
+              </>
+            )}
           </>
         ) : (
           data.section1.couple_name
