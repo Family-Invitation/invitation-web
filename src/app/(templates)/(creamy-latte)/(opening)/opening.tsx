@@ -212,7 +212,15 @@ const Opening: NextPage<Props> = ({
         >
           {windowWidth < 768 ? (
             <>
-              {data?.man_called} & {data?.woman_called}
+              {data?.switch_couple ? (
+                <>
+                  {data?.woman_called} <br /> & <br /> {data?.man_called}
+                </>
+              ) : (
+                <>
+                  {data?.man_called} <br /> & <br /> {data?.woman_called}
+                </>
+              )}
             </>
           ) : (
             data?.opening.couple_name
