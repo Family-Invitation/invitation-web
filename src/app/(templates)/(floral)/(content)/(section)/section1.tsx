@@ -23,7 +23,7 @@ const DateItem = ({ value, text }: DateItemProps) => {
 };
 
 const section1 = ({ data }: Readonly<any>) => {
-  const targetDate = new Date("2025-03-03T04:00:00Z").getTime();
+  const targetDate = new Date(data.section3?.date).getTime();
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 
