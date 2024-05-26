@@ -86,7 +86,7 @@ const opening: NextPage<Props> = ({
 
   return (
     <div id="opening" className="w-full md:w-[768px] mx-auto h-screen relative">
-      <div className="w-full h-screen relative bg-[url('/images/floral/bg-floral-template.png')] px-8 py-16 overflow-hidden">
+      <div className="w-full h-screen relative bg-[url('/images/floral/bg-floral-template.png')] px-8 py-10 md:py-16 overflow-hidden">
         <img
           className="absolute -top-12 right-0 h-[250px] w-[220px] animate-heartBeat opacity-75 "
           src="/images/floral/asset-7.png"
@@ -120,8 +120,10 @@ const opening: NextPage<Props> = ({
           <h4 className="text-[#B87A54] text-4xl font-['qagettoSans'] my-3">
             {data?.man} <br /> & <br /> {data?.woman}
           </h4>
-          <h4 className="text-black text-lg">Rabu, 24 Januari 2024</h4>
-          <div className="flex justify-center items-center my-10">
+          <h4 className="text-black text-lg">
+            {data?.metadata?.description ?? ""}
+          </h4>
+          <div className="flex justify-center items-center my-5">
             <img
               className="w-[50px] h-[50px]"
               src="/images/floral/wedding.png"

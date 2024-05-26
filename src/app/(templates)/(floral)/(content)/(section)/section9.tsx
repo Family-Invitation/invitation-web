@@ -1,5 +1,8 @@
 import React from "react";
 import FloralWrapperLayout from "@/components/floral/WrapperLayout";
+import { urlWA } from "@/lib/constants";
+import Link from "next/link";
+import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
 type Props = {};
 
@@ -37,6 +40,40 @@ const section9 = ({ data }: Readonly<any>) => {
         >
           {data?.section9?.couples ?? ""}
         </h4>
+
+        <img
+          src={data.section9.vendor?.picture || "/logo.png"}
+          alt="logo"
+          style={{
+            // aspectRatio: "1:1",
+            borderRadius: 10,
+            width: "80px",
+            marginTop: "30px",
+          }}
+          onClick={() => {
+            window.open(data.section9.vendor?.url, "_blank");
+          }}
+          data-aos="flip-right"
+        />
+        <div className="text-[#303130] mt-3 text-xs" data-aos="zoom-in">
+          {data.section9.vendor?.name || "Family Invitation"}
+        </div>
+        {!data.section9.vendor && (
+          <div
+            style={{ display: "flex", marginTop: "20px", gap: "10px" }}
+            data-aos="zoom-in"
+          >
+            <Link href={urlWA + "6289516789565"} target="_blank">
+              <FaWhatsapp size={30} color="white" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/familyinvitation_/"
+              target="_blank"
+            >
+              <FaInstagram size={30} color="white" />
+            </Link>
+          </div>
+        )}
       </div>
     </FloralWrapperLayout>
   );
