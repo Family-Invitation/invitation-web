@@ -40,6 +40,7 @@ const Card = ({ cardItem }: CardItemProps) => {
     <div
       className="p-6 bg-white rounded-lg text-center flex flex-col  items-center"
       data-aos="fade-up"
+      style={{ opacity: 0.7 }}
     >
       <h2 className="mb-4 text-[#B87A54] text-4xl font-qagetto">
         {text_title}

@@ -82,7 +82,7 @@ const section7 = ({ data }: Readonly<any>) => {
           className="text-4xl text-[#C4855F] font-qagetto text-center"
           data-aos="zoom-in"
         >
-          Wishes
+          Ucapan
         </h2>
         <div className="p-4 bg-white rounded-lg mt-4" data-aos="fade-up">
           <div className="label">
