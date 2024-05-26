@@ -23,8 +23,8 @@ const WrapperLayout = ({
       }`}
     >
       <div
-        className={`overflow-hidden absolute left-0 w-full direction-ltr leading-[0] z-10 -top-[2px] transition-opacity duration-300 ${
-          hideTopFrame ? "hidden" : ""
+        className={`overflow-hidden absolute left-0 w-full  leading-[0] z-10 -top-[1px] transition-opacity duration-300 ${
+          hideTopFrame ? "opacity-0" : ""
         }`}
       >
         <svg
