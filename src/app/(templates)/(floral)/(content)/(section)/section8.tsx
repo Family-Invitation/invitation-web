@@ -21,7 +21,10 @@ const Card = ({ name, no, title }: RekeningItem) => {
   };
 
   return (
-    <div className="rounded-lg p-6 bg-[#F3F3F3] flex justify-center items-center flex-col">
+    <div
+      className="rounded-lg p-6 bg-[#F3F3F3] flex justify-center items-center flex-col"
+      style={{ opacity: 0.7 }}
+    >
       <h3 className="text-2xl text-[#C4855F] mb-5 font-qagetto">Rekening</h3>
       <p className="text-[#303030] font-semibold font-poppins">{title}</p>
       <p className="text-[#292929] font-poppins font-[15px]">{no}</p>
@@ -51,7 +54,7 @@ const section8 = ({ data }: Readonly<any>) => {
           className="text-4xl text-[#C4855F] mb-4 font-qagetto"
           data-aos="zoom-in"
         >
-          Wedding Gift
+          Beri Hadiah
         </h2>
         <p
           className="text-center text-[#4F4F4F] text-sm font-poppins"

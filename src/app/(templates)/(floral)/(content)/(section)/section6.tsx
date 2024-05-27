@@ -24,7 +24,7 @@ const section6 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section6">
       <div className="flex flex-col items-center justify-center h-full">
         <h2 className="mb-4 text-[#B87A54]  text-4xl font-qagetto">
-          Health Protocol
+          Protokol Kesehatan
         </h2>
 
         <div
