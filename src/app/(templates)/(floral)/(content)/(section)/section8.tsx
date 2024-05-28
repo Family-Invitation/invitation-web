@@ -25,11 +25,11 @@ const Card = ({ name, no, title }: RekeningItem) => {
       className="rounded-lg p-6 bg-[#F3F3F3] flex justify-center items-center flex-col"
       style={{ opacity: 0.7 }}
     >
-      <h3 className="text-2xl text-[#C4855F] mb-5 font-qagetto">Rekening</h3>
-      <p className="text-[#303030] font-semibold font-poppins">{title}</p>
-      <p className="text-[#292929] font-poppins font-[15px]">{no}</p>
+      <h3 className="text-2xl text-[#C4855F] mb-5 font-quicksand">Rekening</h3>
+      <p className="text-[#303030] font-semibold font-poppins text-sm">{title}</p>
+      <p className="text-[#292929] font-poppins text-[15px]">{no}</p>
       <button
-        className="flex items-center justify-center space-x-2 bg-[#C4855F]  text-white py-2 px-4 rounded-md mt-4 w-[150px] btn-sm"
+        className="flex items-center justify-center space-x-2 bg-[#C4855F]  text-white py-2 px-4 rounded-md mt-4 min-w-[150px] btn-sm"
         onClick={() => handleCopy(no)}
       >
         <FaRegCopy className="w-4 h-4" />
@@ -51,7 +51,7 @@ const section8 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section8">
       <div className="flex flex-col justify-center items-center">
         <h2
-          className="text-4xl text-[#C4855F] mb-4 font-qagetto"
+          className="text-4xl text-[#C4855F] mb-4 font-quicksand"
           data-aos="zoom-in"
         >
           Beri Hadiah

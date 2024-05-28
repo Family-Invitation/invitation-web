@@ -115,15 +115,15 @@ const opening: NextPage<Props> = ({
               {data?.woman.slice(0, 1)}
             </h2>
           </div>
-          <h2 className="text-black text-xl font-portSans">The Weading of</h2>
+          <h2 className="text-black text-xl font-portSans">THE WEDDING OF</h2>
 
-          <h4 className="text-[#B87A54] text-4xl font-['qagettoSans'] my-3">
+          <h4 className="text-[#B87A54] text-4xl font-quicksand my-3">
             {data?.man} <br /> & <br /> {data?.woman}
           </h4>
-          <h4 className="text-black text-lg">
+          <h4 className="text-black text-lg font-combo">
             {data?.metadata?.description ?? ""}
           </h4>
-          <div className="flex justify-center items-center my-5">
+          <div className="flex justify-center items-center my-5 md:my-8">
             <img
               className="w-[50px] h-[50px]"
               src="/images/floral/wedding.png"
@@ -131,15 +131,17 @@ const opening: NextPage<Props> = ({
             />
           </div>
           <div className="flex items-center justify-center flex-col">
-            <h4 className="text-black text-lg font-semibold">Kepada Yth.</h4>
-            <h4 className="text-black text-lg font-semibold">
+            <h4 className="text-black text-sm font-medium font-poppins">
+              Kepada Yth.
+            </h4>
+            <h4 className="text-black text-sm font-medium font-poppins">
               Bapak/Ibu/Saudara/i
             </h4>
-            <h3 className="mt-2 text-[#B87A54] text-lg font-semibold">
+            <h3 className="mt-2 text-[#B87A54] text-xl font-medium font-times">
               {formatInvitationName(toParam)}
             </h3>
             <button
-              className="flex items-center justify-center space-x-2 bg-[#C4855F]  text-white py-2 px-4 rounded-md mt-3 z-10"
+              className="flex items-center justify-center space-x-2 bg-[#C4855F]  text-white py-2 px-4 rounded-md mt-3 z-10 font-portSans"
               onClick={() => {
                 setShowContent(true);
               }}

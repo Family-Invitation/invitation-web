@@ -14,7 +14,7 @@ type DateItemProps = {
 const DateItem = ({ value, text }: DateItemProps) => {
   return (
     <div className="py-3 px-4 bg-[#D79872] rounded-lg shadow-xl">
-      <div className="flex flex-col text-white font-semibold text-xs  md:text-sm">
+      <div className="flex flex-col text-white font-semibold text-xs  md:text-sm font-poppins">
         <p className="text-white text-sm font-poppins">{value}</p>
         <p className="text-white font-poppins">{text}</p>
       </div>
@@ -38,7 +38,7 @@ const section1 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section1" hideTopFrame={true}>
       <div>
         <h2 className="text-black text-xl font-times font-light text-center mb-4 font- ">
-          The Weading of
+          THE WEDDING OF
         </h2>
         <div className="text-center">
           <div className="relative items-center justify-center flex mx-auto  h-[160px] w-[150px] mb-5 ">
@@ -50,7 +50,7 @@ const section1 = ({ data }: Readonly<any>) => {
             />
           </div>
 
-          <h4 className="text-[#B87A54] text-4xl font-qagetto">
+          <h4 className="text-[#B87A54] text-4xl font-quicksand">
             {data.man} <br /> & <br /> {data.woman}
           </h4>
           <h4 className="text-[#171717] text-md font-combo mt-2">

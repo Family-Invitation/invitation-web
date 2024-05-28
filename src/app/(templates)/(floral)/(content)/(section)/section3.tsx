@@ -42,12 +42,12 @@ const Card = ({ cardItem }: CardItemProps) => {
       data-aos="fade-up"
       style={{ opacity: 0.7 }}
     >
-      <h2 className="mb-4 text-[#B87A54] text-4xl font-qagetto">
+      <h2 className="mb-4 text-[#B87A54] text-4xl font-quicksand">
         {text_title}
       </h2>
-      <p className="text-black">{date}</p>
+      <p className="text-black font-crimsonPro">{date}</p>
       <p className="text-[#B87A54] font-semibold mb-4 font-portSans">{time}</p>
-      <p className="text-black">Bertempat di</p>
+      <p className="text-black font-crimsonPro">Bertempat di</p>
       <p className="text-[#353535] font-portSans">{address}</p>
       {map?.enabled && (
         <a

@@ -79,12 +79,12 @@ const section7 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section7" fullHeight={false}>
       <div className="flex flex-col  h-full">
         <h2
-          className="text-4xl text-[#C4855F] font-qagetto text-center"
+          className="text-4xl text-[#C4855F] font-quicksand text-center"
           data-aos="zoom-in"
         >
           Ucapan
         </h2>
-        <div className="p-4 bg-white rounded-lg mt-4" data-aos="fade-up">
+        <div className="p-4 bg-white rounded-lg mt-4 opacity-70" data-aos="fade-up">
           <div className="label">
             <span className="label-text font-combo text-black">
               Nama <span className="text-red-600">*</span>
@@ -124,7 +124,7 @@ const section7 = ({ data }: Readonly<any>) => {
           <div className="text-center text-lg text-white">Loading...</div>
         )}
         {!wishes.length && (
-          <div className="text-center text-[#C4855F] w-full mt-8 font-josefinSans text-sm">
+          <div className="text-center text-[#282928] w-full mt-8 font-combo text-sm">
             Belum ada ucapan, Yuk kirim ucapan buat kedua mempelai.
           </div>
         )}
