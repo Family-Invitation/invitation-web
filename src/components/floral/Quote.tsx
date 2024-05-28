@@ -7,7 +7,7 @@ const Quote = (props: Props) => {
   return (
     <FloralWrapperLayout id="quote" fullHeight={false} noFrame={true}>
       <div
-        className="p-4 text-center text-[#444444] font-cormorantGaramond text-sm font-normal"
+        className="p-4 text-center text-[#444444] font-crimsonPro text-sm font-normal"
         data-aos="zoom-in"
       >
         <p className="text-sm mb-4">

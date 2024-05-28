@@ -16,14 +16,15 @@ const config: Config = {
       fontFamily: {
         cormorantGaramond: ["Cormorant Garamond"],
         josefinSans: ["Josefin Sans"],
-        portSans: ['"Port Lligat Sans", "sans-serif"'],
-        qagetto: ["qagetto"],
-        combo: ["Combo"],
-        times: ['"Times New Roman"', "serif"],
-        poppins: ["Poppins"],
-        dancingScript: ["Dancing Script"],
-        croissantOne: ["Croissant One"],
-        alata: ["Alata"],
+        portSans: ["Port Lligat Sans", "sans-serif"],
+        quicksand: ["Quicksand", "sans-serif"],
+        combo: ["Combo", "sans-serif"],
+        times: ["Times New Roman", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+        dancingScript: ["Dancing Script", "sans-serif"],
+        croissantOne: ["Croissant One", "sans-serif"],
+        alata: ["Alata", "sans-serif"],
+        crimsonPro: ["Crimson Pro", "sans-serif"],
       },
       keyframes: {
         wiggle: {

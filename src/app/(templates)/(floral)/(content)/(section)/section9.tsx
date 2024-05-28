@@ -29,13 +29,13 @@ const section9 = ({ data }: Readonly<any>) => {
           />
         </div>
         <p
-          className="text-[#3E3E3E] text-base  font-croissantOne"
+          className="text-[#3E3E3E] text-base font-crimsonPro"
           data-aos="zoom-in"
         >
           Kami yang berbahagia{" "}
         </p>
         <h4
-          className="text-[#B87A54] text-[40px] font-qagetto"
+          className="text-[#B87A54] text-[40px] font-quicksand"
           data-aos="zoom-in"
         >
           {data?.section9?.couples ?? ""}
@@ -55,7 +55,7 @@ const section9 = ({ data }: Readonly<any>) => {
           }}
           data-aos="flip-right"
         />
-        <div className="text-[#303130] mt-3 text-xs" data-aos="zoom-in">
+        <div className="text-[#303130] mt-3 text-xs font-combo" data-aos="zoom-in">
           {data.section9.vendor?.name || "Family Invitation"}
         </div>
         {!data.section9.vendor && (
