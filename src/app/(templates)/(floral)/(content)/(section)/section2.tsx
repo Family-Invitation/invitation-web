@@ -34,7 +34,7 @@ const section2 = ({ data }: Readonly<any>) => {
             {data?.section2?.man?.name}
           </h4>
           <h4
-            className="text-[#171717] text-base leading-[1.3]"
+            className="text-[#171717] text-base leading-[1.3] font-combo"
             data-aos="zoom-in"
           >
             Putra dari {data?.section2?.man?.dad} & <br />
@@ -66,7 +66,7 @@ const section2 = ({ data }: Readonly<any>) => {
             {data?.section2?.woman?.name}
           </h4>
           <h4
-            className="text-[#171717] text-base leading-[1.3]"
+            className="text-[#171717] text-base leading-[1.3] font-combo"
             data-aos="zoom-in"
           >
             Putri dari {data?.section2?.woman?.dad} & <br />
