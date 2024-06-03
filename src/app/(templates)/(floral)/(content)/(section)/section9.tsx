@@ -1,6 +1,6 @@
 import React from "react";
 import FloralWrapperLayout from "@/components/floral/WrapperLayout";
-import { urlWA } from "@/lib/constants";
+import { assetsUrl, urlWA } from "@/lib/constants";
 import Link from "next/link";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa";
 
@@ -42,7 +42,7 @@ const section9 = ({ data }: Readonly<any>) => {
         </h4>
 
         <img
-          src={data.section9.vendor?.picture || "/logo.png"}
+          src={data.section9.vendor?.picture || assetsUrl + "/logo-brown.png"}
           alt="logo"
           style={{
             // aspectRatio: "1:1",
@@ -55,7 +55,10 @@ const section9 = ({ data }: Readonly<any>) => {
           }}
           data-aos="flip-right"
         />
-        <div className="text-[#303130] mt-3 text-xs font-combo" data-aos="zoom-in">
+        <div
+          className="text-[#303130] mt-3 text-xs font-combo"
+          data-aos="zoom-in"
+        >
           {data.section9.vendor?.name || "Family Invitation"}
         </div>
         {!data.section9.vendor && (
@@ -64,13 +67,13 @@ const section9 = ({ data }: Readonly<any>) => {
             data-aos="zoom-in"
           >
             <Link href={urlWA + "6289516789565"} target="_blank">
-              <FaWhatsapp size={30} color="white" />
+              <FaWhatsapp size={30} color="#B87A54" />
             </Link>
             <Link
               href="https://www.instagram.com/familyinvitation_/"
               target="_blank"
             >
-              <FaInstagram size={30} color="white" />
+              <FaInstagram size={30} color="#B87A54" />
             </Link>
           </div>
         )}
