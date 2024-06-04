@@ -117,7 +117,7 @@ const opening: NextPage<Props> = ({
           </div>
           <h2 className="text-black text-xl font-portSans">THE WEDDING OF</h2>
 
-          <h4 className="text-[#B87A54] text-4xl font-quicksand my-3">
+          <h4 className="text-[#B87A54] text-3xl font-quicksand my-3">
             {data?.man} <br /> & <br /> {data?.woman}
           </h4>
           <h4 className="text-black text-lg font-combo">

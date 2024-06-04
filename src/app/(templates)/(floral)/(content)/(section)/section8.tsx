@@ -51,7 +51,7 @@ const section8 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section8">
       <div className="flex flex-col justify-center items-center">
         <h2
-          className="text-4xl text-[#C4855F] mb-4 font-quicksand"
+          className="text-3xl text-[#C4855F] mb-4 font-quicksand"
           data-aos="zoom-in"
         >
           Beri Hadiah

@@ -28,7 +28,7 @@ const section2 = ({ data }: Readonly<any>) => {
           </div>
 
           <h4
-            className="text-[#B87A54] text-4xl font-dancingScript mb-2"
+            className="text-[#B87A54] text-3xl font-dancingScript mb-2"
             data-aos="zoom-in"
           >
             {data?.section2?.man?.name}
@@ -60,7 +60,7 @@ const section2 = ({ data }: Readonly<any>) => {
             />
           </div>
           <h4
-            className="text-[#B87A54] text-4xl font-dancingScript mb-2"
+            className="text-[#B87A54] text-3xl font-dancingScript mb-2"
             data-aos="zoom-in"
           >
             {data?.section2?.woman?.name}

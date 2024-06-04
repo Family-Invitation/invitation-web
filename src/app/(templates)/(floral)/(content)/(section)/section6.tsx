@@ -23,7 +23,7 @@ const section6 = ({ data }: Readonly<any>) => {
   return (
     <FloralWrapperLayout id="section6">
       <div className="flex flex-col items-center justify-center h-full">
-        <h2 className="mb-4 text-[#B87A54] text-4xl text-center font-quicksand">
+        <h2 className="mb-4 text-[#B87A54] text-3xl text-center font-quicksand">
           Protokol Kesehatan
         </h2>
 
