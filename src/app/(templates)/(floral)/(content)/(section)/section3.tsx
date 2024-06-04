@@ -42,7 +42,7 @@ const Card = ({ cardItem }: CardItemProps) => {
       data-aos="fade-up"
       style={{ opacity: 0.7 }}
     >
-      <h2 className="mb-4 text-[#B87A54] text-4xl font-quicksand">
+      <h2 className="mb-4 text-[#B87A54] text-3xl font-quicksand">
         {text_title}
       </h2>
       <p className="text-black font-crimsonPro">{date}</p>
@@ -66,7 +66,7 @@ const Card = ({ cardItem }: CardItemProps) => {
 const section3 = ({ data }: Readonly<any>) => {
   return (
     <FloralWrapperLayout id="section3">
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 justify-center items-center h-full">
         <Card cardItem={data?.section3?.content_box?.wedding} />
         <Card cardItem={data?.section3?.content_box?.reception} />
       </div>

@@ -50,7 +50,7 @@ const section1 = ({ data }: Readonly<any>) => {
             />
           </div>
 
-          <h4 className="text-[#B87A54] text-4xl font-quicksand">
+          <h4 className="text-[#B87A54] text-3xl font-quicksand">
             {data.man} <br /> & <br /> {data.woman}
           </h4>
           <h4 className="text-[#171717] text-md font-combo mt-2">

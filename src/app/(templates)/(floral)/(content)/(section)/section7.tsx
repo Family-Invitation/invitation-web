@@ -79,7 +79,7 @@ const section7 = ({ data }: Readonly<any>) => {
     <FloralWrapperLayout id="section7" fullHeight={false}>
       <div className="flex flex-col  h-full">
         <h2
-          className="text-4xl text-[#C4855F] font-quicksand text-center"
+          className="text-3xl text-[#C4855F] font-quicksand text-center"
           data-aos="zoom-in"
         >
           Ucapan

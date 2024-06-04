@@ -18,7 +18,7 @@ const WrapperLayout = ({
   return (
     <div
       id={id}
-      className={`md:w-[768px] mx-auto relative w-full  bg-[url('/images/floral/bg-floral-template.png')] px-8 py-16 md:p-28 -z-10 bg-repeat overflow-hidden ${
+      className={`md:w-[768px] mx-auto relative w-full  bg-[url('/images/floral/bg-floral-template.png')] px-6 py-12 md:p-28 -z-10 bg-repeat overflow-hidden ${
         fullHeight ? "h-screen" : ""
       }`}
     >
@@ -52,7 +52,7 @@ const WrapperLayout = ({
           ></path>
         </svg>
       </div>
-      <div className="overflow-hidden absolute left-0 w-full direction-ltr leading-[0] rotate-180 z-10 -bottom-[1px]">
+      <div className="overflow-hidden absolute left-0 w-full direction-ltr leading-[0] rotate-180 z-0 -bottom-[1px]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
