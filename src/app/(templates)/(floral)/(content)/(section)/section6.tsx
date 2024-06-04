@@ -32,7 +32,7 @@ const section6 = ({ data }: Readonly<any>) => {
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
           }}
-          className="m-4 md:m-12 gap-3 md:gap-10"
+          className="mx-0 my-4 sm:m-4 md:m-12 gap-4 md:gap-10"
         >
           {images.map(({ imageUrl: url, label }: any, i: number) => (
             <div
@@ -58,7 +58,7 @@ const section6 = ({ data }: Readonly<any>) => {
                 className="w-20  md:w-24 m-2"
               />
               <div
-                className="text-xs md:text-base text-[#54595F] text-center font-poppins"
+                className="text-[10px] md:text-base text-[#54595F] text-center font-poppins"
                 data-aos="fade-up"
               >
                 {label}
