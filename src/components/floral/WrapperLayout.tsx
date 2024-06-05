@@ -11,7 +11,7 @@ type Props = {
 const WrapperLayout = ({
   id,
   hideTopFrame = false,
-  fullHeight = true,
+  fullHeight = false,
   noFrame = false,
   children,
 }: Props) => {
