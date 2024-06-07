@@ -40,12 +40,12 @@ const opening: NextPage<Props> = ({
   function scroll(id: string) {
     const doc = document.getElementById(id);
 
-    // window.scrollTo({
-    //   top: doc?.offsetTop || 0 - 60,
-    //   behavior: "smooth",
-    // });
+    window.scrollTo({
+      top: doc?.offsetTop || 0 - 60,
+      behavior: "smooth",
+    });
 
-    doc?.scrollIntoView({ behavior: "smooth" });
+    // doc?.scrollIntoView({ behavior: "smooth" });
 
     // document.body.style.overflow = "auto";
     // setShowOpening(false);

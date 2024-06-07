@@ -21,15 +21,24 @@ export default function Content({
   showContent: boolean;
   data: any;
 }) {
+  const [scrollBackContent, setScrollBackContent] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const minOffset = document.getElementById("content")?.offsetTop || 0;
-      if (window.scrollY < minOffset) {
-        window.scrollTo({ top: minOffset });
+      if (window.scrollY < minOffset && !scrollBackContent) {
+        setScrollBackContent(true);
+        // alert(scrollBackContent);
+        window.scrollTo({ top: minOffset, behavior: "smooth" });
+      } else {
+        if (scrollBackContent) {
+          setScrollBackContent(false);
+        }
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
+    setTimeout(() => {
+      window.addEventListener("scroll", handleScroll);
+    }, 1000);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
