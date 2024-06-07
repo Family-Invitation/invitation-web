@@ -1,4 +1,10 @@
-import React, { useEffect, Dispatch, SetStateAction, useState } from "react";
+import React, {
+  useEffect,
+  Dispatch,
+  SetStateAction,
+  useState,
+  useLayoutEffect,
+} from "react";
 import { FaQrcode } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -34,20 +40,22 @@ const opening: NextPage<Props> = ({
   function scroll(id: string) {
     const doc = document.getElementById(id);
 
-    window.scrollTo({
-      top: doc?.offsetTop || 0 - 60,
-      behavior: "smooth",
-    });
+    // window.scrollTo({
+    //   top: doc?.offsetTop || 0 - 60,
+    //   behavior: "smooth",
+    // });
 
-    document.body.style.overflow = "auto";
-    setShowOpening(false);
-    setTimeout(() => {
-      const docOpening = document.getElementById("opening");
-      if (docOpening) {
-        docOpening.style.display = "none";
-        AOS.init();
-      }
-    }, 750);
+    doc?.scrollIntoView({ behavior: "smooth" });
+
+    // document.body.style.overflow = "auto";
+    // setShowOpening(false);
+    // setTimeout(() => {
+    const docOpening = document.getElementById("opening");
+    if (docOpening) {
+      // docOpening.style.display = "none";
+      AOS.init();
+    }
+    // }, 750);
   }
 
   useEffect(() => {
@@ -56,6 +64,10 @@ const opening: NextPage<Props> = ({
     }
 
     f();
+
+    // const body = document.body;
+    // body.style.overflow = "hidden";
+    // alert(body.style.overflow);
 
     window.addEventListener("resize", f);
 
@@ -66,27 +78,40 @@ const opening: NextPage<Props> = ({
     return () => window.removeEventListener("resize", f);
   }, []);
 
+  useLayoutEffect(() => {
+    if (!showContent) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed"; // Prevent scroll bar from appearing
+      document.body.style.width = "100%";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.position = ""; // Prevent scroll bar from appearing
+      document.body.style.width = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.position = ""; // Prevent scroll bar from appearing
+      document.body.style.width = "";
+    };
+  }, [showContent]);
+
   useEffect(() => {
     const body = document.body;
 
     if (showContent) {
+      // alert(showContent);
       setShowOpening(false);
       scroll("content");
-      body.style.overflow = ""; // Mengembalikan overflow ke nilai default saat komponen unmount
+      // body.style.overflow = ""; // Mengembalikan overflow ke nilai default saat komponen unmount
     } else {
-      body.style.overflow = "hidden";
     }
     // body.style.overflow = showOpening ? "hidden" : "auto";
-
-    return () => {
-      // Cleanup effect: mengembalikan overflow ke nilai default saat komponen unmount
-      body.style.overflow = "";
-    };
   }, [showContent]);
 
   return (
     <div id="opening" className="w-full md:w-[768px] mx-auto h-screen relative">
-      <div className="w-full h-screen relative bg-[url('/images/floral/bg-floral-template.png')] px-8 py-10 md:py-16 overflow-hidden">
+      <div className="w-full h-full relative bg-[url('/images/floral/bg-floral-template.png')] px-8 py-10 md:py-16 overflow-hidden">
         <img
           className="absolute -top-12 right-0 h-[250px] w-[220px] animate-heartBeat opacity-75 "
           src="/images/floral/asset-7.png"
@@ -97,7 +122,7 @@ const opening: NextPage<Props> = ({
           className="absolute -bottom-16 -left-16 h-[250px] w-[220px] animate-heartBeat -z-[2px] opacity-75 "
           src="/images/floral/asset-6.png"
           alt=""
-          data-aos="fade-down"
+          // data-aos="fade-down"
         />
         <div className="text-center">
           <div className="relative items-center justify-center flex mx-auto  h-[160px] w-[160px] mb-5">
@@ -108,6 +133,7 @@ const opening: NextPage<Props> = ({
               className="absolute"
               data-aos="zoom-in"
             />
+
             <h2 className="absolute top-14 left-[15px] text-5xl font-portSans text-[#B87A54] w-[50px]">
               {data?.man.slice(0, 1)}
             </h2>

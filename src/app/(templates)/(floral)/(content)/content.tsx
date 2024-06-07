@@ -12,6 +12,7 @@ import BottomNavbar from "@/components/floral/BottomNavbar";
 import MusicPlayer from "@/components/MusicPlayer";
 import { useGetData } from "@/hooks/useGetData";
 import { Data } from "@/interfaces/dataInterfaces";
+import { useEffect, useState } from "react";
 
 export default function Content({
   showContent,
@@ -20,6 +21,21 @@ export default function Content({
   showContent: boolean;
   data: any;
 }) {
+  useEffect(() => {
+    const handleScroll = () => {
+      const minOffset = document.getElementById("content")?.offsetTop || 0;
+      if (window.scrollY < minOffset) {
+        window.scrollTo({ top: minOffset });
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div id="content" style={{ width: "100%", zIndex: 10 }}>
       <Section1 data={data} />
