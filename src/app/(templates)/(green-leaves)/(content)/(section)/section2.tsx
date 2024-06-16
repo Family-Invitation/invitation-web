@@ -152,29 +152,13 @@ export default function Section2({ data }: Readonly<any>) {
                 height: "100%",
               }}
             >
-              <div // Picture
-                style={{
-                  width: "100%",
-                  height: resizeList(281, [
-                    {
-                      width: 450,
-                      decreasePercent: 70,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 60,
-                    },
-                  ]),
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  // backgroundColor: "red",
-                }}
-                data-aos="zoom-in"
-              >
-                <img
+              {(data.section2.is_used_picture == undefined
+                ? true
+                : data.section2.is_used_picture) && (
+                <div // Picture
                   style={{
-                    width: resizeList(250, [
+                    width: "100%",
+                    height: resizeList(281, [
                       {
                         width: 450,
                         decreasePercent: 70,
@@ -184,41 +168,61 @@ export default function Section2({ data }: Readonly<any>) {
                         decreasePercent: 60,
                       },
                     ]),
-                    height: resizeList(250, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    borderRadius: "50%",
-                    position: "absolute",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    // backgroundColor: "red",
                   }}
-                  src={data.section2.man.picture}
-                  alt=""
-                />
-                <img
-                  style={{
-                    width: resizeList(300, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    position: "absolute",
-                    zIndex: 1,
-                  }}
-                  src="/frame-rustic.webp"
-                  alt=""
-                />
-              </div>
+                  data-aos="zoom-in"
+                >
+                  <img
+                    style={{
+                      width: resizeList(250, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      height: resizeList(250, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      borderRadius: "50%",
+                      position: "absolute",
+                    }}
+                    src={data.section2.man.picture}
+                    alt=""
+                  />
+                  <img
+                    style={{
+                      width: resizeList(300, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      position: "absolute",
+                      zIndex: 1,
+                    }}
+                    src="/frame-rustic.webp"
+                    alt=""
+                  />
+                </div>
+              )}
               <div
                 style={{
                   flex: 1,
@@ -420,16 +424,22 @@ export default function Section2({ data }: Readonly<any>) {
             >
               <div
                 style={{
-                  height: resizeList(281, [
-                    {
-                      width: 450,
-                      decreasePercent: 70,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 60,
-                    },
-                  ]),
+                  height: (
+                    data.section2.is_used_picture == undefined
+                      ? true
+                      : data.section2.is_used_picture
+                  )
+                    ? resizeList(281, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ])
+                    : "100%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
@@ -449,29 +459,13 @@ export default function Section2({ data }: Readonly<any>) {
                 height: "100%",
               }}
             >
-              <div // Picture
-                style={{
-                  width: "100%",
-                  height: resizeList(281, [
-                    {
-                      width: 450,
-                      decreasePercent: 70,
-                    },
-                    {
-                      width: 700,
-                      decreasePercent: 60,
-                    },
-                  ]),
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  // backgroundColor: "red",
-                }}
-                data-aos="zoom-in"
-              >
-                <img
+              {(data.section2.is_used_picture == undefined
+                ? true
+                : data.section2.is_used_picture) && (
+                <div // Picture
                   style={{
-                    width: resizeList(250, [
+                    width: "100%",
+                    height: resizeList(281, [
                       {
                         width: 450,
                         decreasePercent: 70,
@@ -481,41 +475,61 @@ export default function Section2({ data }: Readonly<any>) {
                         decreasePercent: 60,
                       },
                     ]),
-                    height: resizeList(250, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    borderRadius: "50%",
-                    position: "absolute",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    // backgroundColor: "red",
                   }}
-                  src={data.section2.woman.picture}
-                  alt=""
-                />
-                <img
-                  style={{
-                    width: resizeList(300, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    position: "absolute",
-                    zIndex: 1,
-                  }}
-                  src="/frame-rustic.webp"
-                  alt=""
-                />
-              </div>
+                  data-aos="zoom-in"
+                >
+                  <img
+                    style={{
+                      width: resizeList(250, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      height: resizeList(250, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      borderRadius: "50%",
+                      position: "absolute",
+                    }}
+                    src={data.section2.woman.picture}
+                    alt=""
+                  />
+                  <img
+                    style={{
+                      width: resizeList(300, [
+                        {
+                          width: 450,
+                          decreasePercent: 70,
+                        },
+                        {
+                          width: 700,
+                          decreasePercent: 60,
+                        },
+                      ]),
+                      position: "absolute",
+                      zIndex: 1,
+                    }}
+                    src="/frame-rustic.webp"
+                    alt=""
+                  />
+                </div>
+              )}
               <div
                 style={{
                   flex: 1,
