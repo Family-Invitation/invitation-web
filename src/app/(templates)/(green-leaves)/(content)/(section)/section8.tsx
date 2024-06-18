@@ -244,6 +244,19 @@ export default function Section8({ data }: Readonly<any>) {
                 />
               )
             )}
+            {data?.section8?.send_gift?.name && (
+              <div data-aos="fade-up">
+                <h2 className="text-white font-cormorantGaramond font-semibold text-2xl md:text-5xl mt-12 text-center">
+                  Kirim Kado
+                </h2>
+                <GiftCard
+                  isGift={true}
+                  recipientName={data?.section8?.send_gift?.name}
+                  address={data?.section8?.send_gift?.address}
+                  nomorWa={data?.section8?.send_gift?.no}
+                />
+              </div>
+            )}
             {/* 
             <GiftCard
               isGift={false}
