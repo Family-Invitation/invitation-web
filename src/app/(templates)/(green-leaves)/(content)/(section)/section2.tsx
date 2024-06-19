@@ -142,259 +142,7 @@ export default function Section2({ data }: Readonly<any>) {
               // height: "100vh",
             }}
           >
-            <div // Segment 1
-              style={{
-                flex: 1,
-                textAlign: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                height: "100%",
-              }}
-            >
-              {(data.section2.is_used_picture == undefined
-                ? true
-                : data.section2.is_used_picture) && (
-                <div // Picture
-                  style={{
-                    width: "100%",
-                    height: resizeList(281, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    // backgroundColor: "red",
-                  }}
-                  data-aos="zoom-in"
-                >
-                  <img
-                    style={{
-                      width: resizeList(250, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      height: resizeList(250, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      borderRadius: "50%",
-                      position: "absolute",
-                    }}
-                    src={data.section2.man.picture}
-                    alt=""
-                  />
-                  <img
-                    style={{
-                      width: resizeList(300, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      position: "absolute",
-                      zIndex: 1,
-                    }}
-                    src="/frame-rustic.webp"
-                    alt=""
-                  />
-                </div>
-              )}
-              <div
-                style={{
-                  flex: 1,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-                data-aos="zoom-in"
-              >
-                <h2
-                  style={{
-                    margin: "10px 0",
-                    color: "#8A584C",
-                    fontFamily: "Cormorant Garamond",
-                    fontSize: resizeList(40, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 600,
-                  }}
-                >
-                  {data.section2.man.name}
-                </h2>
-                <img
-                  style={{
-                    width: resizeList(243, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                  }}
-                  src="/divider-rustic.webp"
-                  alt=""
-                />
-                <b
-                  style={{
-                    fontFamily: "Josefin Sans",
-                    color: "#85865F",
-                    fontSize: resizeList(25, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 600,
-                    margin: "20px 0",
-                  }}
-                >
-                  {data.section2.man.text_son_of}
-                </b>
-                <p
-                  style={{
-                    fontFamily: "Josefin Sans",
-                    color: "#85865F",
-                    fontSize: resizeList(25, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 300,
-                    lineHeight: "1.5",
-                    margin: 0,
-                  }}
-                >
-                  {data.section2.man.dad}
-                  <br />
-                  &
-                  <br />
-                  {data.section2.man.mom}
-                </p>
-                <div // Sosmed
-                  style={{
-                    color: "#8A584C",
-                    margin: "20px 0",
-                    display: "flex",
-                  }}
-                >
-                  {data.section2.man.social_media.facebook.enabled && (
-                    <a
-                      href={data.section2.man.social_media.facebook.href}
-                      target="_blank"
-                    >
-                      <FaFacebook
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.man.social_media.tiktok.enabled && (
-                    <a
-                      href={data.section2.man.social_media.tiktok.href}
-                      target="_blank"
-                    >
-                      <FaTiktok
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.man.social_media.instagram.enabled && (
-                    <a
-                      href={data.section2.man.social_media.instagram.href}
-                      target="_blank"
-                    >
-                      <FaInstagram
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.man.social_media.twitter.enabled && (
-                    <a
-                      href={data.section2.man.social_media.twitter.href}
-                      target="_blank"
-                    >
-                      <FaXTwitter
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            {data.switch_couple ? <Woman data={data} /> : <Man data={data} />}
             <div // Segment 2
               style={{
                 flex: resizeList(1, [
@@ -449,261 +197,527 @@ export default function Section2({ data }: Readonly<any>) {
                 &
               </div>
             </div>
-            <div // Segment 3
-              style={{
-                flex: 1,
-                textAlign: "center",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                height: "100%",
-              }}
-            >
-              {(data.section2.is_used_picture == undefined
-                ? true
-                : data.section2.is_used_picture) && (
-                <div // Picture
-                  style={{
-                    width: "100%",
-                    height: resizeList(281, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    // backgroundColor: "red",
-                  }}
-                  data-aos="zoom-in"
-                >
-                  <img
-                    style={{
-                      width: resizeList(250, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      height: resizeList(250, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      borderRadius: "50%",
-                      position: "absolute",
-                    }}
-                    src={data.section2.woman.picture}
-                    alt=""
-                  />
-                  <img
-                    style={{
-                      width: resizeList(300, [
-                        {
-                          width: 450,
-                          decreasePercent: 70,
-                        },
-                        {
-                          width: 700,
-                          decreasePercent: 60,
-                        },
-                      ]),
-                      position: "absolute",
-                      zIndex: 1,
-                    }}
-                    src="/frame-rustic.webp"
-                    alt=""
-                  />
-                </div>
-              )}
-              <div
-                style={{
-                  flex: 1,
-                  textAlign: "center",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-                data-aos="zoom-in"
-              >
-                <h2
-                  style={{
-                    margin: "10px 0",
-                    color: "#8A584C",
-                    fontFamily: "Cormorant Garamond",
-                    fontSize: resizeList(40, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 600,
-                  }}
-                >
-                  {data.section2.woman.name}
-                </h2>
-                <img
-                  style={{
-                    width: resizeList(243, [
-                      {
-                        width: 450,
-                        decreasePercent: 70,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 60,
-                      },
-                    ]),
-                  }}
-                  src="/divider-rustic.webp"
-                  alt=""
-                />
-                <b
-                  style={{
-                    fontFamily: "Josefin Sans",
-                    color: "#85865F",
-                    fontSize: resizeList(25, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 600,
-                    margin: "20px 0",
-                  }}
-                >
-                  {data.section2.woman.text_daughter_of}
-                </b>
-                <p
-                  style={{
-                    fontFamily: "Josefin Sans",
-                    color: "#85865F",
-                    fontSize: resizeList(25, [
-                      {
-                        width: 450,
-                        decreasePercent: 50,
-                      },
-                      {
-                        width: 700,
-                        decreasePercent: 30,
-                      },
-                    ]),
-                    fontWeight: 300,
-                    lineHeight: "1.5",
-                    margin: 0,
-                  }}
-                >
-                  {data.section2.woman.dad}
-                  <br />
-                  &
-                  <br />
-                  {data.section2.woman.mom}
-                </p>
-                <div // Sosmed
-                  style={{
-                    color: "#8A584C",
-                    margin: "20px 0",
-                    display: "flex",
-                  }}
-                >
-                  {data.section2.woman.social_media.facebook.enabled && (
-                    <a
-                      href={data.section2.woman.social_media.facebook.href}
-                      target="_blank"
-                    >
-                      <FaFacebook
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.woman.social_media.tiktok.enabled && (
-                    <a
-                      href={data.section2.woman.social_media.tiktok.href}
-                      target="_blank"
-                    >
-                      <FaTiktok
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.woman.social_media.instagram.enabled && (
-                    <a
-                      href={data.section2.woman.social_media.instagram.href}
-                      target="_blank"
-                    >
-                      <FaInstagram
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                  {data.section2.woman.social_media.twitter.enabled && (
-                    <a
-                      href={data.section2.woman.social_media.twitter.href}
-                      target="_blank"
-                    >
-                      <FaXTwitter
-                        size={resizeList(40, [
-                          {
-                            width: 450,
-                            decreasePercent: 50,
-                          },
-                        ])}
-                        style={{
-                          margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
-                        }}
-                      />
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
+            {data.switch_couple ? <Man data={data} /> : <Woman data={data} />}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Man({ data }: any) {
+  const { resizeList, windowWidth } = useResizeFont();
+  return (
+    <div // Segment 1
+      style={{
+        flex: 1,
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      {(data.section2.is_used_picture == undefined
+        ? true
+        : data.section2.is_used_picture) && (
+        <div // Picture
+          style={{
+            width: "100%",
+            height: resizeList(281, [
+              {
+                width: 450,
+                decreasePercent: 70,
+              },
+              {
+                width: 700,
+                decreasePercent: 60,
+              },
+            ]),
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            // backgroundColor: "red",
+          }}
+          data-aos="zoom-in"
+        >
+          <img
+            style={{
+              width: resizeList(250, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              height: resizeList(250, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              borderRadius: "50%",
+              position: "absolute",
+            }}
+            src={data.section2.man.picture}
+            alt=""
+          />
+          <img
+            style={{
+              width: resizeList(300, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              position: "absolute",
+              zIndex: 1,
+            }}
+            src="/frame-rustic.webp"
+            alt=""
+          />
+        </div>
+      )}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+        data-aos="zoom-in"
+      >
+        <h2
+          style={{
+            margin: "10px 0",
+            color: "#8A584C",
+            fontFamily: "Cormorant Garamond",
+            fontSize: resizeList(40, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 600,
+          }}
+        >
+          {data.section2.man.name}
+        </h2>
+        <img
+          style={{
+            width: resizeList(243, [
+              {
+                width: 450,
+                decreasePercent: 70,
+              },
+              {
+                width: 700,
+                decreasePercent: 60,
+              },
+            ]),
+          }}
+          src="/divider-rustic.webp"
+          alt=""
+        />
+        <b
+          style={{
+            fontFamily: "Josefin Sans",
+            color: "#85865F",
+            fontSize: resizeList(25, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 600,
+            margin: "20px 0",
+          }}
+        >
+          {data.section2.man.text_son_of}
+        </b>
+        <p
+          style={{
+            fontFamily: "Josefin Sans",
+            color: "#85865F",
+            fontSize: resizeList(25, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 300,
+            lineHeight: "1.5",
+            margin: 0,
+          }}
+        >
+          {data.section2.man.dad}
+          <br />
+          &
+          <br />
+          {data.section2.man.mom}
+        </p>
+        <div // Sosmed
+          style={{
+            color: "#8A584C",
+            margin: "20px 0",
+            display: "flex",
+          }}
+        >
+          {data.section2.man.social_media.facebook.enabled && (
+            <a
+              href={data.section2.man.social_media.facebook.href}
+              target="_blank"
+            >
+              <FaFacebook
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.man.social_media.tiktok.enabled && (
+            <a
+              href={data.section2.man.social_media.tiktok.href}
+              target="_blank"
+            >
+              <FaTiktok
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.man.social_media.instagram.enabled && (
+            <a
+              href={data.section2.man.social_media.instagram.href}
+              target="_blank"
+            >
+              <FaInstagram
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.man.social_media.twitter.enabled && (
+            <a
+              href={data.section2.man.social_media.twitter.href}
+              target="_blank"
+            >
+              <FaXTwitter
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Woman({ data }: any) {
+  const { resizeList, windowWidth } = useResizeFont();
+  return (
+    <div // Segment 3
+      style={{
+        flex: 1,
+        textAlign: "center",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        height: "100%",
+      }}
+    >
+      {(data.section2.is_used_picture == undefined
+        ? true
+        : data.section2.is_used_picture) && (
+        <div // Picture
+          style={{
+            width: "100%",
+            height: resizeList(281, [
+              {
+                width: 450,
+                decreasePercent: 70,
+              },
+              {
+                width: 700,
+                decreasePercent: 60,
+              },
+            ]),
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            // backgroundColor: "red",
+          }}
+          data-aos="zoom-in"
+        >
+          <img
+            style={{
+              width: resizeList(250, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              height: resizeList(250, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              borderRadius: "50%",
+              position: "absolute",
+            }}
+            src={data.section2.woman.picture}
+            alt=""
+          />
+          <img
+            style={{
+              width: resizeList(300, [
+                {
+                  width: 450,
+                  decreasePercent: 70,
+                },
+                {
+                  width: 700,
+                  decreasePercent: 60,
+                },
+              ]),
+              position: "absolute",
+              zIndex: 1,
+            }}
+            src="/frame-rustic.webp"
+            alt=""
+          />
+        </div>
+      )}
+      <div
+        style={{
+          flex: 1,
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+        data-aos="zoom-in"
+      >
+        <h2
+          style={{
+            margin: "10px 0",
+            color: "#8A584C",
+            fontFamily: "Cormorant Garamond",
+            fontSize: resizeList(40, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 600,
+          }}
+        >
+          {data.section2.woman.name}
+        </h2>
+        <img
+          style={{
+            width: resizeList(243, [
+              {
+                width: 450,
+                decreasePercent: 70,
+              },
+              {
+                width: 700,
+                decreasePercent: 60,
+              },
+            ]),
+          }}
+          src="/divider-rustic.webp"
+          alt=""
+        />
+        <b
+          style={{
+            fontFamily: "Josefin Sans",
+            color: "#85865F",
+            fontSize: resizeList(25, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 600,
+            margin: "20px 0",
+          }}
+        >
+          {data.section2.woman.text_daughter_of}
+        </b>
+        <p
+          style={{
+            fontFamily: "Josefin Sans",
+            color: "#85865F",
+            fontSize: resizeList(25, [
+              {
+                width: 450,
+                decreasePercent: 50,
+              },
+              {
+                width: 700,
+                decreasePercent: 30,
+              },
+            ]),
+            fontWeight: 300,
+            lineHeight: "1.5",
+            margin: 0,
+          }}
+        >
+          {data.section2.woman.dad}
+          <br />
+          &
+          <br />
+          {data.section2.woman.mom}
+        </p>
+        <div // Sosmed
+          style={{
+            color: "#8A584C",
+            margin: "20px 0",
+            display: "flex",
+          }}
+        >
+          {data.section2.woman.social_media.facebook.enabled && (
+            <a
+              href={data.section2.woman.social_media.facebook.href}
+              target="_blank"
+            >
+              <FaFacebook
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.woman.social_media.tiktok.enabled && (
+            <a
+              href={data.section2.woman.social_media.tiktok.href}
+              target="_blank"
+            >
+              <FaTiktok
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.woman.social_media.instagram.enabled && (
+            <a
+              href={data.section2.woman.social_media.instagram.href}
+              target="_blank"
+            >
+              <FaInstagram
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
+          {data.section2.woman.social_media.twitter.enabled && (
+            <a
+              href={data.section2.woman.social_media.twitter.href}
+              target="_blank"
+            >
+              <FaXTwitter
+                size={resizeList(40, [
+                  {
+                    width: 450,
+                    decreasePercent: 50,
+                  },
+                ])}
+                style={{
+                  margin: windowWidth > 450 ? "5px 15px" : "5px 5px",
+                }}
+              />
+            </a>
+          )}
         </div>
       </div>
     </div>
