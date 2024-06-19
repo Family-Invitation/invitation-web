@@ -300,8 +300,13 @@ function Man({ data }: any) {
       >
         <h2
           style={{
-            margin: "10px 0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "70px 0px 10px",
             color: "#8A584C",
+            width: "100%",
+            height: 70,
             fontFamily: "Cormorant Garamond",
             fontSize: resizeList(40, [
               {
@@ -560,8 +565,13 @@ function Woman({ data }: any) {
       >
         <h2
           style={{
-            margin: "10px 0",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            margin: "70px 0px 10px",
             color: "#8A584C",
+            width: "100%",
+            height: 70,
             fontFamily: "Cormorant Garamond",
             fontSize: resizeList(40, [
               {
