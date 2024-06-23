@@ -26,6 +26,9 @@ const section7 = ({ data }: Readonly<any>) => {
 
   const postApi = usePostWish();
   const postData = async () => {
+    if (message.trim() == "") {
+      return;
+    }
     // Lakukan sesuatu sebelum atau setelah operasi POST
     await postApi.mutate(
       {
@@ -84,7 +87,10 @@ const section7 = ({ data }: Readonly<any>) => {
         >
           Ucapan
         </h2>
-        <div className="p-4 bg-white rounded-lg mt-4 opacity-70" data-aos="fade-up">
+        <div
+          className="p-4 bg-white rounded-lg mt-4 opacity-70"
+          data-aos="fade-up"
+        >
           <div className="label">
             <span className="label-text font-combo text-black">
               Nama <span className="text-red-600">*</span>

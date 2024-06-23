@@ -33,6 +33,9 @@ export default function Section7({ data }: Readonly<any>) {
   const [totalDataWish, setTotalDataWish] = useState(0);
 
   const postData = async () => {
+    if (message.trim() == "") {
+      return;
+    }
     // Lakukan sesuatu sebelum atau setelah operasi POST
     await postApi.mutate(
       {
