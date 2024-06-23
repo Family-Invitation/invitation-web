@@ -36,6 +36,7 @@ export default function Section7({ data }: Readonly<any>) {
     if (message.trim() == "") {
       return;
     }
+    setMessage((m) => m.trim());
     // Lakukan sesuatu sebelum atau setelah operasi POST
     await postApi.mutate(
       {
