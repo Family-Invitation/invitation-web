@@ -41,6 +41,7 @@ const MusicPlayer = ({
 
     if (audioRef.current) {
       audioRef.current.src = audioSource;
+      audioRef.current.preload = "auto";
       // (Optional) Anda dapat menambahkan logika lainnya di sini, seperti memuat metadata audio atau mengatur volume
     }
   }, []);
