@@ -17,6 +17,7 @@ const Card = ({ name, no, title }: RekeningItem) => {
   return (
     <div
       className="rounded-lg p-6 bg-[#f1f1f1] flex justify-center items-center flex-col shadow-md shadow-black"
+      data-aos="flip-up"
       // style={{ opacity: 0.7 }}
     >
       <h3 className="text-2xl text-[#2D2D2D] mb-5 font-shippory">Rekening</h3>
@@ -38,15 +39,16 @@ const Card = ({ name, no, title }: RekeningItem) => {
 
 const section8 = ({ data }: Readonly<any>) => {
   const { content_box } = data?.section8;
-  console.log({ content_box });
 
   if (!content_box?.length) {
     return null;
   }
   return (
     <div className="bg-white flex justify-center items-center flex-col px-5 py-8">
-      <h2 className="font-playFair text-[#525252] text-2xl">WEDDING</h2>
-      <h2 className="font-dancingScript text-[#525252] text-xl">gift</h2>
+      <div className="text-center" data-aos="zoom-in">
+        <h2 className="font-playFair text-[#525252] text-2xl">WEDDING</h2>
+        <h2 className="font-dancingScript text-[#525252] text-xl">gift</h2>
+      </div>
 
       <h4 className="mt-3 font-poppins text-[#4F4F4F] text-xs text-center">
         Doa restu anda merupakan karunia yang sangat berarti bagi kami, dan jika

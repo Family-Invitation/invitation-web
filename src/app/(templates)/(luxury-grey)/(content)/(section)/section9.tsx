@@ -26,7 +26,7 @@ const section8 = ({ data }: Readonly<any>) => {
         >
           {data?.metadata?.description}
         </h2>
-        <div className="absolute bottom-[200px] text-center">
+        <div className="absolute bottom-[200px] text-center" data-aos="zoom-in">
           <p className="text-white text-xs font-poppins px-2">
             Atas kehadiran dan doa restunya kami ucapkan terimakasih.
           </p>

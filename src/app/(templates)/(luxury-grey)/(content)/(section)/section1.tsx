@@ -72,18 +72,18 @@ const section1 = ({ data }: Readonly<any>) => {
         >
           {data?.metadata?.description}
         </h2>
-        <h4
-          className="mt-20 text-xs font-times font-thin italic text-center"
-          data-aos="fade-down"
+        <div
+          data-aos="fade-down "
+          className="flex flex-col items-center justify-center"
         >
-          “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-          pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
-          dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
-          kasih dan sayang.”
-        </h4>
-        <h4 className="mt-4 text-xs font-times italic" data-aos="fade-down">
-          Q.S. Ar- Rum : 21
-        </h4>
+          <h4 className="mt-20 text-xs font-times font-thin italic text-center">
+            “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+            pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung
+            dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa
+            kasih dan sayang.”
+          </h4>
+          <h4 className="mt-4 text-xs font-times italic">Q.S. Ar- Rum : 21</h4>
+        </div>
       </div>
     </div>
   );

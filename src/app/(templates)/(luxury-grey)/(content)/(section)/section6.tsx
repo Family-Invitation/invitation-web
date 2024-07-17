@@ -25,10 +25,12 @@ const images = [
 const section6 = ({ data }: Readonly<any>) => {
   return (
     <div className="flex flex-col items-center justify-center py-8 bg-[#F1F1F1]">
-      <h2 className="font-playFair text-[#383838] text-3xl">Protokol</h2>
-      <h2 className="font-dancingScript text-[#2f2f2f] text-xl mb-5">
-        Kesehatan
-      </h2>
+      <div className="text-center" data-aos="zoom-in">
+        <h2 className="font-playFair text-[#383838] text-3xl">Protokol</h2>
+        <h2 className="font-dancingScript text-[#2f2f2f] text-xl mb-5">
+          Kesehatan
+        </h2>
+      </div>
 
       <div
         style={{
@@ -48,7 +50,7 @@ const section6 = ({ data }: Readonly<any>) => {
               flexDirection: "column",
               alignItems: "center",
             }}
-            // data-aos="fade-up"
+            data-aos="fade-up"
           >
             <img
               src={url}
@@ -63,7 +65,7 @@ const section6 = ({ data }: Readonly<any>) => {
             />
             <div
               className="text-[10px] md:text-xs text-[#54595F] text-center font-poppins px-[2px]"
-              //   data-aos="fade-up"
+              data-aos="fade-up"
             >
               {label}
             </div>

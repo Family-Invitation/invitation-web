@@ -32,7 +32,7 @@ const MomentGallery = ({ data }: Readonly<Props>) => {
   ];
   return (
     <Gallery id="my-gallery">
-      <div className="grid grid-cols-6 gap-3 w-full">
+      <div className="grid grid-cols-6 gap-3 w-full" data-aos="fade-up">
         {data?.section5?.pictures.map(
           ({ url: imgUrl }: { url: string }, i: number) => (
             <Item<HTMLImageElement>

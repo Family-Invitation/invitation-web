@@ -53,11 +53,16 @@ const section3 = ({ data }: Readonly<any>) => {
     <>
       {/* akad & resepsi */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
-        <h2 className="font-playFair text-white text-2xl">WEDDING</h2>
-        <h2 className="font-dancingScript text-white text-xl">Event</h2>
+        <div className="text-center" data-aos="zoom-in">
+          <h2 className="font-playFair text-white text-2xl">WEDDING</h2>
+          <h2 className="font-dancingScript text-white text-xl">Event</h2>
+        </div>
 
         {/* card akad nikah */}
-        <div className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl">
+        <div
+          className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl"
+          data-aos="fade-up"
+        >
           <div className="bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754287-scaled-1.jpg')] bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full"></div>
           <div className="flex w-full">
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
@@ -97,7 +102,10 @@ const section3 = ({ data }: Readonly<any>) => {
         </div>
 
         {/* card resepsi */}
-        <div className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl">
+        <div
+          className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl"
+          data-aos="fade-up"
+        >
           <div className="bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754256-scaled-1.jpg')] bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full"></div>
           <div className="flex w-full">
             <div className="w-3/4 py-12 flex justify-center items-center flex-col bg-white">
@@ -141,12 +149,17 @@ const section3 = ({ data }: Readonly<any>) => {
 
       {/* countdown */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
-        <h2 className="font-playFair text-white text-3xl">EVENT</h2>
-        <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
-        <div className="mt-8 h-full w-full px-8">
+        <div className="text-center" data-aos="zoom-in">
+          <h2 className="font-playFair text-white text-3xl">EVENT</h2>
+          <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
+        </div>
+        <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
           <div className="bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754224-scaled-1.jpg')] bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full"></div>
         </div>
-        <div className="flex justify-between items-center mt-8 w-[50%]">
+        <div
+          className="flex justify-between items-center mt-8 w-[50%]"
+          data-aos="fade-up"
+        >
           <div className="flex justify-center items-center flex-col font-poppins text-white max-w-[50px]">
             <h4> {timeLeft.days}</h4>
             <h4>Hari</h4>

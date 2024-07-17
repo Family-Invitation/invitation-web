@@ -11,14 +11,19 @@ const section2 = ({ data }: Readonly<any>) => {
         backgroundImage: "linear-gradient(180deg, #404747 0%, #3A3E3E 100%)",
       }}
     >
-      <h2 className="text-white text-2xl font-playFair">Our Wedding</h2>
-      <h4 className="text-white mt-3 font-times text-center text-sm italic px-2">
+      <h2 className="text-white text-2xl font-playFair" data-aos="fade-up">
+        Our Wedding
+      </h2>
+      <h4
+        className="text-white mt-3 font-times text-center text-sm italic px-2"
+        data-aos="fade-up"
+      >
         Tanpa mengurangi rasa hormat, kami bermaksud mengundang
         Bapak/Ibu/Saudara/I untuk menghadiri acara Pernikahan kami
       </h4>
 
       {/* //groom Card*/}
-      <div className="mt-5 px-5 h-full w-full">
+      <div className="mt-5 px-5 h-full w-full" data-aos="fade-up">
         <div className="flex w-full h-full">
           <div
             className="w-1/5"
@@ -77,13 +82,13 @@ const section2 = ({ data }: Readonly<any>) => {
 
       <div
         className="text-white mt-5 font-dancingScript text-center text-3xl"
-        // data-aos="fade-down"
+        data-aos="zoom-in"
       >
         - {data?.man} & {data?.woman} -
       </div>
 
       {/* //bride Card*/}
-      <div className="mt-6 px-5 h-full w-full">
+      <div className="mt-6 px-5 h-full w-full" data-aos="fade-up">
         <div className="flex w-full h-full">
           <div
             className="w-4/5 relative  h-[400px] rounded-tl-3xl bg-cover bg-center bg-no-repeat  bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754226-scaled-1.jpg')] opacity-90"

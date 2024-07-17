@@ -83,17 +83,14 @@ const section7 = ({ data }: Readonly<any>) => {
   }, []);
 
   return (
-    <div className="flex flex-col  h-full py-8">
+    <div className="flex flex-col  h-full py-8 bg-white">
       <h2
         className="text-3xl text-[#525252] font-playFair text-center"
-        // data-aos="zoom-in"
+        data-aos="zoom-in"
       >
         Ucapan
       </h2>
-      <div
-        className="px-6 py-4 bg-white rounded-lg mt-4 "
-        // data-aos="fade-up"
-      >
+      <div className="px-6 py-4 bg-white rounded-lg mt-4 " data-aos="fade-up">
         <div className="label">
           <span className="label-text font-combo text-black">
             Nama <span className="text-red-600">*</span>
@@ -137,7 +134,7 @@ const section7 = ({ data }: Readonly<any>) => {
       )}
       <div
         className="grid grid-cols-1 lg:grid-cols-1  gap-8 mt-8 w-full overflow-auto px-6"
-        // data-aos="fade-up"
+        data-aos="fade-up"
       >
         <>
           {wishes.map((item: WishMessage, index) => (
