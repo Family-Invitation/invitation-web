@@ -36,7 +36,7 @@ const ButtonBase = ({
       ) : (
         <button
           style={buttonStyles}
-          className="lg:min-w-[100px] min-w-[80px] text-sm lg:text-base text-center"
+          className="lg:min-w-[100px] min-w-[80px] text-sm lg:text-base text-center font-crimsonPro"
           onClick={onClick}
         >
           {isLoading ? "Loading..." : text}

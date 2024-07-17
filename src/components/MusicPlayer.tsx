@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
-type Template = "green-leaves" | "creamy-latte" | "floral";
+type Template = "green-leaves" | "creamy-latte" | "floral" | "luxury-grey";
 const MusicPlayer = ({
   showContent,
   audioSource,
@@ -18,6 +18,7 @@ const MusicPlayer = ({
     "green-leaves": "#4F583D",
     "creamy-latte": "#D2B591",
     floral: "#D79872",
+    "luxury-grey": "#2D2D2D",
   };
 
   const mainColor = colors[template];
@@ -60,7 +61,8 @@ const MusicPlayer = ({
       style={{
         position: "fixed",
         bottom: "100px",
-        right: "20px",
+        left: template === "luxury-grey" ? "20px" : "auto",
+        right: template !== "luxury-grey" ? "20px" : "auto",
         zIndex: "999",
       }}
     >
