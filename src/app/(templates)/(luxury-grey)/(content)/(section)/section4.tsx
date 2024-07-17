@@ -11,7 +11,7 @@ const section4 = ({ data }: Readonly<any>) => {
         <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
       </div>
       <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
-        <div className="bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754224-scaled-1.jpg')] bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full"></div>
+        <div className={`bg-[url('${data?.section3.content_box.event_picture}')] bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full`}></div>
       </div>
       <div
         className="flex justify-between items-center mt-8 w-[50%]"
