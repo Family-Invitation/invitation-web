@@ -39,7 +39,7 @@ const section2 = ({ data }: Readonly<any>) => {
             </div>
           </div>
           <div
-            className="w-4/5 relative  h-[400px] rounded-tr-3xl bg-cover bg-center bg-no-repeat  bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754303-scaled-1.jpg')] opacity-90"
+            className="w-4/5 relative  h-[400px] rounded-tr-3xl bg-cover bg-center bg-no-repeat opacity-90"
             style={{
               backgroundImage: `url('${data.section2.man?.picture}')`,
             }}
