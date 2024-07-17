@@ -11,7 +11,12 @@ const section4 = ({ data }: Readonly<any>) => {
         <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
       </div>
       <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
-        <div className={`bg-[url('${data?.section3.content_box.event_picture}')] bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full`}></div>
+        <div
+          className={`bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full`}
+          style={{
+            backgroundImage: `url("${data?.section3.content_box.event_picture}")`,
+          }}
+        ></div>
       </div>
       <div
         className="flex justify-between items-center mt-8 w-[50%]"
