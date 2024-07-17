@@ -4,7 +4,12 @@ type Props = {};
 
 const section8 = ({ data }: Readonly<any>) => {
   return (
-    <div className={`flex justify-center items-center flex-col h-full w-full bg-[url('${data?.section9.theme.background_mobile}')] bg-center bg-no-repeat bg-cover relative`}>
+    <div
+      className={`flex justify-center items-center flex-col h-full w-full bg-center bg-no-repeat bg-cover relative`}
+      style={{
+        backgroundImage: `url("${data?.section9.theme.background_mobile}")`,
+      }}
+    >
       <div className="absolute inset-0   bg-black opacity-30 transition-opacity duration-300 w-full"></div>
       <div
         className={`w-full h-full relative px-8  overflow-hidden flex flex-col items-center justify-center text-white `}
