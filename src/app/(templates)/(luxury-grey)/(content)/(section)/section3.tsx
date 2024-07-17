@@ -63,7 +63,12 @@ const section3 = ({ data }: Readonly<any>) => {
           className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl"
           data-aos="fade-up"
         >
-          <div className={`bg-[url('${data?.section3.content_box.wedding_picture}')] bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full`}></div>
+          <div
+            className={`bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full`}
+            style={{
+              backgroundImage: `url("${data?.section3.content_box.wedding_picture}")`,
+            }}
+          ></div>
           <div className="flex w-full">
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
               <div className="flex justify-center items-center h-full relative">
@@ -106,7 +111,12 @@ const section3 = ({ data }: Readonly<any>) => {
           className="relative h-full w-full mt-8 shadow-black shadow-lg rounded-t-3xl"
           data-aos="fade-up"
         >
-          <div className={`bg-[url('${data?.section3.content_box.reception_picture}')] bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full`}></div>
+          <div
+            className={`bg-cover bg-center bg-no-repeat rounded-t-3xl h-[400px] w-full`}
+            style={{
+              backgroundImage: `url("${data?.section3.content_box.reception_picture}")`,
+            }}
+          ></div>
           <div className="flex w-full">
             <div className="w-3/4 py-12 flex justify-center items-center flex-col bg-white">
               <h2 className="text-[#363636] font-playFair text-2xl mb-2 font-thin">
@@ -154,7 +164,12 @@ const section3 = ({ data }: Readonly<any>) => {
           <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
         </div>
         <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
-          <div className={`bg-[url('${data?.section3.content_box.event_picture}')] bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full`}></div>
+          <div
+            className={`bg-cover bg-center bg-no-repeat rounded-t-[150px] h-[450px] w-full`}
+            style={{
+              backgroundImage: `url("${data?.section3.content_box.event_picture}")`,
+            }}
+          ></div>
         </div>
         <div
           className="flex justify-between items-center mt-8 w-[50%]"
