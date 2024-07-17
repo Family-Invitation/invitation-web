@@ -61,7 +61,7 @@ const section2 = ({ data }: Readonly<any>) => {
                 {data?.section2?.man?.mom}
               </h4>
               {data?.section2?.man?.social_media?.instagram?.enabled && (
-                <div className="flex justify-center items-center mt-2">
+                <div className="flex justify-center items-center mt-2 relative z-10">
                   <a
                     href={data?.section2?.man?.social_media?.instagram?.href}
                     target="_blank"
@@ -112,13 +112,18 @@ const section2 = ({ data }: Readonly<any>) => {
                 {data?.section2?.woman?.mom}
               </h4>
               {data?.section2?.woman?.social_media?.instagram?.enabled && (
-                <div className="flex justify-center items-center mt-2">
-                  <div className="flex bg-black jutify-center items-center py-1 px-2 rounded-md font-combo">
+                <div className="flex justify-center items-center mt-2 relative z-10">
+                  <a
+                    href={data?.section2?.woman?.social_media?.instagram?.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex bg-black jutify-center items-center py-1 px-2 rounded-md font-combo"
+                  >
                     <span className="mr-1">
                       <FaInstagram />
                     </span>
                     {data?.section2?.woman?.name}
-                  </div>
+                  </a>
                 </div>
               )}
             </div>
