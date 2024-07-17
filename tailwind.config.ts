@@ -25,6 +25,9 @@ const config: Config = {
         croissantOne: ["Croissant One", "sans-serif"],
         alata: ["Alata", "sans-serif"],
         crimsonPro: ["Crimson Pro", "sans-serif"],
+        playWrite: ["Playwrite CO", "sans-serif"],
+        playFair: ["Playfair Display", "sans-serif"],
+        shippory: ["Shippori Mincho", "sans-serif"],
       },
       keyframes: {
         wiggle: {

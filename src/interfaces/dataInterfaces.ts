@@ -88,6 +88,9 @@ export interface IWishItem {
   likeCount: number;
   isLiked: boolean;
   user: string;
+  key: number;
+  index?: number;
+  wishesLength?: number;
 }
 
 export interface WishMessage {

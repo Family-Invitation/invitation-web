@@ -64,7 +64,10 @@ const WishCard = ({
         flexDirection: "column",
         borderRadius: "10px",
         backgroundColor: "white",
+        marginTop: index === 0 ? "1rem" : "",
+        marginBottom: wishesLength && wishesLength - 1 === index ? "1rem" : "",
       }}
+      className="shadow-md shadow-[#000000]"
     >
       <div
         style={{

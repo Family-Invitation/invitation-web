@@ -13,11 +13,6 @@ type RekeningItem = {
 const Card = ({ name, no, title }: RekeningItem) => {
   const handleCopy = (textToCopy: string) => {
     navigator.clipboard.writeText(textToCopy);
-    // toast.success("Nomor rekening berhasil disalin", {
-    //   position: "top-center",
-    //   autoClose: 5000,
-    //   transition: Zoom,
-    // });
   };
 
   return (
@@ -26,7 +21,9 @@ const Card = ({ name, no, title }: RekeningItem) => {
       style={{ opacity: 0.7 }}
     >
       <h3 className="text-2xl text-[#C4855F] mb-5 font-quicksand">Rekening</h3>
-      <p className="text-[#303030] font-semibold font-poppins text-sm">{title}</p>
+      <p className="text-[#303030] font-semibold font-poppins text-sm">
+        {title}
+      </p>
       <p className="text-[#292929] font-poppins text-[15px]">{no}</p>
       <button
         className="flex items-center justify-center space-x-2 bg-[#C4855F]  text-white py-2 px-4 rounded-md mt-4 min-w-[150px] btn-sm"
