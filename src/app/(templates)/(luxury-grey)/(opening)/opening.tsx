@@ -125,10 +125,10 @@ const opening: NextPage<Props> = ({
         >
           The Wedding Of
         </h2>
-        <h4 className=" text-3xl md:text-4xl font-playWrite my-8 font-normal md:block hidden">
+        <h4 className=" text-3xl md:text-4xl font-dancingScript my-8 font-normal md:block hidden">
           {data?.opening?.couple_name}
         </h4>
-        <div className=" text-3xl md:text-4xl font-playWrite my-8 font-normal md:hidden block text-center">
+        <div className=" text-3xl md:text-4xl font-dancingScript my-8 font-normal md:hidden block text-center">
           <h4>{data?.man} </h4>
           <h4 className="my-2">&</h4>
           <h4>{data?.woman}</h4>

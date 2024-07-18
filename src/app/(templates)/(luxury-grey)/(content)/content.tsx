@@ -2,7 +2,7 @@ import Quote from "@/components/floral/Quote";
 import Section1 from "./(section)/section1";
 import Section2 from "./(section)/section2";
 import Section3 from "./(section)/section3";
-// import Section4 from "./(section)/section4";
+import Section4 from "./(section)/section4";
 import Section5 from "./(section)/section5";
 import Section6 from "./(section)/section6";
 import Section7 from "./(section)/section7";
@@ -52,7 +52,7 @@ export default function Content({
         <Section1 data={data} />
         <Section2 data={data} />
         <Section3 data={data} />
-        {/* <Section4 data={data} /> */}
+        <Section4 data={data} />
         <Section5 data={data} />
         <Section6 data={data} />
         <Section7 data={data} />

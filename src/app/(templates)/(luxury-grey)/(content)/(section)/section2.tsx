@@ -24,7 +24,7 @@ const section2 = ({ data }: Readonly<any>) => {
 
       {/* //groom Card*/}
       <div className="mt-5 px-5 h-full w-full" data-aos="fade-up">
-        <div className="flex w-full h-full">
+        <div className="flex w-full h-full shadow-black shadow-md rounded-tr-3xl">
           <div
             className="w-1/5"
             style={{
@@ -84,12 +84,12 @@ const section2 = ({ data }: Readonly<any>) => {
         className="text-white mt-5 font-dancingScript text-center text-3xl"
         data-aos="zoom-in"
       >
-        - {data?.man} & {data?.woman} -
+        - {data?.man_called} & {data?.woman_called} -
       </div>
 
       {/* //bride Card*/}
-      <div className="mt-6 px-5 h-full w-full" data-aos="fade-up">
-        <div className="flex w-full h-full">
+      <div className="mt-6 px-5 h-full w-full shado" data-aos="fade-up">
+        <div className="flex w-full h-full shadow-black shadow-md rounded-tl-3xl">
           <div
             className="w-4/5 relative  h-[400px] rounded-tl-3xl bg-cover bg-center bg-no-repeat  bg-[url('https://hi.momenkita.id/wp-content/uploads/2023/10/pexels-ba-tik-3754226-scaled-1.jpg')] opacity-90"
             style={{
