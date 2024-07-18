@@ -31,7 +31,7 @@ const Section4 = ({ data }: Readonly<any>) => {
     },
   ];
 
-  function generateIconByTitle(title: string) {
+  function generateIconByIcon(title: string) {
     switch (title.toLowerCase()) {
       case "perkenalan":
         return <FaHeart className="text-red-500" />;
@@ -57,7 +57,7 @@ const Section4 = ({ data }: Readonly<any>) => {
           <div key={index} className="w-full grid grid-cols-6 mb-8">
             <div className="col-span-1 flex flex-col items-center relative">
               <div className="bg-white p-2 rounded-full shadow-md z-10 mb-4">
-                {generateIconByTitle(step.icon)}
+                {generateIconByIcon(step.icon)}
               </div>
               {index < steps.length - 1 && (
                 <div className="flex-1 w-px bg-gray-300 z-0 transition-all duration-300"></div>
