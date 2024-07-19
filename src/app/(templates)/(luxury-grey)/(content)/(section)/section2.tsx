@@ -57,7 +57,8 @@ const section2 = ({ data }: Readonly<any>) => {
                 {data?.section2?.man?.name}
               </h4>
               <h4 className="text-xs font-shippory">
-                Putra dari {data?.section2?.man?.dad} & <br />
+                {data?.section2.man.text_son_of} {data?.section2?.man?.dad} &{" "}
+                <br />
                 {data?.section2?.man?.mom}
               </h4>
               {data?.section2?.man?.social_media?.instagram?.enabled && (
@@ -108,7 +109,8 @@ const section2 = ({ data }: Readonly<any>) => {
                 {data?.section2?.woman?.name}
               </h4>
               <h4 className="text-xs font-shippory">
-                Putra dari {data?.section2?.woman?.dad} & <br />
+                {data?.section2.woman.text_daughter_of}{" "}
+                {data?.section2?.woman?.dad} & <br />
                 {data?.section2?.woman?.mom}
               </h4>
               {data?.section2?.woman?.social_media?.instagram?.enabled && (
