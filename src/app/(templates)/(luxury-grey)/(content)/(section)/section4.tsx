@@ -26,13 +26,13 @@ const Section4 = ({ data }: Readonly<any>) => {
         </h2>
       </div>
       <div className="w-full flex flex-col items-center">
-        {data.section4.stories.map((step: any, index: number) => (
+        {data.section4.stories.map((step: any, index: number, arr: any) => (
           <div key={index} className="w-full grid grid-cols-6 mb-8">
             <div className="col-span-1 flex flex-col items-center relative">
               <div className="bg-white p-2 rounded-full shadow-md z-10 mb-4">
                 {generateIconByIcon(step.icon)}
               </div>
-              {index < steps.length - 1 && (
+              {index < arr.length - 1 && (
                 <div className="flex-1 w-px bg-gray-300 z-0 transition-all duration-300"></div>
               )}
             </div>
