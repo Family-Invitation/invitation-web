@@ -1,50 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FaHeart, FaRing, FaStar } from "react-icons/fa";
 import { ImManWoman } from "react-icons/im";
 import { MdOutlineDateRange } from "react-icons/md";
 
 const Section4 = ({ data }: Readonly<any>) => {
-  const steps = [
-    {
-      date: "12 September 2017",
-      title: "Awal Bertemu",
-      icon: "perkenalan",
-      description:
-        "Tahun di mana dia dikenalkan oleh rekan kerjanya yang juga temanku melalui sosial media.",
-      image: data.opening.theme?.background,
-    },
-    {
-      date: "15 Mei 2019",
-      title: "Lamaran",
-      icon: "lamaran",
-      description:
-        "Hari di mana dia menyatakan keseriusannya di hadapan orang tua.",
-      image: data?.section3.content_box.reception_picture,
-    },
-    {
-      date: "20 Juli 2020",
-      title: "Menikah",
-      icon: "menikah",
-      description:
-        "Hari bahagia di mana kami resmi menjadi pasangan suami istri.",
-      image: data?.section3.content_box.wedding_picture,
-    },
-  ];
-
   function generateIconByIcon(title: string) {
     switch (title.toLowerCase()) {
-      case "perkenalan":
+      case "heart":
         return <FaHeart className="text-red-500" />;
-      case "lamaran":
+      case "ring":
         return <FaRing className="text-yellow-500" />;
-      case "menikah":
+      case "man_woman":
         return <ImManWoman className="text-blue-500" />;
       default:
         return <MdOutlineDateRange className="text-gray-500" />; // Jika tidak ada icon yang sesuai
     }
   }
 
-  return (
+  return data?.section4?.stories?.length ? (
     <div className="bg-[#F1F1F1] flex justify-center items-center flex-col px-5 py-8">
       <div className="text-center" data-aos="zoom-in">
         <h2 className="font-playFair text-[#383838] text-3xl">LOVE</h2>
@@ -53,13 +26,13 @@ const Section4 = ({ data }: Readonly<any>) => {
         </h2>
       </div>
       <div className="w-full flex flex-col items-center">
-        {steps.map((step, index) => (
+        {data.section4.stories.map((step: any, index: number, arr: any) => (
           <div key={index} className="w-full grid grid-cols-6 mb-8">
             <div className="col-span-1 flex flex-col items-center relative">
               <div className="bg-white p-2 rounded-full shadow-md z-10 mb-4">
                 {generateIconByIcon(step.icon)}
               </div>
-              {index < steps.length - 1 && (
+              {index < arr.length - 1 && (
                 <div className="flex-1 w-px bg-gray-300 z-0 transition-all duration-300"></div>
               )}
             </div>
@@ -79,7 +52,7 @@ const Section4 = ({ data }: Readonly<any>) => {
                   {step.title}
                 </h4>
                 <h4 className="text-[#4D4D4D] text-sm font-lora mt-2">
-                  {step.description}
+                  {step.content}
                 </h4>
               </div>
             </div>
@@ -87,6 +60,8 @@ const Section4 = ({ data }: Readonly<any>) => {
         ))}
       </div>
     </div>
+  ) : (
+    <></>
   );
 };
 
