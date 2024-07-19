@@ -58,7 +58,7 @@ const section1 = ({ data }: Readonly<any>) => {
           The Wedding Of
         </h2>
         <div
-          className=" text-2xl md:text-3xl font-playWrite my-8 font-normal  text-center"
+          className=" text-2xl md:text-3xl font-dancingScript my-8 font-normal  text-center"
           data-aos="fade-up"
         >
           <h4>{data?.man} </h4>

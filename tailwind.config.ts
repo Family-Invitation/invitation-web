@@ -28,6 +28,7 @@ const config: Config = {
         playWrite: ["Playwrite CO", "sans-serif"],
         playFair: ["Playfair Display", "sans-serif"],
         shippory: ["Shippori Mincho", "sans-serif"],
+        lora: ["Lora", "sans-serif"],
       },
       keyframes: {
         wiggle: {
