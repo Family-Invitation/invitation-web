@@ -115,6 +115,7 @@ const opening: NextPage<Props> = ({
         }')`,
       }}
     >
+      <div className="absolute inset-0 bg-black opacity-30 transition-opacity duration-300 w-full"></div>
       <div
         className={`w-full h-full relative px-8 py-28 md:py-28 overflow-hidden flex flex-col items-center text-white `}
         data-aos="fade-up"

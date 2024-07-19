@@ -48,6 +48,7 @@ const section1 = ({ data }: Readonly<any>) => {
             "radial-gradient( circle farthest-corner at 10% 20%,  rgba(98,114,128,1) 0%, rgba(52,63,51,1) 90.1% )",
         }}
       ></div>
+      <div className="absolute inset-0   bg-black opacity-30 transition-opacity duration-300 w-full"></div>
 
       <div className="w-full minh-full relative  overflow-hidden flex flex-col items-center text-white px-12 pt-[300px]">
         <h2
