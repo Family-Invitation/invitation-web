@@ -58,13 +58,7 @@ const WrapperLayout = ({ data, children }: Props) => {
             width: "calc(70% )", // Adjust to match the grid column span
           }}
         >
-          <div
-            className="absolute top-0 left-0 opacity-20 transition-all duration-300 w-full h-full bg-transparent"
-            style={{
-              backgroundImage:
-                "radial-gradient( circle farthest-corner at 10% 20%,  rgba(98,114,128,1) 0%, rgba(52,63,51,1) 90.1% )",
-            }}
-          ></div>
+          <div className="absolute inset-0   bg-black opacity-30 transition-opacity duration-300 w-full"></div>
           <div className="w-full h-full relative overflow-hidden flex flex-col items-center justify-center text-white">
             <h2
               className="font-poppins text-xs tracking-widest font-semibold"
