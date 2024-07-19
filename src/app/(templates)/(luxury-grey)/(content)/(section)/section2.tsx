@@ -45,7 +45,7 @@ const section2 = ({ data }: Readonly<any>) => {
             }}
           >
             <div className="absolute bottom-0 left-0 right-0 p-4 mb-4 border border-blue-50 bg-transparent mx-4 rounded-xl text-center text-white">
-              <div className="absolute inset-0 backdrop-blur-[2px] bg-[#2C3333] bg-opacity-10 rounded-xl"></div>{" "}
+              <div className="absolute inset-0 backdrop-blur-[2px] bg-black bg-opacity-30 rounded-xl"></div>{" "}
               <div className="relative z-10">
                 <h4 className="text-lg font-shippory font-semibold">
                   {" "}
@@ -94,7 +94,7 @@ const section2 = ({ data }: Readonly<any>) => {
             }}
           >
             <div className="absolute bottom-0 left-0 right-0 p-4 mb-4 border border-blue-50 bg-transparent mx-4 rounded-xl text-center text-white">
-              <div className="absolute inset-0 backdrop-blur-[2px] bg-[#2C3333] bg-opacity-10 rounded-xl"></div>{" "}
+              <div className="absolute inset-0 backdrop-blur-[2px] bg-black bg-opacity-30 rounded-xl"></div>{" "}
               {/* Light blur overlay */}
               <div className="relative z-10">
                 <h4 className="text-lg font-shippory font-semibold">
