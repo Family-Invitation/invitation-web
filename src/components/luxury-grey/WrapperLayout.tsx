@@ -72,7 +72,7 @@ const WrapperLayout = ({ data, children }: Props) => {
             >
               The Wedding Of
             </h2>
-            <h4 className="text-3xl md:text-4xl font-playWrite my-8 font-extralight">
+            <h4 className="text-3xl md:text-4xl font-dancingScript my-8 font-extralight">
               {data?.opening?.couple_name}
             </h4>
             <h2
