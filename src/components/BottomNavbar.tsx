@@ -41,7 +41,11 @@ const BottomNavbar = ({ data, template }: any) => {
         left: "50%",
         transform: "translateX(-50%)",
         backgroundColor:
-          templateActive === "green-leaves" ? "#8A594C" : undefined,
+          templateActive === "green-leaves"
+            ? "#8A594C"
+            : "khitan-green"
+            ? "#FFFFFF52"
+            : undefined,
         backgroundImage:
           templateActive === "creamy-latte"
             ? `url("/art-paper.jpg")`

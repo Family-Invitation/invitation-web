@@ -7,6 +7,7 @@ import GreenLeaves from "@/app/(templates)/(green-leaves)/green-leaves";
 import CreamyLatte from "@/app/(templates)/(creamy-latte)/creamy-latte";
 import Floral from "@/app/(templates)/(floral)/floral";
 import LuxuryGrey from "@/app/(templates)/(luxury-grey)/luxury-grey";
+import KhitanGreen from "@/app/(templates)/(khitan-green)/khitan-green";
 import ReactLoading from "react-loading";
 
 import { TemplateInvitation } from "@/interfaces/templateInterfaces";
@@ -50,6 +51,8 @@ function TemplateSelection({ data }: any) {
   if (!isloaded) {
     return <Loading />;
   }
+
+  return <KhitanGreen data={data} />;
 
   switch (data.template as string) {
     case TemplateInvitation.GreenLeaves:

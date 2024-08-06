@@ -5,13 +5,13 @@ import React, {
   useState,
   useLayoutEffect,
 } from "react";
-import { FaQrcode } from "react-icons/fa6";
-import { MdEmail } from "react-icons/md";
+
 import { useRouter, useSearchParams } from "next/navigation";
 import { NextPage } from "next";
-import { formatInvitationName } from "@/helpers/formatInvitationName";
 import AOS from "aos";
-import "aos/dist/aos.css"; // You can also use <link> for styles
+import "aos/dist/aos.css"; //
+import { formatInvitationName } from "@/helpers/formatInvitationName";
+import { MdEmail } from "react-icons/md";
 
 type Props = {
   showOpening: boolean;
@@ -21,13 +21,13 @@ type Props = {
   data: any;
 };
 
-const opening: NextPage<Props> = ({
+const Opening: NextPage<Props> = ({
   showOpening,
   showContent,
   setShowOpening,
   setShowContent,
   data,
-}) => {
+}: Props) => {
   const router = useRouter();
 
   const [windowWidth, setWindowWidth] = useState(0);
@@ -101,59 +101,57 @@ const opening: NextPage<Props> = ({
   return (
     <div
       id="opening"
-      className="w-full mx-auto h-screen relative bg-cover bg-center bg-no-repeat bg-fixed"
+      className="bg-cover max-w-3xl text-center bg-fixed h-screen w-full relative"
       style={{
-        backgroundImage: `url('${
-          windowWidth > 900
-            ? data.opening.theme?.background || "/bg-section1.webp"
-            : data.opening.theme?.background_mobile ||
-              "/images/bg-section1-mobile.webp"
-        }')`,
+        backgroundImage: `url("/images/khitan-green/green-bg-islamic-scaled.jpg")`,
+        backgroundPosition: "bottom center",
       }}
     >
-      <div className="absolute inset-0 bg-black opacity-30 transition-opacity duration-300 w-full"></div>
+      <img
+        className="absolute -top-2 left-0 h-[150px] w-[140px] z-10"
+        src="/images/khitan-green/decoration-left.png"
+        alt=""
+        data-aos="fade-down"
+      />
+      <img
+        className="absolute -top-2 right-0 h-[150px] w-[150px] z-10"
+        src="/images/khitan-green/decoration-right.png"
+        alt=""
+        data-aos="fade-down"
+      />
       <div
-        className={`w-full h-full relative px-8 py-28 md:py-28 overflow-hidden flex flex-col items-center text-white `}
+        className="flex flex-col h-full justify-center items-center font-crimsonPro mx-4 md:mx-10"
         data-aos="fade-up"
       >
-        <h2
-          className="font-poppins text-xs tracking-widest font-semibold"
-          style={{ letterSpacing: "4px" }}
-        >
-          The Wedding Of
+        <img
+          src="https://plus.unsplash.com/premium_photo-1661277731403-f5f8f237ae2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt=""
+          className="object-cover h-[150px] aspect-square rounded-full "
+        />
+        <h4 className="text-lg text-[#FFCB58] mt-4">Undangan</h4>
+        <h2 className="text-3xl font-dancingScript text-[#FFCB58] my-2">
+          Walimatul Khitan Romeo
         </h2>
-        <h4 className=" text-3xl md:text-4xl font-dancingScript my-8 font-normal md:block hidden">
-          {data?.opening?.couple_name}
-        </h4>
-        <div className=" text-3xl md:text-4xl font-dancingScript my-8 font-normal md:hidden block text-center">
-          <h4>{data?.man} </h4>
-          <h4 className="my-2">&</h4>
-          <h4>{data?.woman}</h4>
-        </div>
-        <h2
-          className="font-poppins text-xs tracking-widest font-semibold"
-          style={{ letterSpacing: "4px" }}
+        <h3 className="text-[#FFCB58] text-2xl">10 Juni 2023</h3>
+        <p className="text-[#FFCB58] text-base mt-6">
+          Kepada Yth. Bapak/Ibu/Saudara/i
+        </p>
+        <h3 className="text-white text-2xl my-4">
+          {formatInvitationName(toParam)}
+        </h3>
+        <p className="text-[#FFCB58] text-base">
+          Kami mengundang Anda untuk dapat hadir dalam acara kami
+        </p>
+        <button
+          className="flex items-center justify-center space-x-2 mt-6 bg-[#FFCB58] text-[#5C4C28]  text-sm py-2 px-4 rounded-xl font-poppins"
+          onClick={() => setShowContent(true)}
         >
-          {data?.metadata?.description}
-        </h2>
-
-        <div className="mt-[200px] flex flex-col justify-center items-center">
-          <p className="text-white text-xs font-poppins">Kepada Yth.</p>
-          <p className="text-white text-3xl mt-2 font-playFair">
-            {" "}
-            {formatInvitationName(toParam)}
-          </p>
-          <button
-            className="flex items-center justify-center space-x-2 mt-6 bg-gray-800 text-white  text-sm py-2 px-4 rounded-xl font-poppins border border-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-opacity-50"
-            onClick={() => setShowContent(true)}
-          >
-            <MdEmail className="w-4 h-4" />
-            <span>Open Invitation</span>
-          </button>
-        </div>
+          <MdEmail className="w-4 h-4" />
+          <span>Buka Undangan</span>
+        </button>
       </div>
     </div>
   );
 };
 
-export default opening;
+export default Opening;
