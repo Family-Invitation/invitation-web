@@ -7,6 +7,7 @@ import GreenLeaves from "@/app/(templates)/(green-leaves)/green-leaves";
 import CreamyLatte from "@/app/(templates)/(creamy-latte)/creamy-latte";
 import Floral from "@/app/(templates)/(floral)/floral";
 import LuxuryGrey from "@/app/(templates)/(luxury-grey)/luxury-grey";
+import KhitanGreen from "@/app/(templates)/(khitan-green)/khitan-green";
 import ReactLoading from "react-loading";
 
 import { TemplateInvitation } from "@/interfaces/templateInterfaces";
@@ -60,6 +61,8 @@ function TemplateSelection({ data }: any) {
       return <Floral data={data} />;
     case TemplateInvitation.LuxuryGrey:
       return <LuxuryGrey data={data} />;
+    case TemplateInvitation.KhitanGreen:
+      return <KhitanGreen data={data} />;
   }
 
   return <NotFound />;
