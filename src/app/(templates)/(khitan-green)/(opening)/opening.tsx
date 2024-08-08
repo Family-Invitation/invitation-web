@@ -124,15 +124,15 @@ const Opening: NextPage<Props> = ({
         data-aos="fade-up"
       >
         <img
-          src="https://plus.unsplash.com/premium_photo-1661277731403-f5f8f237ae2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={data.opening.picture}
           alt=""
-          className="object-cover h-[150px] aspect-square rounded-full "
+          className="object-cover h-[150px] w-[150px] aspect-square rounded-full"
         />
-        <h4 className="text-lg text-[#FFCB58] mt-4">Undangan</h4>
+        <h4 className="text-lg text-[#FFCB58] mt-4">{data.opening.title}</h4>
         <h2 className="text-3xl font-dancingScript text-[#FFCB58] my-2">
-          Walimatul Khitan Romeo
+          {data.opening.name}
         </h2>
-        <h3 className="text-[#FFCB58] text-2xl">10 Juni 2023</h3>
+        <h3 className="text-[#FFCB58] text-2xl">{data.opening.date}</h3>
         <p className="text-[#FFCB58] text-base mt-6">
           Kepada Yth. Bapak/Ibu/Saudara/i
         </p>

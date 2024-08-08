@@ -52,8 +52,6 @@ function TemplateSelection({ data }: any) {
     return <Loading />;
   }
 
-  return <KhitanGreen data={data} />;
-
   switch (data.template as string) {
     case TemplateInvitation.GreenLeaves:
       return <GreenLeaves data={data} />;
@@ -63,6 +61,8 @@ function TemplateSelection({ data }: any) {
       return <Floral data={data} />;
     case TemplateInvitation.LuxuryGrey:
       return <LuxuryGrey data={data} />;
+    case TemplateInvitation.KhitanGreen:
+      return <KhitanGreen data={data} />;
   }
 
   return <NotFound />;

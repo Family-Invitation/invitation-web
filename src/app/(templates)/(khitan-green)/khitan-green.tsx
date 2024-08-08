@@ -5,7 +5,7 @@ import Opening from "./(opening)/opening";
 import AOS from "aos";
 import { QueryClientProvider, queryClient } from "../../../../react-query";
 
-export default function GreenLeaves({ data }: any) {
+export default function KhitanGreen({ data }: any) {
   const [showOpening, setShowOpening] = useState(false);
   const [showContent, setShowContent] = useState(false);
 

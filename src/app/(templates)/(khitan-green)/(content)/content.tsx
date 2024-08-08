@@ -20,19 +20,6 @@ type Props = {
 };
 
 const Content = ({ showContent, data }: Props) => {
-  const listRekening = [
-    {
-      name: "Montblanc Maulana S.E",
-      no: "1234567890",
-      title: "Bank Central Asia",
-    },
-    {
-      name: "Bank Mandiri",
-      no: "1234567890",
-      title: "Bank Rakyat Indonesia",
-    },
-  ];
-
   return (
     <div
       id="content"
@@ -63,15 +50,15 @@ const Content = ({ showContent, data }: Props) => {
             data-aos="zoom-in"
             className="flex flex-col items-center justify-center"
           >
-            <h2 className="text-3xl py-3">Romeo Maulana</h2>
+            <h2 className="text-3xl py-3">{data.content.name}</h2>
             <img
-              src="https://plus.unsplash.com/premium_photo-1661277731403-f5f8f237ae2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={data.content.picture}
               alt=""
-              className="object-cover  h-[150px] aspect-square rounded-full "
+              className="object-cover  h-[150px] w-[150px] aspect-square rounded-full "
             />
             <h4 className="text-base pt-3">Putra dari</h4>
             <h4 className="text-base pt-1">
-              Montblanc Maulana S.E & Janice Yunita S.I
+              {data.content.dad} & {data.content.mom}
             </h4>
           </div>
         </div>
@@ -91,27 +78,27 @@ const Content = ({ showContent, data }: Props) => {
             data-aos="zoom-in"
           >
             <BiCalendar className="h-10 w-10 text-white" />
-            <h2 className="text-white text-2xl mt-2">Walimatul Khitan Romeo</h2>
+            <h2 className="text-white text-2xl mt-2">
+              {data.opening.title} - {data.content.name}
+            </h2>
             <div className="divider w-full"></div>
             <div className="flex items-center gap-2 justify-start w-full text-white mt-2">
               <FaRegCalendar className="h-4 w-4 text-white" />
-              <span>10 Juni 2023</span>
+              <span>{data.opening.date}</span>
             </div>
             <div className="flex items-center gap-2 justify-start w-full text-white mt-1">
               <span>
                 <FaRegClock className="h-4 w-4 text-white" />
               </span>
-              <span>10.00 - Selesai</span>
+              <span>{data.content.time}</span>
             </div>
             <div className="flex items-center gap-2 justify-start w-full text-white text-start leading-5 mt-1">
               <span>
                 <IoLocationSharp className="h-4 w-4 text-white" />
               </span>
               <span>
-                <strong>Hotel Shangrila Jakarta</strong> <br />
-                Kota BNI, Jl. Jenderal Sudirman No.Kav. 1, Karet Tengsin,
-                Kecamatan Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota
-                Jakarta 10220
+                <strong>{data.content.address_title}</strong> <br />
+                {data.content.address}
               </span>
             </div>
             <button className="flex items-center justify-center space-x-2 bg-[#FFCB58]  text-white py-2 px-4 rounded-md mt-3 z-10 font-portSans">
@@ -151,7 +138,7 @@ const Content = ({ showContent, data }: Props) => {
       </div>
 
       {/* section 4 */}
-      <div
+      {/* <div
         id="section4"
         className="flex flex-col justify-center items-center w-full mt-[100px]"
       >
@@ -164,7 +151,7 @@ const Content = ({ showContent, data }: Props) => {
         <div className="px-4 md:px-10 w-full">
           <KhitanGreenGallery data={data} />
         </div>
-      </div>
+      </div> */}
 
       {/* section 5 */}
       <div id="section5">
@@ -176,7 +163,7 @@ const Content = ({ showContent, data }: Props) => {
             Hadiah
           </h3>
           <div className="mt-4 w-full flex flex-col gap-6 px-4 md:px-10 py-4">
-            {listRekening.map((item) => (
+            {data.content.gifts?.map((item: any) => (
               <CardGift name={item.name} no={item.no} title={item.title} />
             ))}
           </div>
@@ -198,17 +185,17 @@ const Content = ({ showContent, data }: Props) => {
             <div data-aos="zoom-in">
               <h3 className="mt-8 text-3xl">Kami yang Mengundang</h3>
               <h2 className="text-3xl font-dancingScript mt-4">
-                Montlbanc Maulana S.E
+                {data.content.dad}
               </h2>
               <p className="text-3xl font-cormorantGaramond">&</p>
               <h2 className="text-3xl font-dancingScript">
-                Janice Juwita S.I{" "}
+                {data.content.mom}
               </h2>
             </div>
             <img
-              src="https://plus.unsplash.com/premium_photo-1661277731403-f5f8f237ae2e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={data.opening.picture}
               alt=""
-              className="mt-8 object-cover  h-[150px] aspect-square rounded-full "
+              className="mt-8 object-cover  h-[150px] w-[150px] aspect-square rounded-full "
               data-aos="flip-right"
             />
             <div className="mt-8 flex flex-col items-center">

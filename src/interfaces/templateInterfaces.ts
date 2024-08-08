@@ -3,4 +3,5 @@ export enum TemplateInvitation {
   CreamyLatte = "creamy-latte",
   Floral = "floral",
   LuxuryGrey = "luxury-grey",
+  KhitanGreen = "khitan-green",
 }
