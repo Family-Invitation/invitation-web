@@ -101,9 +101,11 @@ const Content = ({ showContent, data }: Props) => {
                 {data.content.address}
               </span>
             </div>
-            <button className="flex items-center justify-center space-x-2 bg-[#FFCB58]  text-white py-2 px-4 rounded-md mt-3 z-10 font-portSans">
-              <span>Buka Peta</span>
-            </button>
+            <a href={data.content.address_link} target="_blank">
+              <button className="flex items-center justify-center space-x-2 bg-[#FFCB58]  text-white py-2 px-4 rounded-md mt-3 z-10 font-portSans">
+                <span>Buka Peta</span>
+              </button>
+            </a>
           </div>
           <p
             className="text-[#FFCB58] mt-5 italic text-sm"
