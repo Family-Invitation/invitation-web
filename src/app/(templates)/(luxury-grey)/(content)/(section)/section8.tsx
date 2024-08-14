@@ -1,5 +1,6 @@
 import React from "react";
 import { FaRegCopy } from "react-icons/fa";
+import { toast, ToastContainer, Zoom } from "react-toastify";
 
 type Props = {};
 
@@ -12,6 +13,11 @@ type RekeningItem = {
 const Card = ({ name, no, title }: RekeningItem) => {
   const handleCopy = (textToCopy: string) => {
     navigator.clipboard.writeText(textToCopy);
+    toast.success("Nomor rekening berhasil disalin", {
+      position: "top-center",
+      autoClose: 5000,
+      transition: Zoom,
+    });
   };
 
   return (
@@ -60,6 +66,7 @@ const section8 = ({ data }: Readonly<any>) => {
           <Card name={item.name} no={item.no} title={item.title} />
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };
