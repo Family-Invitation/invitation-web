@@ -31,6 +31,7 @@ const opening: NextPage<Props> = ({
   const router = useRouter();
 
   const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
   const [loaded, setLoaded] = useState(false);
 
   const searchParams = useSearchParams();
@@ -59,6 +60,7 @@ const opening: NextPage<Props> = ({
   useEffect(() => {
     function f() {
       setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
     }
 
     f();
@@ -113,7 +115,7 @@ const opening: NextPage<Props> = ({
     >
       <div className="absolute inset-0 bg-black opacity-30 transition-opacity duration-300 w-full"></div>
       <div
-        className={`w-full h-full relative px-8 py-28 md:py-28 overflow-hidden flex flex-col items-center text-white `}
+        className={`w-full h-full relative px-8 py-[4vh] md:py-[4vh] overflow-hidden flex flex-col justify-center items-center text-white `}
         data-aos="fade-up"
       >
         <h2
@@ -137,7 +139,10 @@ const opening: NextPage<Props> = ({
           {data?.metadata?.description}
         </h2>
 
-        <div className="mt-[200px] flex flex-col justify-center items-center">
+        <div
+          className="flex flex-col justify-center items-center"
+          style={{ marginTop: (windowHeight / 100) * 10 }}
+        >
           <p className="text-white text-xs font-poppins">Kepada Yth.</p>
           <p className="text-white text-3xl mt-2 font-playFair">
             {" "}
