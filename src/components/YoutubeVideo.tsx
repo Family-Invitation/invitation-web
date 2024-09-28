@@ -2,6 +2,7 @@ import React from "react";
 
 type YoutubeVideoProps = {
   videoId: string;
+  useMargin?: boolean; // Add margin around the video if true. Default is false.
 };
 
 /**
@@ -11,12 +12,12 @@ type YoutubeVideoProps = {
  * @return {JSX.Element | null} The rendered YouTube video component or null if videoId is falsy.
  */
 
-const YoutubeVideo = ({ videoId }: YoutubeVideoProps) => {
+const YoutubeVideo = ({ videoId, useMargin = true }: YoutubeVideoProps) => {
   if (!videoId) {
     return null;
   }
   return (
-    <div className="mx-6 md:mx-0 aspect-video">
+    <div className={`${useMargin ? "mx-6 md:mx-0" : ""} aspect-video`}>
       <iframe
         width="100%"
         height="100%"

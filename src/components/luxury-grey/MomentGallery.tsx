@@ -1,10 +1,12 @@
 import React from "react";
 import { Gallery, Item } from "react-photoswipe-gallery";
+import YoutubeVideo from "../YoutubeVideo";
 
 type Props = {
   data: {
     section5: {
       pictures: any;
+      video_id: string;
     };
   };
 };
@@ -32,6 +34,17 @@ const MomentGallery = ({ data }: Readonly<Props>) => {
   ];
   return (
     <Gallery id="my-gallery">
+      <div
+        style={{
+          width: "100%",
+          margin: "20px 0",
+        }}
+      >
+        <YoutubeVideo
+          useMargin={false}
+          videoId={data.section5?.video_id ?? ""}
+        />
+      </div>
       <div className="grid grid-cols-6 gap-3 w-full" data-aos="fade-up">
         {data?.section5?.pictures.map(
           ({ url: imgUrl }: { url: string }, i: number) => (
