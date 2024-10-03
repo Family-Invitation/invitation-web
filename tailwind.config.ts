@@ -29,6 +29,7 @@ const config: Config = {
         playFair: ["Playfair Display", "sans-serif"],
         shippory: ["Shippori Mincho", "sans-serif"],
         lora: ["Lora", "sans-serif"],
+        leckerliOne: ["Leckerli One", "sans-serif"],
       },
       keyframes: {
         wiggle: {
