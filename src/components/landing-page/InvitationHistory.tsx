@@ -23,34 +23,23 @@ const responsive = {
 const InvitationHistory = (props: Props) => {
   const cardItems = [
     {
-      image: "/back-cover.jpg",
-      groomName: "Tono",
-      brideName: "Zulia",
-      date: "8 Desember 2024",
+      image:
+        "https://assets.familydecorative.com/file/thumbnail/febby-wildan.jpg",
     },
     {
-      image: "/back-cover.jpg",
-      groomName: "Rahmat",
-      brideName: "Salsa",
-      date: "10 Desember 2023",
+      image: "https://assets.familydecorative.com/file/thumbnail/syifa-ary.jpg",
     },
     {
-      image: "/back-cover.jpg",
-      groomName: "Budi",
-      brideName: "Yanti",
-      date: "10 Desember 2021",
+      image:
+        "https://assets.familydecorative.com/file/thumbnail/mutiara-kosasih.jpg",
     },
     {
-      image: "/back-cover.jpg",
-      groomName: "Dono",
-      brideName: "Siska",
-      date: "20 Desember 2022",
+      image:
+        "https://assets.familydecorative.com/file/thumbnail/rini-irvan.jpg",
     },
     {
-      image: "/back-cover.jpg",
-      groomName: "Burhan",
-      brideName: "Amel",
-      date: "11 Desember 202",
+      image:
+        "https://assets.familydecorative.com/file/thumbnail/amanda-dimas.jpg",
     },
     // Tambahkan lebih banyak card sesuai kebutuhan
   ];
@@ -80,18 +69,7 @@ const InvitationHistory = (props: Props) => {
               style={{
                 backgroundImage: `url(${item.image})`,
               }}
-            >
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-black opacity-20 rounded-lg"></div>
-
-              {/* Content over the overlay */}
-              <div className="relative z-10 text-center mt-[230px]">
-                <p className="text-lg font-bold">{item.groomName}</p>
-                <p className="text-lg">&</p>
-                <p className="text-lg font-bold">{item.brideName}</p>
-                <p className="text-sm mt-2">{item.date}</p>
-              </div>
-            </div>
+            ></div>
           ))}
         </Carousel>
       </div>
