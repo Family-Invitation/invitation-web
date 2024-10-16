@@ -24,27 +24,24 @@ export default function Page() {
 
   const cardItems = [
     {
-      image: "/bg-section1.webp",
-      title: "Tema 1",
+      image: "https://assets.familydecorative.com/file/theme/luxury-grey.jpg",
+      title: "Luxury Grey",
     },
     {
-      image: "/bg-section1.webp",
-      title: "Tema 2",
+      image: "https://assets.familydecorative.com/file/theme/creamy-latte.jpg",
+      title: "Creamy Latte",
     },
     {
-      image: "/bg-section1.webp",
-      title: "Tema 3",
+      image: "https://assets.familydecorative.com/file/theme/floral.jpg",
+      title: "Floral",
     },
     {
-      image: "/bg-section1.webp",
-      title: "Tema 4",
-    },
-    {
-      image: "/bg-section1.webp",
-      title: "Tema 5",
+      image: "https://assets.familydecorative.com/file/theme/green-leaves.jpg",
+      title: "Green Leaves",
     },
     // Tambahkan lebih banyak card sesuai kebutuhan
   ];
+
   return (
     <Wrapper>
       <div
@@ -103,14 +100,17 @@ export default function Page() {
                   itemClass="flex justify-center items-center"
                 >
                   {cardItems.map((item, index) => (
-                    <div key={index} className="rounded-xl max-w-[170px] md:max-w-[220px] mt-2">
+                    <div
+                      key={index}
+                      className="rounded-xl w-[170px] md:w-[220px] mt-2"
+                    >
                       <img
                         src={item.image}
                         alt={item.title}
                         loading="lazy"
-                        className="w-full h-[120px] md:h-[150px] object-cover rounded-b-none rounded-t-lg"
+                        className="w-full h-[170px] md:h-[220px] object-cover rounded-b-none rounded-t-lg"
                       />
-                      <div className="bg-[#E7F2FE] p-4 rounded-t-none rounded-b-lg text-center">
+                      <div className="bg-[#E7F2FE]  p-3 md:p-4 rounded-t-none rounded-b-lg text-center">
                         <p className="font-poppins text-[#49516F] font-semibold">
                           {item.title}
                         </p>
