@@ -50,10 +50,10 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
-        <link
+        {/* <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap"
           rel="stylesheet"
-        ></link>
+        ></link> */}
         {/* <link
           rel="stylesheet"
           href="https://unpkg.com/aos@2.3.1/dist/aos.css"

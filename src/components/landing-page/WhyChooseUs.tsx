@@ -30,7 +30,7 @@ const WhyChooseUsItem = ({
 
 const WhyChooseUs = (props: Props) => {
   return (
-    <div className="bg-[#A21272] w-full py-20 md:py-12 text-center">
+    <div className="bg-[#A21272] w-full py-20 md:py-12 text-center z-10">
       <h2 className="text-[#FEE7F2] text-2xl md:text-3xl font-bold">
         <span className="font-poppins">Mengapa Memilih </span>
         <span className="font-leckerliOne">Family Decorative?</span>

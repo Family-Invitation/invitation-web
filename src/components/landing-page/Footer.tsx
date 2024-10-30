@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -24,10 +25,10 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="w-full md:w-[30%] font-poppins mt-8 md:mt-0">
-          <div className="text-[#FEE7F2] text-lg">Desain</div>
-          <div className="text-[#FEE7F2] text-lg mt-4"> Portofolio</div>
-          <button className="text-[#F2FEE7] bg-[#8BB84C] px-4 py-3  font-normal rounded-md text-base mt-4">
+        <div className="w-full md:w-[30%] font-poppins mt-8 md:mt-0 flex flex-col">
+          <Link href="/desain" className="text-[#FEE7F2] text-lg">Desain</Link>
+          <Link href="/portofolio" className="text-[#FEE7F2] text-lg mt-4"> Portofolio</Link>
+          <button className="text-[#F2FEE7] bg-[#8BB84C] px-4 py-3  font-normal rounded-md text-base mt-4 w-fit">
             Pesan Sekarang
           </button>
         </div>

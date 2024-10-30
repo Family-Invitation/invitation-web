@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./landing-page/Navbar";
 import Footer from "./landing-page/Footer";
+import "../app/globals.css";
 
 type Props = {
   children: React.ReactNode;

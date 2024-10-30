@@ -3,8 +3,6 @@ import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
-type Props = {};
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -20,7 +18,7 @@ const responsive = {
   },
 };
 
-const InvitationHistory = (props: Props) => {
+const InvitationHistory = () => {
   const cardItems = [
     {
       image:
@@ -41,7 +39,6 @@ const InvitationHistory = (props: Props) => {
       image:
         "https://assets.familydecorative.com/file/thumbnail/amanda-dimas.jpg",
     },
-    // Tambahkan lebih banyak card sesuai kebutuhan
   ];
 
   return (
@@ -53,11 +50,12 @@ const InvitationHistory = (props: Props) => {
 
         <Carousel
           responsive={responsive}
-          ssr={true} // server-side rendering
+          ssr={true}
           infinite={true}
           autoPlay={false}
           keyBoardControl={true}
-          customTransition="all .5"
+          customTransition="transform 0.5s ease-in-out"
+          transitionDuration={500}
           containerClass="carousel-container"
           swipeable
           itemClass="flex justify-center items-center"
@@ -65,7 +63,7 @@ const InvitationHistory = (props: Props) => {
           {cardItems.map((item, index) => (
             <div
               key={index}
-              className="relative w-[250px] h-[400px] bg-center bg-cover rounded-lg flex flex-col justify-center items-center text-white font-leckerliOn"
+              className="relative w-[250px] h-[400px] bg-center bg-cover rounded-lg flex flex-col justify-center items-center text-white font-leckerliOn transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg"
               style={{
                 backgroundImage: `url(${item.image})`,
               }}
