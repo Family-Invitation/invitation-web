@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { Suspense } from "react";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   return {
@@ -20,7 +21,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Josefin+Sans:wght@100;200;300;400;500;600&display=swap"
+          rel="stylesheet"
+        ></link>
+      </head>
+      <body>
+        <Suspense fallback={<div></div>}>{children}</Suspense>
+      </body>
     </html>
   );
 }
