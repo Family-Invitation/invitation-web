@@ -26,12 +26,16 @@ export default function Content({
       <Section3 data={data} />
       <Section4 data={data} />
       <Section5 data={data} />
-      <Section6 data={data} />
+      {/* <Section6 data={data} /> */}
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
-      <MusicPlayer showContent={showContent} audioSource={data.music.url} template={data?.template}/>
-      <BottomNavbar data={data} template={data?.template ?? ""}/>
+      <MusicPlayer
+        showContent={showContent}
+        audioSource={data.music.url}
+        template={data?.template}
+      />
+      <BottomNavbar data={data} template={data?.template ?? ""} />
       <div
         style={{
           width: "100%",

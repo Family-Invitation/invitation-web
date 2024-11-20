@@ -54,7 +54,7 @@ export default function Content({
         <Section3 data={data} />
         <Section4 data={data} />
         <Section5 data={data} />
-        <Section6 data={data} />
+        {/* <Section6 data={data} /> */}
         <Section7 data={data} />
         <div className="border-t border-gray-300" />
         <Section8 data={data} />

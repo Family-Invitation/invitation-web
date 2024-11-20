@@ -53,7 +53,7 @@ export default function Content({
       <Section3 data={data} />
       {/* <Section4 data={data} /> */}
       {/* <Section5 data={data} /> */}
-      <Section6 data={data} />
+      {/* <Section6 data={data} /> */}
       <Section7 data={data} />
       <Section8 data={data} />
       <Section9 data={data} />
