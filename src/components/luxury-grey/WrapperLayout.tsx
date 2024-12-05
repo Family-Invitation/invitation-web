@@ -64,7 +64,7 @@ const WrapperLayout = ({ data, children }: Props) => {
               className="font-poppins text-xs tracking-widest font-semibold"
               style={{ letterSpacing: "4px" }}
             >
-              The Wedding Of
+              {data?.opening?.text_title || "The Wedding Of"}
             </h2>
             <h4 className="text-3xl md:text-4xl font-dancingScript my-8 font-extralight">
               {data?.opening?.couple_name}

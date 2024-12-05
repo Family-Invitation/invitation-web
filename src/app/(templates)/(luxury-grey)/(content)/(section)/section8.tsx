@@ -52,7 +52,9 @@ const section8 = ({ data }: Readonly<any>) => {
   return (
     <div className="bg-white flex justify-center items-center flex-col px-5 py-8">
       <div className="text-center" data-aos="zoom-in">
-        <h2 className="font-playFair text-[#525252] text-2xl">WEDDING</h2>
+        <h2 className="font-playFair text-[#525252] text-2xl">
+          {data?.section8.text_title || "WEDDING"}
+        </h2>
         <h2 className="font-dancingScript text-[#525252] text-xl">gift</h2>
       </div>
 
