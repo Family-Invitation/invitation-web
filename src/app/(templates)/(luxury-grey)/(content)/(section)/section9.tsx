@@ -22,7 +22,7 @@ const section9 = ({ data }: Readonly<any>) => {
             className="font-poppins text-xs tracking-widest font-semibold"
             style={{ letterSpacing: "4px" }}
           >
-            The Wedding Of
+            {data?.section9.text_title || "The Wedding Of"}
           </h2>
           <div className=" text-2xl md:text-3xl font-dancingScript my-8 font-normal  text-center">
             <h4>{data?.man} </h4>
