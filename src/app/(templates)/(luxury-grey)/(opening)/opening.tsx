@@ -122,7 +122,7 @@ const opening: NextPage<Props> = ({
           className="font-poppins text-xs tracking-widest font-semibold"
           style={{ letterSpacing: "4px" }}
         >
-          The Wedding Of
+          {data?.opening?.text_title || "The Wedding Of"}
         </h2>
         <h4 className=" text-3xl md:text-4xl font-dancingScript my-8 font-normal md:block hidden">
           {data?.opening?.couple_name}

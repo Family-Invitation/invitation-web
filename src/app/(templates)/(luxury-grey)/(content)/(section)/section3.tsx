@@ -54,7 +54,9 @@ const section3 = ({ data }: Readonly<any>) => {
       {/* akad & resepsi */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
         <div className="text-center" data-aos="zoom-in">
-          <h2 className="font-playFair text-white text-2xl">WEDDING</h2>
+          <h2 className="font-playFair text-white text-2xl">
+            {data?.section3.content_box.text_title || "WEDDING"}
+          </h2>
           <h2 className="font-dancingScript text-white text-xl">Event</h2>
         </div>
 
@@ -73,7 +75,7 @@ const section3 = ({ data }: Readonly<any>) => {
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
               <div className="flex justify-center items-center h-full relative">
                 <div className=" rotate-90 text-white  text-3xl font-playFair ">
-                  AKAD NIKAH
+                  {data?.section3.content_box.text_wedding || "AKAD NIKAH"}
                 </div>
               </div>
             </div>
@@ -149,7 +151,7 @@ const section3 = ({ data }: Readonly<any>) => {
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
               <div className="flex justify-center items-center h-full relative">
                 <div className=" rotate-90 text-white  text-3xl font-playFair ">
-                  RESEPSI
+                  {data?.section3.content_box.text_reception || "RESEPSI"}
                 </div>
               </div>
             </div>
@@ -160,8 +162,12 @@ const section3 = ({ data }: Readonly<any>) => {
       {/* countdown */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
         <div className="text-center" data-aos="zoom-in">
-          <h2 className="font-playFair text-white text-3xl">EVENT</h2>
-          <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
+          <h2 className="font-playFair text-white text-3xl">
+            {data?.section3.content_box.text_event || "EVENT"}
+          </h2>
+          <h2 className="font-dancingScript text-white text-xl">
+            {data?.section3.content_box.text_countdown || "Countdown"}
+          </h2>
         </div>
         <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
           <div
