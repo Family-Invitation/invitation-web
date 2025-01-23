@@ -102,7 +102,9 @@ export default function Section9({ data }: Readonly<any>) {
           }}
           className="mx-16 lg:mx-[300px]"
           data-aos="fade-up"
-          dangerouslySetInnerHTML={{ __html: data.section9.text_gratitude }}
+          dangerouslySetInnerHTML={{
+            __html: data.section9.text_gratitude.replaceAll("\n", "<br>"),
+          }}
         ></div>
         <div
           style={{
