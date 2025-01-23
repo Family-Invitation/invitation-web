@@ -91,9 +91,15 @@ const section3 = ({ data }: Readonly<any>) => {
               <h2 className="text-[#1F1F1F] font-playFair text-2xl mt-2">
                 {weddingMonthYear}
               </h2>
-              <h4 className="mt-4 text-[#54595F] font-portSans text-base font-semibold">
-                {data?.section3?.content_box?.wedding?.time}
-              </h4>
+              <h4
+                className="mt-4 text-[#54595F] font-portSans text-base font-semibold"
+                dangerouslySetInnerHTML={{
+                  __html: data?.section3?.content_box?.wedding?.time.replaceAll(
+                    "\n",
+                    "<br>"
+                  ),
+                }}
+              ></h4>
               {data?.section3?.content_box?.wedding?.button?.map?.enabled && (
                 <a
                   className="flex items-center justify-center space-x-2 bg-[#2C3333]  text-white py-2 px-4 rounded-md mt-4 btn-sm w-[150px] border-[2px] border-white "
@@ -132,9 +138,16 @@ const section3 = ({ data }: Readonly<any>) => {
               <h2 className="text-[#1F1F1F] font-playFair text-2xl mt-2">
                 {receptionMonthYear}
               </h2>
-              <h4 className="mt-4 text-[#54595F] font-portSans text-base font-semibold">
-                {data?.section3?.content_box?.reception?.time}
-              </h4>
+              <h4
+                className="mt-4 text-[#54595F] font-portSans text-base font-semibold"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    data?.section3?.content_box?.reception?.time.replaceAll(
+                      "\n",
+                      "<br>"
+                    ),
+                }}
+              ></h4>
               {data?.section3?.content_box?.reception?.button?.map?.enabled && (
                 <a
                   className="flex items-center justify-center space-x-2 bg-[#2C3333]  text-white py-2 px-4 rounded-md mt-4 btn-sm w-[150px] border-[2px] border-white "
