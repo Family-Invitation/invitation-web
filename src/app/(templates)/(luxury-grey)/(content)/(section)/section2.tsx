@@ -12,7 +12,7 @@ const section2 = ({ data }: Readonly<any>) => {
       }}
     >
       <h2 className="text-white text-2xl font-playFair" data-aos="fade-up">
-        Our Wedding
+        {data?.section2.text_title || "Our Wedding"}
       </h2>
       <h4
         className="text-white mt-3 font-times text-center text-sm italic px-2"

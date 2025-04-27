@@ -476,7 +476,10 @@ export default function Section3({ data }: Readonly<any>) {
                 >
                   <span
                     dangerouslySetInnerHTML={{
-                      __html: data.section3.content_box.text_invite,
+                      __html: data.section3.content_box.text_invite.replaceAll(
+                        "\n",
+                        "<br>"
+                      ),
                     }}
                   >
                     {/* <em>Assalamu'alaikum Wr.Wb.</em>

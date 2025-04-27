@@ -51,9 +51,12 @@ const Section4 = ({ data }: Readonly<any>) => {
                 <h4 className="font-playFair text-[#0F0F0F] text-3xl mt-2">
                   {step.title}
                 </h4>
-                <h4 className="text-[#4D4D4D] text-sm font-lora mt-2">
-                  {step.content}
-                </h4>
+                <h4
+                  className="text-[#4D4D4D] text-sm font-lora mt-2"
+                  dangerouslySetInnerHTML={{
+                    __html: step.content.replaceAll("\n", "<br>"),
+                  }}
+                ></h4>
               </div>
             </div>
           </div>

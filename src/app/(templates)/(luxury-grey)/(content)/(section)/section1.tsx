@@ -56,7 +56,7 @@ const section1 = ({ data }: Readonly<any>) => {
           style={{ letterSpacing: "4px" }}
           data-aos="fade-up"
         >
-          The Wedding Of
+          {data?.section1.text_title || "The Wedding Of"}
         </h2>
         <div
           className=" text-2xl md:text-3xl font-dancingScript my-8 font-normal  text-center"

@@ -54,7 +54,9 @@ const section3 = ({ data }: Readonly<any>) => {
       {/* akad & resepsi */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
         <div className="text-center" data-aos="zoom-in">
-          <h2 className="font-playFair text-white text-2xl">WEDDING</h2>
+          <h2 className="font-playFair text-white text-2xl">
+            {data?.section3.content_box.text_title || "WEDDING"}
+          </h2>
           <h2 className="font-dancingScript text-white text-xl">Event</h2>
         </div>
 
@@ -73,7 +75,7 @@ const section3 = ({ data }: Readonly<any>) => {
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
               <div className="flex justify-center items-center h-full relative">
                 <div className=" rotate-90 text-white  text-3xl font-playFair ">
-                  AKAD NIKAH
+                  {data?.section3.content_box.text_wedding || "AKAD NIKAH"}
                 </div>
               </div>
             </div>
@@ -89,9 +91,15 @@ const section3 = ({ data }: Readonly<any>) => {
               <h2 className="text-[#1F1F1F] font-playFair text-2xl mt-2">
                 {weddingMonthYear}
               </h2>
-              <h4 className="mt-4 text-[#54595F] font-portSans text-base font-semibold">
-                {data?.section3?.content_box?.wedding?.time}
-              </h4>
+              <h4
+                className="mt-4 text-[#54595F] font-portSans text-base font-semibold"
+                dangerouslySetInnerHTML={{
+                  __html: data?.section3?.content_box?.wedding?.time.replaceAll(
+                    "\n",
+                    "<br>"
+                  ),
+                }}
+              ></h4>
               {data?.section3?.content_box?.wedding?.button?.map?.enabled && (
                 <a
                   className="flex items-center justify-center space-x-2 bg-[#2C3333]  text-white py-2 px-4 rounded-md mt-4 btn-sm w-[150px] border-[2px] border-white "
@@ -130,9 +138,16 @@ const section3 = ({ data }: Readonly<any>) => {
               <h2 className="text-[#1F1F1F] font-playFair text-2xl mt-2">
                 {receptionMonthYear}
               </h2>
-              <h4 className="mt-4 text-[#54595F] font-portSans text-base font-semibold">
-                {data?.section3?.content_box?.reception?.time}
-              </h4>
+              <h4
+                className="mt-4 text-[#54595F] font-portSans text-base font-semibold"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    data?.section3?.content_box?.reception?.time.replaceAll(
+                      "\n",
+                      "<br>"
+                    ),
+                }}
+              ></h4>
               {data?.section3?.content_box?.reception?.button?.map?.enabled && (
                 <a
                   className="flex items-center justify-center space-x-2 bg-[#2C3333]  text-white py-2 px-4 rounded-md mt-4 btn-sm w-[150px] border-[2px] border-white "
@@ -149,7 +164,7 @@ const section3 = ({ data }: Readonly<any>) => {
             <div className="w-1/4 max-h-[400px] bg-[#2C3333]">
               <div className="flex justify-center items-center h-full relative">
                 <div className=" rotate-90 text-white  text-3xl font-playFair ">
-                  RESEPSI
+                  {data?.section3.content_box.text_reception || "RESEPSI"}
                 </div>
               </div>
             </div>
@@ -160,8 +175,12 @@ const section3 = ({ data }: Readonly<any>) => {
       {/* countdown */}
       <div className="bg-[#2C3333] flex justify-center items-center flex-col px-5 py-8">
         <div className="text-center" data-aos="zoom-in">
-          <h2 className="font-playFair text-white text-3xl">EVENT</h2>
-          <h2 className="font-dancingScript text-white text-xl">Countdown</h2>
+          <h2 className="font-playFair text-white text-3xl">
+            {data?.section3.content_box.text_event || "EVENT"}
+          </h2>
+          <h2 className="font-dancingScript text-white text-xl">
+            {data?.section3.content_box.text_countdown || "Countdown"}
+          </h2>
         </div>
         <div className="mt-8 h-full w-full px-8" data-aos="flip-up">
           <div
