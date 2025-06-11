@@ -1,9 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
-type Props = {};
 
 const responsive = {
   desktop: {
@@ -17,11 +16,10 @@ const responsive = {
   mobile: {
     breakpoint: { max: 464, min: 0 },
     items: 2,
-    // partialVisibilityGutter: 40,
   },
 };
 
-const InvitationTheme = (props: Props) => {
+const InvitationTheme = () => {
   const [activeTab, setActiveTab] = useState("terbaru");
 
   const cardItems = [
@@ -41,7 +39,6 @@ const InvitationTheme = (props: Props) => {
       image: "https://assets.familydecorative.com/file/theme/green-leaves.jpg",
       title: "Green Leaves",
     },
-    // Tambahkan lebih banyak card sesuai kebutuhan
   ];
 
   return (
@@ -77,13 +74,14 @@ const InvitationTheme = (props: Props) => {
             <div>
               <Carousel
                 responsive={responsive}
-                ssr={true} // server-side rendering
+                ssr={true}
                 infinite={true}
                 autoPlay={false}
                 keyBoardControl={true}
-                customTransition="all .5"
-                containerClass="carousel-container"
+                customTransition="transform 0.5s ease-in-out"
+                transitionDuration={500}
                 swipeable
+                containerClass="carousel-container"
                 itemClass="flex justify-center items-center"
               >
                 {cardItems.map((item, index) => (
@@ -97,7 +95,7 @@ const InvitationTheme = (props: Props) => {
                       loading="lazy"
                       className="w-full h-[170px] md:h-[220px] object-cover rounded-b-none rounded-t-lg"
                     />
-                    <div className="bg-[#E7F2FE]  p-3 md:p-4 rounded-t-none rounded-b-lg text-center">
+                    <div className="bg-[#E7F2FE] p-3 md:p-4 rounded-t-none rounded-b-lg text-center">
                       <p className="font-poppins text-[#49516F] font-semibold">
                         {item.title}
                       </p>
@@ -113,7 +111,6 @@ const InvitationTheme = (props: Props) => {
           {activeTab === "populer" && (
             <div>
               <h2 className="text-xl font-semibold">Tema Populer</h2>
-              {/* Content for "Populer" */}
               <p>Ini adalah daftar tema populer...</p>
             </div>
           )}

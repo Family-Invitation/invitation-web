@@ -3,10 +3,10 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   return (
-    <header className="relative h-screen px-4 md:px-12  bg-[#EEEDED]">
-      <div className="flex items-start h-screen flex-col md:justify-center mt-60 md:mt-0 text-center md:text-left">
+    <header className="relative h-screen md:h-[65vh] px-4 md:px-12  bg-[#EEEDED]">
+      <div className="flex items-start h-full flex-col md:justify-center mt-60 md:mt-0 text-center md:text-left">
         <div className="flex items-center">
-          <div className="w-full md:w-[65%]">
+          <div className="w-full md:w-[73%]">
             <h1 className="text-[#DF1E9F] text-start text-3xl md:text-5xl font-philosopher  w-full  px-0 leading-10 font-medium">
               Rayakan Cinta Anda dengan Undangan Pernikahan Digital yang Elegan
             </h1>
@@ -20,12 +20,12 @@ const Header = () => {
               </button>
             </div>
           </div>
-          <div className="w-auto relative hidden md:block">
+          <div className="w-auto relative hidden md:block mt-32">
             <img
               src="/images/landing-page/img-header.png"
               alt="img-header"
               loading="lazy"
-              className="w-full h-[600px] relative "
+              className="w-full h-[620px] relative object-cover object-center"
             />
           </div>
         </div>
